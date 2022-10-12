@@ -1,0 +1,134 @@
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\obj\Release\MikroMnt.csprojAssemblyReference.cache
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\obj\Release\MikroMnt.dll.licenses
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\obj\Release\MikroMnt.csproj.CoreCompileInputs.cache
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\MikroMnt.dll.config
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\MikroMnt.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\MikroMnt.pdb
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DMS.Tools.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\MWSControls.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\MWSFramework.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\SandTrap.WebControls.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\UOBISecurity.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Web.v20.2.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Data.v20.2.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Printing.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Office.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.RichEdit.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Pdf.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Pdf.v20.2.Drawing.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.RichEdit.v20.2.Core.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Pdf.v20.2.Core.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Pdf.v20.2.Drawing.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\de\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\es\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\ja\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\ru\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\de\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\es\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\ja\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\ru\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\obj\Release\MikroMnt.csproj.CopyComplete
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\obj\Release\MikroMnt.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\obj\Release\MikroMnt.pdb
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Docs.v20.2.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Spreadsheet.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.DataVisualization.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Snap.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.DataAccess.v20.2.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.XtraCharts.v20.2.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Sparkline.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Charts.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Xpo.v20.2.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.CodeParser.v20.2.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Snap.v20.2.Core.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.DataAccess.v20.2.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.XtraCharts.v20.2.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Sparkline.v20.2.Core.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\DevExpress.Xpo.v20.2.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\de\DevExpress.Snap.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\es\DevExpress.Snap.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\ja\DevExpress.Snap.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\ru\DevExpress.Snap.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\de\DevExpress.DataAccess.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\es\DevExpress.DataAccess.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\ja\DevExpress.DataAccess.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\ru\DevExpress.DataAccess.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\de\DevExpress.XtraCharts.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\es\DevExpress.XtraCharts.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\ja\DevExpress.XtraCharts.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\ru\DevExpress.XtraCharts.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\de\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\es\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\ja\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\ru\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\de\DevExpress.Xpo.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\es\DevExpress.Xpo.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\ja\DevExpress.Xpo.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\maintenance\bin\ru\DevExpress.Xpo.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\MikroMnt.dll.config
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\MikroMnt.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\MikroMnt.pdb
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Data.v20.2.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Docs.v20.2.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Office.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Printing.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Spreadsheet.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Web.v20.2.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DMS.Tools.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\MWSControls.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\MWSFramework.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\SandTrap.WebControls.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\UOBISecurity.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.DataVisualization.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.RichEdit.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Snap.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.DataAccess.v20.2.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Pdf.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Pdf.v20.2.Drawing.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.XtraCharts.v20.2.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Sparkline.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Charts.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Xpo.v20.2.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.CodeParser.v20.2.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.RichEdit.v20.2.Core.xml
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Snap.v20.2.Core.xml
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.DataAccess.v20.2.xml
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Pdf.v20.2.Core.xml
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Pdf.v20.2.Drawing.xml
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.XtraCharts.v20.2.xml
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Sparkline.v20.2.Core.xml
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\DevExpress.Xpo.v20.2.xml
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\de\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\es\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\ja\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\ru\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\de\DevExpress.Snap.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\es\DevExpress.Snap.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\ja\DevExpress.Snap.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\ru\DevExpress.Snap.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\de\DevExpress.DataAccess.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\es\DevExpress.DataAccess.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\ja\DevExpress.DataAccess.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\ru\DevExpress.DataAccess.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\de\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\es\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\ja\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\ru\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\de\DevExpress.XtraCharts.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\es\DevExpress.XtraCharts.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\ja\DevExpress.XtraCharts.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\ru\DevExpress.XtraCharts.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\de\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\es\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\ja\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\ru\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\de\DevExpress.Xpo.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\es\DevExpress.Xpo.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\ja\DevExpress.Xpo.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\bin\ru\DevExpress.Xpo.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\obj\Release\MikroMnt.csproj.AssemblyReference.cache
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\obj\Release\MikroMnt.dll.licenses
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\obj\Release\MikroMnt.csproj.CoreCompileInputs.cache
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\obj\Release\MikroMnt.csproj.CopyComplete
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\obj\Release\MikroMnt.dll
+D:\JOGJA\SKBF\Source Code\edisweb\maintenance\obj\Release\MikroMnt.pdb

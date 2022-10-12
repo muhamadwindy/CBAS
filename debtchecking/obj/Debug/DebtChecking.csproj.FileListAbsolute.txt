@@ -1,0 +1,241 @@
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\classes\DMSControls.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DebtChecking.dll.config
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DebtChecking.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DebtChecking.pdb
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Printing.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Web.v20.2.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DMS.Tools.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\Interop.Office.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\Interop.Word.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\MWSControls.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\MWSFramework.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\UOBISecurity.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Data.v20.2.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Pdf.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Pdf.v20.2.Drawing.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Office.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.RichEdit.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Pdf.v20.2.Core.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Pdf.v20.2.Drawing.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.RichEdit.v20.2.Core.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\de\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\es\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\ja\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\ru\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\de\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\es\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\ja\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\ru\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\obj\Debug\DebtChecking.csprojAssemblyReference.cache
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\obj\Debug\DebtChecking.csproj.ResolveComReference.cache
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\obj\Debug\DebtChecking.dll.licenses
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\obj\Debug\DebtChecking.csproj.CoreCompileInputs.cache
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\obj\Debug\DebtChecking.csproj.CopyComplete
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\obj\Debug\DebtChecking.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\obj\Debug\DebtChecking.pdb
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\MWSFramework.pdb
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Docs.v20.2.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Spreadsheet.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.DataVisualization.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Snap.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.DataAccess.v20.2.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.XtraCharts.v20.2.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Sparkline.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Charts.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Xpo.v20.2.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.CodeParser.v20.2.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Snap.v20.2.Core.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.DataAccess.v20.2.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.XtraCharts.v20.2.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Sparkline.v20.2.Core.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Xpo.v20.2.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\de\DevExpress.Snap.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\es\DevExpress.Snap.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\ja\DevExpress.Snap.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\ru\DevExpress.Snap.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\de\DevExpress.DataAccess.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\es\DevExpress.DataAccess.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\ja\DevExpress.DataAccess.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\ru\DevExpress.DataAccess.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\de\DevExpress.XtraCharts.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\es\DevExpress.XtraCharts.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\ja\DevExpress.XtraCharts.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\ru\DevExpress.XtraCharts.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\de\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\es\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\ja\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\ru\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\de\DevExpress.Xpo.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\es\DevExpress.Xpo.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\ja\DevExpress.Xpo.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\ru\DevExpress.Xpo.v20.2.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.PivotGrid.v20.2.Core.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.Web.ASPxPivotGrid.v20.2.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\DevExpress.PivotGrid.v20.2.Core.xml
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\de\DevExpress.PivotGrid.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\es\DevExpress.PivotGrid.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\ja\DevExpress.PivotGrid.v20.2.Core.resources.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\debtchecking\bin\ru\DevExpress.PivotGrid.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\obj\Debug\DebtChecking.csproj.AssemblyReference.cache
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\obj\Debug\DebtChecking.csproj.ResolveComReference.cache
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\obj\Debug\DebtChecking.dll.licenses
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\obj\Debug\DebtChecking.csproj.CoreCompileInputs.cache
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\obj\Debug\DebtChecking.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\obj\Debug\DebtChecking.pdb
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\classes\DMSControls.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DebtChecking.dll.config
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DebtChecking.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DebtChecking.pdb
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Data.v20.2.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Docs.v20.2.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Office.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.PivotGrid.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Printing.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Spreadsheet.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Web.ASPxPivotGrid.v20.2.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Web.v20.2.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\Interop.Office.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\Interop.Word.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\MWSControls.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\MWSFramework.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\UOBISecurity.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.DataVisualization.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.RichEdit.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Snap.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.DataAccess.v20.2.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Pdf.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Pdf.v20.2.Drawing.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.XtraCharts.v20.2.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Sparkline.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Charts.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Xpo.v20.2.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.CodeParser.v20.2.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.PivotGrid.v20.2.Core.xml
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.RichEdit.v20.2.Core.xml
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Snap.v20.2.Core.xml
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.DataAccess.v20.2.xml
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Pdf.v20.2.Core.xml
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Pdf.v20.2.Drawing.xml
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.XtraCharts.v20.2.xml
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Sparkline.v20.2.Core.xml
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DevExpress.Xpo.v20.2.xml
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\de\DevExpress.PivotGrid.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\es\DevExpress.PivotGrid.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\ja\DevExpress.PivotGrid.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\ru\DevExpress.PivotGrid.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\de\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\es\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\ja\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\ru\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\de\DevExpress.Snap.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\es\DevExpress.Snap.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\ja\DevExpress.Snap.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\ru\DevExpress.Snap.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\de\DevExpress.DataAccess.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\es\DevExpress.DataAccess.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\ja\DevExpress.DataAccess.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\ru\DevExpress.DataAccess.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\de\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\es\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\ja\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\ru\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\de\DevExpress.XtraCharts.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\es\DevExpress.XtraCharts.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\ja\DevExpress.XtraCharts.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\ru\DevExpress.XtraCharts.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\de\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\es\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\ja\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\ru\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\de\DevExpress.Xpo.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\es\DevExpress.Xpo.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\ja\DevExpress.Xpo.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\ru\DevExpress.Xpo.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\obj\Debug\DebtChecking.csproj.CopyComplete
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\EPPlus.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\Newtonsoft.Json.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DMS.Tools.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.csproj.AssemblyReference.cache
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.csproj.ResolveComReference.cache
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.csproj.CoreCompileInputs.cache
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\classes\DMSControls.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DebtChecking.dll.config
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DebtChecking.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DebtChecking.pdb
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Data.v20.2.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Docs.v20.2.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Office.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.PivotGrid.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Printing.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Spreadsheet.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Web.ASPxPivotGrid.v20.2.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Web.v20.2.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\EPPlus.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\evohtmltopdf.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\Interop.Office.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\Interop.Word.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\Ionic.Zip.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\MWSControls.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\MWSFramework.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\Newtonsoft.Json.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\UOBISecurity.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.DataVisualization.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.RichEdit.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Snap.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.DataAccess.v20.2.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Pdf.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Pdf.v20.2.Drawing.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.XtraCharts.v20.2.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Sparkline.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Charts.v20.2.Core.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Xpo.v20.2.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.CodeParser.v20.2.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.PivotGrid.v20.2.Core.xml
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\evohtmltopdf.xml
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.RichEdit.v20.2.Core.xml
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Snap.v20.2.Core.xml
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.DataAccess.v20.2.xml
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Pdf.v20.2.Core.xml
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Pdf.v20.2.Drawing.xml
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.XtraCharts.v20.2.xml
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Sparkline.v20.2.Core.xml
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Xpo.v20.2.xml
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\de\DevExpress.PivotGrid.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\es\DevExpress.PivotGrid.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ja\DevExpress.PivotGrid.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ru\DevExpress.PivotGrid.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\de\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\es\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ja\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ru\DevExpress.RichEdit.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\de\DevExpress.Snap.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\es\DevExpress.Snap.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ja\DevExpress.Snap.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ru\DevExpress.Snap.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\de\DevExpress.DataAccess.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\es\DevExpress.DataAccess.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ja\DevExpress.DataAccess.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ru\DevExpress.DataAccess.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\de\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\es\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ja\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ru\DevExpress.Pdf.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\de\DevExpress.XtraCharts.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\es\DevExpress.XtraCharts.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ja\DevExpress.XtraCharts.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ru\DevExpress.XtraCharts.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\de\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\es\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ja\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ru\DevExpress.Sparkline.v20.2.Core.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\de\DevExpress.Xpo.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\es\DevExpress.Xpo.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ja\DevExpress.Xpo.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ru\DevExpress.Xpo.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.csproj.CopyComplete
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.pdb
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.dll.licenses
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\NReco.PdfGenerator.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\NReco.PdfGenerator.xml
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DMS.Tools.dll

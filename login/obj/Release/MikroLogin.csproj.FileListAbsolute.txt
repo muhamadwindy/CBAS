@@ -1,0 +1,10 @@
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\obj\Release\MikroLogin.csprojAssemblyReference.cache
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\obj\Release\MikroLogin.csproj.CoreCompileInputs.cache
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\bin\MikroLogin.dll.config
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\bin\MikroLogin.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\bin\MikroLogin.pdb
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\bin\Newtonsoft.Json.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\bin\UOBISecurity.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\obj\Release\MikroLogin.csproj.CopyComplete
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\obj\Release\MikroLogin.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\obj\Release\MikroLogin.pdb

@@ -1,0 +1,33 @@
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\obj\Debug\MikroLogin.csprojAssemblyReference.cache
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\obj\Debug\MikroLogin.csproj.CoreCompileInputs.cache
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\bin\MikroLogin.dll.config
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\bin\MikroLogin.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\bin\MikroLogin.pdb
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\bin\Newtonsoft.Json.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\bin\UOBISecurity.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\obj\Debug\MikroLogin.csproj.CopyComplete
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\obj\Debug\MikroLogin.dll
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\obj\Debug\MikroLogin.pdb
+D:\SLIK OJK\Kredit Plus Portal  V 2\Login\bin\DMS.Tools.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\Login\bin\MikroLogin.dll.config
+D:\JOGJA\SKBF\Source Code\ediswebwnd\Login\bin\MikroLogin.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\Login\bin\MikroLogin.pdb
+D:\JOGJA\SKBF\Source Code\ediswebwnd\Login\bin\DMS.Tools.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\Login\bin\Newtonsoft.Json.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\Login\bin\UOBISecurity.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\Login\obj\Debug\MikroLogin.csproj.AssemblyReference.cache
+D:\JOGJA\SKBF\Source Code\ediswebwnd\Login\obj\Debug\MikroLogin.csproj.CoreCompileInputs.cache
+D:\JOGJA\SKBF\Source Code\ediswebwnd\Login\obj\Debug\MikroLogin.csproj.CopyComplete
+D:\JOGJA\SKBF\Source Code\ediswebwnd\Login\obj\Debug\MikroLogin.dll
+D:\JOGJA\SKBF\Source Code\ediswebwnd\Login\obj\Debug\MikroLogin.pdb
+D:\JOGJA\SKBF\Source Code\edisweb\Login\bin\MikroLogin.dll.config
+D:\JOGJA\SKBF\Source Code\edisweb\Login\bin\MikroLogin.dll
+D:\JOGJA\SKBF\Source Code\edisweb\Login\bin\MikroLogin.pdb
+D:\JOGJA\SKBF\Source Code\edisweb\Login\bin\Newtonsoft.Json.dll
+D:\JOGJA\SKBF\Source Code\edisweb\Login\bin\UOBISecurity.dll
+D:\JOGJA\SKBF\Source Code\edisweb\Login\obj\Debug\MikroLogin.csproj.AssemblyReference.cache
+D:\JOGJA\SKBF\Source Code\edisweb\Login\obj\Debug\MikroLogin.csproj.CoreCompileInputs.cache
+D:\JOGJA\SKBF\Source Code\edisweb\Login\obj\Debug\MikroLogin.csproj.CopyComplete
+D:\JOGJA\SKBF\Source Code\edisweb\Login\obj\Debug\MikroLogin.dll
+D:\JOGJA\SKBF\Source Code\edisweb\Login\obj\Debug\MikroLogin.pdb
+D:\JOGJA\SKBF\Source Code\edisweb\Login\bin\DMS.Tools.dll

@@ -1,0 +1,134 @@
+<script type="text/javascript" language="javascript">
+// include this script to prevent form being submitted twice
+// (i.e when user click the button twice)
+// form must be named Form1 in the aspx page for this to work
+var processing = false;
+function cekmandatorypanel(panel, excludelist)
+{
+	max_elm = panel.GetMainElement().all.length-1;
+    elmlst = panel.GetMainElement().all;   
+    dxmandatory = false;    
+	for (var i=0; i<max_elm; i++)
+	{
+		elm = elmlst[i];
+		if(excludelist != null && (elm.className == "mandatory" || elm.className == "dxeButtonEdit mandatory"))
+	    {
+	        exclude = false;
+	        for(var j=0;j<excludelist.length;j++)
+	        {	            
+	            if(elm.name.indexOf(excludelist[j]) != -1)
+                {
+                    exclude = true;
+                    break;
+                }
+            }
+            if(exclude) continue;		    
+	    }
+        if(elm.className=="dxeButtonEdit mandatory")
+        { 
+            dxelm = elm;
+	        dxmandatory = true;
+	    }
+		try
+		{
+		    if (elm.className == "mandatory"||(dxmandatory && elm.type=="text")) 
+		    {
+		        if((dxmandatory && elm.value=="(none)") ||  elm.value == "" || elm.value == "0,00" || elm.value == "0.00" || elm.value == "0")
+		        {		
+			        try{
+			        if(dxmandatory)elm=dxelm;
+    			    
+			        var r = elm.parentElement;
+			        var d;
+			        var counter = 0;
+			        while (d == null && counter < 8)
+			        {
+				        r = r.parentElement;
+				        try{d = r.cells(0).innerText;}
+				        catch(ex){d = null;counter=counter+1;}
+			        }
+			        if (d == null)
+				        d = "";
+			        alert(d + " tidak boleh kosong...");			
+    			    }
+    			    catch(e){}
+    			    dxmandatory=false;
+			        elm.focus();
+			        return false;
+		        }
+		        dxmandatory=false;	    
+		    }
+	    } catch(e){};
+	}
+	return true;
+}
+
+function endcallback(s, e) {
+    if(s.hasOwnProperty("cp_alert")&&s.cp_alert!="")
+    {
+        alert(s.cp_alert);
+        s.cp_alert = "";
+    }
+    if(s.hasOwnProperty("cp_redirect"))
+    {
+        if(s.hasOwnProperty("cp_target")&&s.cp_target=="_parent")
+            parent.window.location = s.cp_redirect;
+        else
+            window.location =  s.cp_redirect;
+    }   
+    if (s.hasOwnProperty("cp_closepopup") && s.cp_closepopup != "") {
+        popup.Hide();
+    }
+    processing=false;
+}
+
+function callback(objcallback,parameter,cekmandatory, excludelist)
+{
+    if(cekmandatory==null)cekmandatory=true;
+    if(!processing)
+    if(!cekmandatory || cekmandatorypanel(objcallback, excludelist))
+    {
+        processing=true;
+        objcallback.EndCallback.RemoveHandler(endcallback);
+        objcallback.EndCallback.AddHandler(endcallback);        
+        objcallback.PerformCallback(parameter)
+    }
+}
+
+function callbackpopup(popup,objcallback,parameter,objrefcallback,refparameter)
+{
+    objcallback.EndCallback.ClearHandlers();
+    if(!processing)
+    {
+        if(objrefcallback==null)
+        {
+            popup.Show();
+            callback(objcallback,parameter,false);
+
+        }
+        else
+        {
+            objcallback.EndCallback.AddHandler(
+                function customcallback(s,e)
+                {
+                    popup.Hide();
+                    processing = false;
+                    callback(objrefcallback,refparameter,false);
+                }            
+            );         
+            callback(objcallback,parameter,true);
+        }
+    }
+}
+
+
+
+
+</script>
+<script for=form1 event=onsubmit language=javascript>
+	if (processing) return false;
+	processing = true;
+	return true;
+</script>
+
+
