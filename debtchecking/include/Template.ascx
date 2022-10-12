@@ -129,7 +129,7 @@
  
 <script src='<%= ResolveUrl("~/App_Themes/mwstyle/dataTables/datatables.min.js")%>'></script>
 
-<script src='<%= ResolveUrl("~/App_Themes/mwstyle/datatables-responsive/dataTables.responsive.js")%>'></script>
+<script src='<%= ResolveUrl("~/App_Themes/mwstyle/plugins/datatables-responsive/js/dataTables.responsive.js")%>'></script>
 
 <script src='<%= ResolveUrl("~/App_Themes/mwstyle/dist/js/adminlte.js")%>'></script> 
 
@@ -139,7 +139,7 @@
 
 <script src="<%= ResolveUrl("~/include/bootstrap-combobox.js") %>"></script>
 
-<script src="<%= ResolveUrl("~/libraryu/MWSTools.js") %>"></script>
+<script src="<%= ResolveUrl("~/library/MWSTools.js") %>"></script>
 
  
 
