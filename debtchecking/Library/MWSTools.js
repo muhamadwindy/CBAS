@@ -1,6 +1,5 @@
 ﻿$(document).on("input", ".numeric", function () {
-	this.value = this.value.replace(/[^\d]/g, '');
-	//this.value = this.value.replace(/[^\d\.\-]/g, '');
+	this.value = this.value.replace(/[^\d]/g, ''); 
 });
 $(document).on("input", ".numericanddot", function () {
 	this.value = this.value.replace(/[^\d\.\-]/g, '');
@@ -31,7 +30,11 @@ $(document).on("input", ".numericdoublenegative", function () {
 });
 
 $(document).on("input", ".alphaonly", function () {
-	this.value = this.value.replace(/[^A-Za-z_\s\&]/g, '');
+	this.value = this.value.replace(/[^A-Za-z\s\&]/g, '');
+});
+
+$(document).on("input", ".alphanumeric", function () {
+	this.value = this.value.replace(/[^A-Za-z0-9\s\&]/g, '');
 });
 
 
@@ -89,7 +92,7 @@ function currzd(sign, txt, ribuan, cent, segment, event) {
         return;
     }
     var fValue = parseFloat(clearValue(txt.value, ribuan, cent));
-    var iStr = decFormat(fValue, ribuan, cent, 0);                 // formated integer 
+    var iStr = decFormat(fValue, ribuan, cent, 0); 
     var decstr = '';
     var idx = txt.value.indexOf(cent);
     if (idx > 0) {
@@ -103,56 +106,19 @@ function currzd(sign, txt, ribuan, cent, segment, event) {
 
 
 
-function SpecialKeyDec() {
-	/* keydown / keyup
-	8-backspace; 9-tab; 13-Enter; 16-Shift; 17-Ctrl; 18-Alt; 19-Pause; 20-CapsLock; 27-Esc;
-
-	33-PageUp; 34-PageDown; 35-End;	36-Home; 37-Left; 38-Up; 39-Right; 40-Down; 45-Insert; 46-Delete; 91-Win;
-
-	F1-F12 - 112-123; 144-NumLock; ScrollLock - 145;	  
-	*/
-
-	/*keypress
-	! 33; " 34; # 35; $ 36; % 37; & 38; ' 39;
-	( 40; ) 41; * 42; + 43; - 45;
-	: 58; ; 59; < 60; = 61; > 62; ? 63; @ 64;
-	[ 91; ] 93; ^ 94; _ 95; ` 96;
-	{ 123; | 124; } 125; ~ 126;
-	*/
+function SpecialKeyDec() { 
 	if (event.keyCode == 46 || event.keyCode == 8) return false;
 
 	if (
-		(event.keyCode < 28 && event.keyCode > 8)
-		/*	|| (event.keyCode<46 && event.keyCode>32) 
-			|| (event.keyCode==91)
-			|| (event.keyCode<146 && event.keyCode>111)
-		//	|| (event.keyCode<46 && event.keyCode>32)
-			|| (event.keyCode<65 && event.keyCode>57)
-			|| (event.keyCode<97 && event.keyCode>90)
-			|| (event.keyCode<127 && event.keyCode>122)*/
+		(event.keyCode < 28 && event.keyCode > 8) 
 	) return true;
 }
 function decimalformat(txt, dec) {
-	var length = txt.value.length, code;
-
-	//if (SpecialKeyDec()) return true;
-
-	//if user press backspace
-	//if (event.keyCode==8) return;
-
-	//if (event.keyCode>36 && event.keyCode<41) return;
-
+	var length = txt.value.length, code; 
 	if (dec == '.')
 		code = (event.keyCode != 110 && event.keyCode != 190);
 	else if (dec == ',')
-		code = (event.keyCode != 188);
-
-	/*if ( (event.keyCode<48 || event.keyCode>57)
-		&& (event.keyCode<96 || event.keyCode>105)
-		&& code)
-		txt.value = txt.value.substr(0,length-1);
-	*/
-
+		code = (event.keyCode != 188); 
 	if (txt.value.indexOf(dec) != txt.value.lastIndexOf(dec)
 		|| txt.value.indexOf(dec) == 0)
 		txt.value = txt.value.substr(0, length - 1);

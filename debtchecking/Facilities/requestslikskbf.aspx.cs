@@ -378,6 +378,7 @@ namespace DebtChecking.Facilities
             staticFramework.reff(Brand, "select BrandId, BrandName from dbo.rfbrandmanufacturer where Active = 1", null, conn);
             staticFramework.reff(VehicleYear, "select VehicleYearCode, VehicleYear from dbo.RfVehicleYear where Active = 1", null, conn);
             staticFramework.reff(LoanTerm, "select Tenor, Tenor from dbo.RfTenor", null, conn);
+            staticFramework.reff(Classification, "select ClassificationId, ClassificationName from RFCLASSIFICATION", null, conn);
 
             string productId = productid.SelectedValue;
             string vehicleYear = VehicleYear.SelectedValue;
@@ -432,6 +433,7 @@ namespace DebtChecking.Facilities
             staticFramework.retrieve(dt, gender);
             staticFramework.retrieve(dt, mother_name);
             staticFramework.retrieve(dt, PICName);
+            staticFramework.retrieve(dt, JenisIdentitas);
             //staticFramework.retrieve(dt, status_bpkb);
             //staticFramework.retrieve(dt, nama_bpkb);
             //string linkPhoto = Server.MapPath(dt.Rows[0]["photo"].ToString());
@@ -458,10 +460,12 @@ namespace DebtChecking.Facilities
 
             staticFramework.reff(Varian, "select VarianId, VarianName from dbo.RfVarian where ModelId = @1 and Active = 1", new object[] { h_Model.Value }, conn);
 
-
-
             staticFramework.retrieve(dtLoan, "VarianId", Varian);
             staticFramework.retrieve(dtLoan, "VarianId", h_Varian);
+            setClassification();
+            staticFramework.retrieve(Classification, "VarianId", h_Varian);
+
+
             staticFramework.retrieve(dtLoan, "VehicleYearCode", VehicleYear);
             staticFramework.retrieve(dtLoan, "VehicleYearCode", h_VehicleYear);
             staticFramework.retrieve(dtLoan, "NoOfUnitId", NoOfUnit);
@@ -550,6 +554,7 @@ namespace DebtChecking.Facilities
             staticFramework.saveNVC(Fields, gender);
             staticFramework.saveNVC(Fields, mother_name);
             staticFramework.saveNVC(Fields, PICName);
+            staticFramework.saveNVC(Fields, JenisIdentitas);
             //staticFramework.saveNVC(Fields, status_bpkb);
             //staticFramework.saveNVC(Fields, nama_bpkb);
 
@@ -574,7 +579,7 @@ namespace DebtChecking.Facilities
             staticFramework.saveNVC(Fields, "VarianId", Varian);
             staticFramework.saveNVC(Fields, "VehicleYearCode", h_VehicleYear.Value);
             staticFramework.saveNVC(Fields, "NoOfUnitId", h_NoOfUnit.Value);
-            staticFramework.saveNVC(Fields, "Otr", OTR.Text);
+            staticFramework.saveNVC(Fields, "Otr", OTR);
             staticFramework.saveNVC(Fields, "Dp", DP.Text);
             staticFramework.saveNVC(Fields, "LoanTerm", h_LoanTerm.Value);
             staticFramework.saveNVC(Fields, "InterestRate", InterestRate);
@@ -1435,6 +1440,28 @@ namespace DebtChecking.Facilities
         protected void panelLoanTerm_Callback(object sender, CallbackEventArgsBase e)
         {
             loadTenor();
+        }
+
+        protected void panelClassification_Callback(object sender, CallbackEventArgsBase e)
+        {
+            setClassification();
+
+        }
+
+        void setClassification()
+        {
+            string query = "select ClassificationId from dbo.RfVarian where VarianId = @1 ";
+            DataTable dt = conn.GetDataTable(query, new object[] { h_Varian.Value }, dbtimeout);
+            try
+            {
+                Classification.SelectedValue = dt.Rows[0][0].ToString();
+                Classification.DataBind();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

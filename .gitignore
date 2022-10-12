@@ -1,3 +1,4 @@
-/debtchecking/.vs/*
-/debtchecking/bin/*
-/debtchecking/obj/*
+/debtchecking/.vs/
+/debtchecking/bin/
+/debtchecking/obj/
+/debtchecking/.vs/DebtChecking/v17/.suo

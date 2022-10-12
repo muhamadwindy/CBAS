@@ -194,6 +194,13 @@
     <Compile Include="Facilities\UploadBulk.aspx.designer.cs">
       <DependentUpon>UploadBulk.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Facilities\uploadrequestslikskbf.aspx.cs">
+      <DependentUpon>uploadrequestslikskbf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Facilities\uploadrequestslikskbf.aspx.designer.cs">
+      <DependentUpon>uploadrequestslikskbf.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Facilities\UploadRestoreData.aspx.cs">
       <DependentUpon>UploadRestoreData.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2629,6 +2636,7 @@
     <Content Include="CommonForm\ReportSet.aspx" />
     <Content Include="Facilities\requestslikskbf.aspx" />
     <Content Include="Facilities\UploadBulk.aspx" />
+    <Content Include="Facilities\uploadrequestslikskbf.aspx" />
     <Content Include="Facilities\UploadRestoreData.aspx" />
     <Content Include="Facilities\UploadTemplateMaster.aspx" />
     <Content Include="image\loading.gif" />

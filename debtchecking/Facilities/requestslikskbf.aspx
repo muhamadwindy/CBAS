@@ -134,20 +134,6 @@
 
         function validasiktp() {
             var ret = true
-            var noktp = document.getElementById("mainPanel_ktp").value;
-            var nonpwp = document.getElementById("mainPanel_npwp").value;
-            if (document.getElementById("mainPanel_cust_type_0").checked) {
-                if (noktp.length < 10) {
-                    alert("No KTP tidak valid!");
-                    ret = false;
-                }
-            }
-            if (document.getElementById("mainPanel_cust_type_1").checked) {
-                if (nonpwp.length < 15) {
-                    alert("No NPWP tidak valid!");
-                    ret = false;
-                }
-            }
             return ret
         }
 
@@ -220,7 +206,7 @@
 
 
         $(document).ready(function () {
-            $('select').select2({
+            $('.select2').select2({
                 theme: 'bootstrap4'
             })
 
@@ -355,7 +341,7 @@
                                                     <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-sm-8">
-                                                    <asp:DropDownList ID="productid" runat="server" CssClass="form-control form-control-sm input-sm autofillflag" onchange="panelDealer.PerformCallback();panelLoanTerm.PerformCallback();"></asp:DropDownList>
+                                                    <asp:DropDownList ID="productid" runat="server" CssClass="form-control form-control-sm input-sm autofillflag select2" onchange="panelDealer.PerformCallback();panelLoanTerm.PerformCallback();"></asp:DropDownList>
                                                 </div>
                                             </div>
                                         </div>
@@ -366,7 +352,7 @@
                                                     <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-sm-8">
-                                                    <asp:DropDownList ID="branchid" runat="server" CssClass="form-control form-control-sm"></asp:DropDownList>
+                                                    <asp:DropDownList ID="branchid" runat="server" CssClass="form-control form-control-sm select2"></asp:DropDownList>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -375,7 +361,7 @@
                                                     <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-sm-8">
-                                                    <asp:DropDownList ID="purpose" onchange="CheckTujuan(this.value);" runat="server" CssClass="form-control form-control-sm"></asp:DropDownList>
+                                                    <asp:DropDownList ID="purpose" onchange="CheckTujuan(this.value);" runat="server" CssClass="form-control form-control-sm select2"></asp:DropDownList>
                                                 </div>
                                             </div>
                                         </div>
@@ -400,7 +386,28 @@
                                                     KTP No.
                                                     <span class="text-danger">*</span>
                                                 </label>
-                                                <div class="col-sm-8">
+                                                <div class="col-sm-3">
+                                                    <script type="text/javascript">
+                                                        const setIdentitas = (param) => {
+                                                            const identitas = $('#mainPanel_ktp');
+                                                            identitas.val('');
+                                                            if (param.value === "KITAS") {
+                                                                identitas.removeClass('numeric');
+                                                                identitas.addClass('alphanumeric');
+                                                            } else {
+                                                                identitas.removeClass('alphanumeric');
+                                                                identitas.addClass('numeric');
+                                                            }
+                                                        }
+                                                    </script>
+                                                    <asp:DropDownList ID="JenisIdentitas" RepeatLayout="UnorderedList"
+                                                        CssClass="form-control form-control-sm" runat="server" RepeatDirection="Vertical"
+                                                        onchange="setIdentitas(this)">
+                                                        <asp:ListItem Text="KTP" Value="KTP"></asp:ListItem>
+                                                        <asp:ListItem Text="KITAS" Value="KITAS"></asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </div>
+                                                <div class="col-sm-5">
                                                     <asp:TextBox ID="ktp" runat="server" CssClass="form-control form-control-sm numeric" MaxLength="16"></asp:TextBox>
                                                 </div>
                                             </div>
@@ -470,7 +477,7 @@
                                                     Nama Ibu Kandung 
                                                 </label>
                                                 <div class="col-sm-8">
-                                                    <asp:TextBox ID="mother_name" CssClass="form-control form-control-sm" runat="server" MaxLength="50" onkeypress="return digitsonly();" onpaste="if(parseInt(clipboardData.getData('Text')) != clipboardData.getData('Text')) return false;"></asp:TextBox>
+                                                    <asp:TextBox ID="mother_name" CssClass="form-control form-control-sm alphaonly" runat="server" MaxLength="50"></asp:TextBox>
                                                 </div>
                                             </div>
 
@@ -573,19 +580,19 @@
                                                                                                 <div class="form-group row">
                                                                                                     <label class="col-sm-4 col-form-label">Nama SLIK Tambahan</label>
                                                                                                     <div class="col-sm-8">
-                                                                                                        <asp:TextBox ID="supp_cust_name" runat="server" CssClass="form-control form-control-sm" MaxLength="100" onkeypress="return digitsonly();" onpaste="if(parseInt(clipboardData.getData('Text')) != clipboardData.getData('Text')) return false;"></asp:TextBox>
+                                                                                                        <asp:TextBox ID="supp_cust_name" runat="server" CssClass="form-control form-control-sm alphaonly" MaxLength="100"></asp:TextBox>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="form-group row">
                                                                                                     <label class="col-sm-4 col-form-label">Nomor KTP</label>
                                                                                                     <div class="col-sm-8">
-                                                                                                        <asp:TextBox ID="supp_ktp" runat="server" CssClass="form-control form-control-sm" MaxLength="16" onkeypress="return digitsonly();" onpaste="if(parseInt(clipboardData.getData('Text')) != clipboardData.getData('Text')) return false;"></asp:TextBox>
+                                                                                                        <asp:TextBox ID="supp_ktp" runat="server" CssClass="form-control form-control-sm numeric" MaxLength="16"></asp:TextBox>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="form-group row">
                                                                                                     <label class="col-sm-4 col-form-label">Nomor NPWP</label>
                                                                                                     <div class="col-sm-8">
-                                                                                                        <asp:TextBox ID="supp_npwp" CssClass="form-control form-control-sm" runat="server" MaxLength="15" onkeypress="return digitsonly();" onpaste="if(parseInt(clipboardData.getData('Text')) != clipboardData.getData('Text')) return false;">
+                                                                                                        <asp:TextBox ID="supp_npwp" CssClass="form-control form-control-sm numeric" runat="server" MaxLength="15">
                                                                                                         </asp:TextBox>
                                                                                                     </div>
                                                                                                 </div>
@@ -623,7 +630,7 @@
                                                                                                 <div id="tr_supp_mother_name" class="form-group row" runat="server">
                                                                                                     <label class="col-sm-5 col-form-label">Nama Ibu Kandung</label>
                                                                                                     <div class="col-sm-7">
-                                                                                                        <asp:TextBox ID="supp_mother_name" CssClass="form-control form-control-sm" runat="server"></asp:TextBox>
+                                                                                                        <asp:TextBox ID="supp_mother_name" CssClass="form-control form-control-sm alphaonly" runat="server"></asp:TextBox>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="form-group row hidden">
@@ -949,7 +956,7 @@
                                                                 <label class="col-sm-3 col-form-label">Brand</label>
                                                                 <div class="col-sm-9">
                                                                     <input type="hidden" runat="server" id="h_Brand" />
-                                                                    <asp:DropDownList ID="Brand" runat="server" onchange="mainPanel_h_Brand.value=this.value;panelModel.PerformCallback();panelLoanTerm.PerformCallback()" data-info="Brand" CssClass="form-control form-control-sm input-sm select2" Style="width: 100%"></asp:DropDownList>
+                                                                    <asp:DropDownList ID="Brand" runat="server" onchange="mainPanel_h_Brand.value=this.value;panelModel.PerformCallback();panelLoanTerm.PerformCallback();;panelVarian.PerformCallback()" data-info="Brand" CssClass="form-control form-control-sm input-sm select2" Style="width: 100%"></asp:DropDownList>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
@@ -994,7 +1001,31 @@
                                                                             }" />
                                                                         <PanelCollection>
                                                                             <dx:PanelContent ID="PanelContent6" runat="server">
-                                                                                <asp:DropDownList ID="Varian" runat="server" CssClass="form-control" Style="width: 100%" onchanger="mainPanel_h_Varian.value=this.value">
+                                                                                <asp:DropDownList ID="Varian" runat="server" CssClass="form-control" Style="width: 100%" onchange="mainPanel_h_Varian.value=this.value;panelClassification.PerformCallback();">
+                                                                                </asp:DropDownList>
+
+                                                                            </dx:PanelContent>
+                                                                        </PanelCollection>
+                                                                    </dx:ASPxCallbackPanel>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group row">
+                                                                <label class="col-sm-3 col-form-label">
+                                                                    Classification 
+                                                                </label>
+                                                                <div class="col-sm-9"> 
+                                                                    <dx:ASPxCallbackPanel runat="server" ID="panelClassification" 
+                                                                        ClientInstanceName="panelClassification" OnCallback="panelClassification_Callback">
+                                                                        <ClientSideEvents EndCallback="function(s, e) {
+                                                                            $('#mainPanel_panelClassification_Classification').select2({
+                                                                                theme: 'bootstrap4'
+                                                                            })
+                                                                            
+                                                                            }" />
+                                                                        <PanelCollection>
+                                                                            <dx:PanelContent ID="PanelContent7" runat="server">
+                                                                                <asp:DropDownList ID="Classification" Enabled="false" runat="server" CssClass="form-control" Style="width: 100%" >
                                                                                 </asp:DropDownList>
 
                                                                             </dx:PanelContent>
@@ -1028,7 +1059,7 @@
                                                         <div class="col-sm-6">
                                                             <div class="form-group row">
                                                                 <label class="col-sm-4 col-form-label">OTR</label>
-                                                                <div class="col-sm-8"> 
+                                                                <div class="col-sm-8">
                                                                     <div class="input-group">
                                                                         <span class="input-group-addon">Rp</span>
                                                                         <cc1:TXT_CURRENCY runat="server" ID="OTR"
@@ -1063,7 +1094,7 @@
                                                                             
                                                                             }" />
                                                                                 <PanelCollection>
-                                                                                    <dx:PanelContent ID="PanelContent7" runat="server">
+                                                                                    <dx:PanelContent ID="PanelContent8" runat="server">
                                                                                         <asp:DropDownList ID="LoanTerm" runat="server" onchange="mainPanel_h_LoanTerm.value=this.value" CssClass="form-control form-control-sm pull-right">
                                                                                         </asp:DropDownList>
                                                                                     </dx:PanelContent>

@@ -123,6 +123,15 @@ namespace DebtChecking.Facilities
         protected global::System.Web.UI.WebControls.TextBox cust_name;
 
         /// <summary>
+        /// JenisIdentitas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList JenisIdentitas;
+
+        /// <summary>
         /// ktp control.
         /// </summary>
         /// <remarks>
@@ -654,6 +663,33 @@ namespace DebtChecking.Facilities
         protected global::System.Web.UI.WebControls.DropDownList Varian;
 
         /// <summary>
+        /// panelClassification control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel panelClassification;
+
+        /// <summary>
+        /// PanelContent7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.PanelContent PanelContent7;
+
+        /// <summary>
+        /// Classification control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Classification;
+
+        /// <summary>
         /// h_VehicleYear control.
         /// </summary>
         /// <remarks>
@@ -726,13 +762,13 @@ namespace DebtChecking.Facilities
         protected global::DevExpress.Web.ASPxCallbackPanel panelLoanTerm;
 
         /// <summary>
-        /// PanelContent7 control.
+        /// PanelContent8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.PanelContent PanelContent7;
+        protected global::DevExpress.Web.PanelContent PanelContent8;
 
         /// <summary>
         /// LoanTerm control.
