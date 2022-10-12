@@ -1,5 +1,4 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Template.ascx.cs" Inherits="MikroMnt.include.Template" %>
-
 <!-- Font Awesome -->
 <link rel="stylesheet" href='<%= ResolveUrl("~/App_Themes/mwstyle/plugins/fontawesome-free/css/all.min.css") %>'>
 <!-- Ionicons -->
@@ -17,16 +16,18 @@
 <!-- overlayScrollbars -->
 <link rel="stylesheet" href='<%= ResolveUrl("~/App_Themes/mwstyle/plugins/overlayScrollbars/css/OverlayScrollbars.min.css")%>'>
 
-<%--<link href='<%= ResolveUrl("~/App_Themes/mwstyle/dataTables/datatables.css")%>' rel="stylesheet" />
+<link href='<%= ResolveUrl("~/App_Themes/mwstyle/dataTables/datatables.css")%>' rel="stylesheet" />
 
 <link href='<%= ResolveUrl("~/App_Themes/mwstyle/dataTables/Buttons-1.6.1/css/buttons.dataTables.css")%>' rel="stylesheet" />
 
-<link href='<%= ResolveUrl("~/App_Themes/mwstyle/dataTables/datatables.min.css")%>' rel="stylesheet" />--%>
+<link href='<%= ResolveUrl("~/App_Themes/mwstyle/dataTables/datatables.min.css")%>' rel="stylesheet" />
 
 <!-- Daterange picker -->
 <link rel="stylesheet" href='<%= ResolveUrl("~/App_Themes/mwstyle/plugins/daterangepicker/daterangepicker.css")%>'>
 <!-- summernote -->
 <link rel="stylesheet" href='<%= ResolveUrl("~/App_Themes/mwstyle/plugins/summernote/summernote-bs4.css")%>'>
+<link rel="stylesheet" href='<%= ResolveUrl("~/App_Themes/mwstyle/plugins/select2/css/select2.min.css")%>'>
+<link rel="stylesheet" href='<%= ResolveUrl("~/App_Themes/mwstyle/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css")%>'>
 <!-- Google Font: Source Sans Pro -->
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
@@ -95,11 +96,6 @@
         text-transform: uppercase;
     }
 
-    .form-control {
-        height: 25px !important;
-        padding: 0
-    }
-
     .nav-item {
         cursor: pointer !important;
     }
@@ -130,15 +126,23 @@
 
 <script src='<%= ResolveUrl("~/App_Themes/mwstyle/plugins/jquery-validation/jquery.validate.min.js")%>'></script>
 
-<%--<script src='<%= ResolveUrl("~/App_Themes/mwstyle/dataTables/datatables.js")%>'></script>--%>
-<%--<script src='<%= ResolveUrl("~/App_Themes/mwstyle/dataTables/datatables.min.js")%>'></script>--%>
+<script src='<%= ResolveUrl("~/App_Themes/mwstyle/dataTables/datatables.min.js")%>'></script>
+
+<script src='<%= ResolveUrl("~/App_Themes/mwstyle/plugins/datatables-responsive/js/dataTables.responsive.js")%>'></script>
 
 <script src='<%= ResolveUrl("~/App_Themes/mwstyle/dist/js/adminlte.js")%>'></script>
-<!-- AdminLTE for demo purposes -->
-<%--<script src='<%= ResolveUrl("~/App_Themes/mwstyle/dist/js/demo.js")%>'></script>--%>
+
 <script src='<%= ResolveUrl("~/App_Themes/mwstyle/plugins/chart.js/Chart.min.js")%>'></script>
 
+<script src='<%= ResolveUrl("~/App_Themes/mwstyle/plugins/select2/js/select2.full.min.js")%>'></script>
+
 <script src="<%= ResolveUrl("~/include/bootstrap-combobox.js") %>"></script>
+
+<script src="<%= ResolveUrl("~/library/MWSTools.js") %>"></script>
+
+
+
+
 
 <script src="<%= ResolveUrl("~/include/onepost.js") %>"></script>
 
@@ -147,6 +151,13 @@
 <script>
 
     $(document).ready(function () {
+
+        $('.numeric').on('keypress', function () {
+            $(this).val();
+        });
+
+
+
         $('.combobox').combobox();
 
         //Date
@@ -154,6 +165,7 @@
             autoUpdateInput: false,
             singleDatePicker: true,
             showDropdowns: true,
+            minDate: 1,
             minYear: 1901,
             maxYear: parseInt(moment().format('YYYY'), 10),
             locale: {
@@ -165,6 +177,7 @@
         $('.daterange').daterangepicker({
             autoUpdateInput: false,
             showDropdowns: true,
+            minDate: 1,
             minYear: 1901,
             maxYear: parseInt(moment().format('YYYY'), 10),
             locale: {
@@ -173,7 +186,7 @@
         })
 
         $('.date').on('apply.daterangepicker', function (ev, picker) {
-            $(this).val(picker.startDate.format("DD MMMM YYYY") + ' - ' + picker.endDate.format("DD MMMM YYYY"));
+            $(this).val(picker.startDate.format("DD MMMM YYYY"));
         });
 
         $('.date').on('cancel.daterangepicker', function (ev, picker) {
@@ -186,11 +199,6 @@
         $('.daterange').on('cancel.daterangepicker', function (ev, picker) {
             $(this).val('');
         });
-
-        $('.numeric').on('keypress', function () {
-            return digitsonly();
-        });
-        $(".numeric").numeric({ decimal: ".", negative: false, scale: 3 });
     });
 
     function getParameterByName(name, url = window.location.href) {
@@ -201,12 +209,4 @@
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
-    function digitsonly() {
-        if ((event.keyCode > 47 && event.keyCode < 58) || (event.keyCode == 44) || (event.keyCode == 45) || (event.keyCode == 46)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
 </script>

@@ -185,7 +185,7 @@ namespace MikroMnt.user
             if (mode == true)
             {
                 TXT_SU_FULLNAME.ReadOnly = false;
-                TXT_SU_FULLNAME.CssClass = "mandatory";
+                TXT_SU_FULLNAME.CssClass = "form-control form-control-sm mandatory";
 
                 //TXT_SU_FULLNAME.ReadOnly = true;
                 //TXT_SU_FULLNAME.CssClass = "";
@@ -203,11 +203,11 @@ namespace MikroMnt.user
             else
             {
                 TXT_SU_FULLNAME.ReadOnly = false;
-                TXT_SU_FULLNAME.CssClass = "mandatory";
+                TXT_SU_FULLNAME.CssClass = "form-control form-control-sm mandatory";
                 TXT_SU_PWD.Enabled = true;
-                TXT_SU_PWD.CssClass = "mandatory";
+                TXT_SU_PWD.CssClass = "form-control form-control-sm mandatory";
                 TXT_VERIFYPWD.Enabled = true;
-                TXT_VERIFYPWD.CssClass = "mandatory";
+                TXT_VERIFYPWD.CssClass = "form-control form-control-sm mandatory";
                 TXT_SU_EMAIL.ReadOnly = false;
                 ddl_JenisUser.SelectedValue = "2";
                 cb_resetpwd.Enabled = true;

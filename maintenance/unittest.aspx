@@ -4,12 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Untitled Page</title>
+    <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:TextBox ID="TextBox1" runat="server">admin</asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" CssClass="mandatory">admin</asp:TextBox>
             <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
             &nbsp;<br />
             url :

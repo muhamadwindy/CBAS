@@ -250,7 +250,7 @@
             <aside class="main-sidebar sidebar-light-primary elevation-4">
                 <!-- Brand Logo -->
                 <a href='<%= ResolveUrl("~/index.aspx")%>' class="brand-link">
-                    <img src="image/logo_kreditplus.png" alt="Kreditplus Logo" class="brand-image"
+                    <img src="image/skbf_login_logo.png" alt="Kreditplus Logo" class="brand-image"
                         style="opacity: .8">
                     <span class="brand-text font-weight-light">
                         <br />
@@ -302,7 +302,7 @@
             </div>
             <!-- /.content-wrapper -->
             <footer class="main-footer">
-                <strong>Copyright &copy; 2021 PT. Finansia Multi Finance</strong>
+                <strong>&copy; 2022 PT. Sunindo Kookmin Best Finance. </strong>
                 All rights reserved.
             </footer>
             <!-- ./wrapper -->

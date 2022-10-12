@@ -7,11 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MikroMnt.Parameter {
-    
-    
-    public partial class ParamMaker {
-        
+namespace MikroMnt.Parameter
+{
+
+
+    public partial class ParamMaker
+    {
+
+        /// <summary>
+        /// Template control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::MikroMnt.include.Template Template;
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +31,7 @@ namespace MikroMnt.Parameter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// title control.
         /// </summary>
@@ -29,7 +40,7 @@ namespace MikroMnt.Parameter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label title;
-        
+
         /// <summary>
         /// PageCtrl control.
         /// </summary>
@@ -38,7 +49,7 @@ namespace MikroMnt.Parameter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxPageControl PageCtrl;
-        
+
         /// <summary>
         /// ContentControl1 control.
         /// </summary>
@@ -47,7 +58,7 @@ namespace MikroMnt.Parameter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ContentControl ContentControl1;
-        
+
         /// <summary>
         /// grid control.
         /// </summary>
@@ -56,7 +67,7 @@ namespace MikroMnt.Parameter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGridView grid;
-        
+
         /// <summary>
         /// ContentControl2 control.
         /// </summary>
@@ -65,7 +76,7 @@ namespace MikroMnt.Parameter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ContentControl ContentControl2;
-        
+
         /// <summary>
         /// gridpending control.
         /// </summary>
@@ -74,7 +85,7 @@ namespace MikroMnt.Parameter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGridView gridpending;
-        
+
         /// <summary>
         /// popup control.
         /// </summary>
@@ -83,7 +94,7 @@ namespace MikroMnt.Parameter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxPopupControl popup;
-        
+
         /// <summary>
         /// PopupControlContentControl1 control.
         /// </summary>
@@ -92,7 +103,7 @@ namespace MikroMnt.Parameter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.PopupControlContentControl PopupControlContentControl1;
-        
+
         /// <summary>
         /// panel control.
         /// </summary>
@@ -101,7 +112,7 @@ namespace MikroMnt.Parameter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxCallbackPanel panel;
-        
+
         /// <summary>
         /// PanelContent1 control.
         /// </summary>
@@ -110,7 +121,7 @@ namespace MikroMnt.Parameter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.PanelContent PanelContent1;
-        
+
         /// <summary>
         /// USC_paraminput1 control.
         /// </summary>

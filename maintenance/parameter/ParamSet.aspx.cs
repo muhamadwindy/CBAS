@@ -51,7 +51,7 @@ namespace MikroMnt.Parameter
             {
                 LBL_TITLE.Text = Request.QueryString["title"];
 
-                dataView.ColumnCount = 5;
+                dataView.ColumnCount = 4;
                 dataView.RowPerPage = 5;
                 if (Request.QueryString["col"] != null)
                     try

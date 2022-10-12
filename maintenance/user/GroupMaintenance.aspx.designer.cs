@@ -7,11 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MikroMnt.user {
-    
-    
-    public partial class GroupMaintenance {
-        
+namespace MikroMnt.user
+{
+
+
+    public partial class GroupMaintenance
+    {
+
+        /// <summary>
+        /// Template control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::MikroMnt.include.Template Template;
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +31,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// DDL_MODULEID control.
         /// </summary>
@@ -29,7 +40,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DDL_MODULEID;
-        
+
         /// <summary>
         /// TXT_FINDGROUP control.
         /// </summary>
@@ -38,7 +49,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TXT_FINDGROUP;
-        
+
         /// <summary>
         /// TXT_FINDUPLINER control.
         /// </summary>
@@ -47,7 +58,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TXT_FINDUPLINER;
-        
+
         /// <summary>
         /// BTN_SEARCH control.
         /// </summary>
@@ -56,7 +67,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BTN_SEARCH;
-        
+
         /// <summary>
         /// BTN_CLEARSEARCH control.
         /// </summary>
@@ -65,7 +76,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BTN_CLEARSEARCH;
-        
+
         /// <summary>
         /// DatGrd control.
         /// </summary>
@@ -74,7 +85,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataGrid DatGrd;
-        
+
         /// <summary>
         /// LBL_RESULT control.
         /// </summary>
@@ -83,7 +94,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LBL_RESULT;
-        
+
         /// <summary>
         /// TXT_GROUPID control.
         /// </summary>
@@ -92,7 +103,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TXT_GROUPID;
-        
+
         /// <summary>
         /// TXT_SG_GRPNAME control.
         /// </summary>
@@ -101,7 +112,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TXT_SG_GRPNAME;
-        
+
         /// <summary>
         /// CHK_SG_APPRSTA control.
         /// </summary>
@@ -110,7 +121,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox CHK_SG_APPRSTA;
-        
+
         /// <summary>
         /// CHK_SG_CALCULATOR control.
         /// </summary>
@@ -119,7 +130,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox CHK_SG_CALCULATOR;
-        
+
         /// <summary>
         /// FLAG_SUPERVISOR control.
         /// </summary>
@@ -128,7 +139,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox FLAG_SUPERVISOR;
-        
+
         /// <summary>
         /// DDL_SG_GRPUPLINER control.
         /// </summary>
@@ -137,7 +148,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DDL_SG_GRPUPLINER;
-        
+
         /// <summary>
         /// MEMBEROF_AD control.
         /// </summary>
@@ -146,7 +157,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox MEMBEROF_AD;
-        
+
         /// <summary>
         /// CHK_MODULEID control.
         /// </summary>
@@ -155,7 +166,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBoxList CHK_MODULEID;
-        
+
         /// <summary>
         /// SG_ROLEDESC control.
         /// </summary>
@@ -164,7 +175,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox SG_ROLEDESC;
-        
+
         /// <summary>
         /// RBL_MODULE control.
         /// </summary>
@@ -173,7 +184,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList RBL_MODULE;
-        
+
         /// <summary>
         /// IFR_MODULE control.
         /// </summary>
@@ -182,7 +193,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlIframe IFR_MODULE;
-        
+
         /// <summary>
         /// BTN_NEW control.
         /// </summary>
@@ -191,7 +202,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BTN_NEW;
-        
+
         /// <summary>
         /// BTN_SAVE control.
         /// </summary>
@@ -200,7 +211,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BTN_SAVE;
-        
+
         /// <summary>
         /// BTN_CANCEL control.
         /// </summary>
@@ -209,7 +220,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BTN_CANCEL;
-        
+
         /// <summary>
         /// LBL_SAVEMODE control.
         /// </summary>

@@ -75,7 +75,7 @@ namespace DebtChecking
                     //DbConnection connLandingPage = new DbConnection(myconnstr);
                     //connLandingPage.ExecReader("EXEC getLandingPage @1", new object[1] { Session["GroupID"].ToString() }, dbtimeout);
                     //nexturl = connLandingPage.hasRow() ? connLandingPage.GetFieldValue(0) : "Index.aspx";
-                    nexturl = "Main.aspx";
+                    nexturl = "Index.aspx";
                 }
             }
             connESecurity.Dispose();

@@ -7,11 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MikroMnt.user {
-    
-    
-    public partial class GroupApproval {
-        
+namespace MikroMnt.user
+{
+
+
+    public partial class GroupApproval
+    {
+
+        /// <summary>
+        /// Template control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::MikroMnt.include.Template Template;
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +31,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// DG_REQUEST control.
         /// </summary>
@@ -29,7 +40,7 @@ namespace MikroMnt.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataGrid DG_REQUEST;
-        
+
         /// <summary>
         /// BTN_SUBMIT control.
         /// </summary>

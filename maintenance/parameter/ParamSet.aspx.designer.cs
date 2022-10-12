@@ -7,11 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MikroMnt.Parameter {
-    
-    
-    public partial class ParamSet {
-        
+namespace MikroMnt.Parameter
+{
+
+
+    public partial class ParamSet
+    {
+
+        /// <summary>
+        /// Template control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::MikroMnt.include.Template Template;
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +31,7 @@ namespace MikroMnt.Parameter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// LBL_TITLE control.
         /// </summary>
@@ -29,7 +40,7 @@ namespace MikroMnt.Parameter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LBL_TITLE;
-        
+
         /// <summary>
         /// dataView control.
         /// </summary>
