@@ -5,13 +5,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>GroupApproval</title> 
+    <title>GroupApproval</title>
     <Template:Admin runat="server" ID="Template" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-sm-12">
                     <div class="text-center">
@@ -19,7 +18,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-sm-12">
                     <asp:DataGrid ID="DG_REQUEST" runat="server" AutoGenerateColumns="False" CssClass="table table-sm table-bordered">

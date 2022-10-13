@@ -45,7 +45,7 @@ namespace DebtChecking.SLIK
             DataTable dtPosition = ds.Tables[1];
             DataTable dtDetail = ds.Tables[2];
 
-            if(dtHead.AsEnumerable()
+            if (dtHead.AsEnumerable()
                 .Where(x => x.Field<string>("status_app") == "A").Count() > 0)
             {
                 DataTable dtCust = dtHead.AsEnumerable()
@@ -71,7 +71,7 @@ namespace DebtChecking.SLIK
 
             int totalPosition = dtPosition.Rows.Count;
             StringBuilder sbReport = new StringBuilder();
-            for(int i = 0; i < totalPosition; i++)
+            for (int i = 0; i < totalPosition; i++)
             {
                 string statusApp = GetFieldValueDatatable(dtPosition, "status_app", i);
                 string statusDesc = GetFieldValueDatatable(dtPosition, "status_desc", i);
@@ -79,14 +79,14 @@ namespace DebtChecking.SLIK
                 sbReport.Append(GenerateReportTambahan(statusApp, statusDesc, dtHead, dtDetail));
             }
             divLoopReport.InnerHtml = sbReport.ToString();
-           
+
         }
 
         private StringBuilder GenerateReportTambahan(string statusApp, string statusDesc, DataTable dtHead, DataTable dtDetail)
         {
             StringBuilder sb = new StringBuilder();
-            if(dtHead.AsEnumerable()
-                .Where(x=>x.Field<string>("status_app").ToLower() == statusApp.ToLower()).Count() > 0)
+            if (dtHead.AsEnumerable()
+                .Where(x => x.Field<string>("status_app").ToLower() == statusApp.ToLower()).Count() > 0)
             {
                 DataTable dtHeadProcess = dtHead.AsEnumerable()
                 .Where(x => x.Field<string>("status_app").ToLower() == statusApp.ToLower()).CopyToDataTable();
@@ -98,7 +98,8 @@ namespace DebtChecking.SLIK
 
                 sb.Append(" <div class=\"card card-primary card-outline\"> \n");
                 sb.Append(" <div class=\"card-header\">\r\n " +
-                    "<h4 class=\"card-title\" runat=\"server\">Report SLIK Result - " + statusDesc + "</h4>\r\n </div>");
+                    "<h4 class=\"card-title\" runat=\"server\">Report SLIK Result - " + statusDesc + "</h4>\r\n " +
+                    "<div class=\"card-tools\"> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\"><i class=\"fas fa-minus\"></i></button></div></div>");
                 sb.Append(" <div class=\"card-body\">");
                 sb.Append(" <div> \n");
                 sb.Append("<div class=\"row\">\r\n                       " +
@@ -106,17 +107,17 @@ namespace DebtChecking.SLIK
                     " <div class=\"form-group row\">\r\n                                " +
                     "<div class=\"col-sm-4\">Customer Name</div>\r\n                                " +
                     "<div class=\"col-sm-1\">:</div>\r\n                                " +
-                    "<div class=\"col-sm-7\"><b><label>"+custName+"</label></b></div>\r\n  " +
+                    "<div class=\"col-sm-7\"><b><label>" + custName + "</label></b></div>\r\n  " +
                     "</div>\r\n                 " +
                     "<div class=\"form-group row\">\r\n                                " +
                     "<div class=\"col-sm-4\">Total Fasilitas / Aktif</div>\r\n                                " +
                     "<div class=\"col-sm-1\">:</div>\r\n                                " +
-                    "<div class=\"col-sm-7\"><b><label>"+ totalFasilitas + " / " + totalAktif+"</label></b></div>\r\n                           " +
+                    "<div class=\"col-sm-7\"><b><label>" + totalFasilitas + " / " + totalAktif + "</label></b></div>\r\n                           " +
                     " </div>\r\n                             " +
                     "<div class=\"form-group row\">\r\n                               " +
                     " <div class=\"col-sm-4\">Plafon Efektif / Baki Debet</div>\r\n                                " +
                     "<div class=\"col-sm-1\">:</div>\r\n                                " +
-                    "<div class=\"col-sm-7\"><b><label>Rp "+ plafon+" / Rp "+ bakiDebet +"</label></b></div>\r\n                            " +
+                    "<div class=\"col-sm-7\"><b><label>Rp " + plafon + " / Rp " + bakiDebet + "</label></b></div>\r\n                            " +
                     "</div>\r\n                        " +
                     "</div>\r\n                    " +
                     "</div>");
@@ -135,7 +136,7 @@ namespace DebtChecking.SLIK
                 sb.Append("</div> \n"); // div primary
             }
 
-            
+
             return sb;
         }
 
@@ -206,7 +207,7 @@ namespace DebtChecking.SLIK
                     sb.Append("</div>");
                 }
             }
-            
+
             sb.Append("<br />");
             return sb;
         }
@@ -251,7 +252,7 @@ namespace DebtChecking.SLIK
             StringBuilder sb = new StringBuilder();
             sb.Append(" \n <hr /> \n  <b>Kontrak Fasiltas Aktif :</b> <hr /> \n");
             if (dt.AsEnumerable()
-                .Where(x => x.Field<string>("status_app").ToLower() == statusApp.ToLower() 
+                .Where(x => x.Field<string>("status_app").ToLower() == statusApp.ToLower()
                 && x.Field<string>("KontrakInfo").ToLower() == "aktif").Count() > 0)
             {
                 DataTable dtDetail = dt.AsEnumerable()
@@ -278,7 +279,7 @@ namespace DebtChecking.SLIK
                         + " | " + worst + " | " + lastRepeatedOvd + " | " + aktif + " | Tunggakan " + tunggakan + " | " + frekuensiRestru);
                     sb.Append("</div>");
                 }
-            }                
+            }
             sb.Append("<br />");
             return sb;
         }
@@ -323,7 +324,7 @@ namespace DebtChecking.SLIK
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(" \n <hr /> \n  <b>Kontrak Fasiltas HAPUS BUKU / HAPUS TAGIH :</b> <hr /> \n");
-            if(dt.AsEnumerable()
+            if (dt.AsEnumerable()
                .Where(x => x.Field<string>("status_app").ToLower() == statusApp.ToLower()
                && x.Field<string>("KontrakInfo").ToLower() == "wo").Count() > 0)
             {
@@ -354,7 +355,7 @@ namespace DebtChecking.SLIK
                     sb.Append("</div>");
                 }
             }
-           
+
             sb.Append("<br />");
             return sb;
         }
@@ -400,11 +401,11 @@ namespace DebtChecking.SLIK
         protected void BtnDownloadReport_Click(object sender, EventArgs e)
         {
             string exportType = ExportType.SelectedValue;
-            if(exportType == "txt")
+            if (exportType == "txt")
             {
                 ExportToTextFile();
             }
-            else if(exportType == "pdf")
+            else if (exportType == "pdf")
             {
                 ExportToPDF();
 
@@ -418,12 +419,12 @@ namespace DebtChecking.SLIK
             string url = HttpContext.Current.Request.Url.ToString();
             string[] splitUrl = url.Split(new string[] { paramSplit }, StringSplitOptions.None);
             string url1 = splitUrl[0];
-            string urlPdf = url1 + "" + paramSplit + "SLIKReport_SKBF_PDF.aspx?reffnumber="+reffNumber;
+            string urlPdf = url1 + "" + paramSplit + "SLIKReport_SKBF_PDF.aspx?reffnumber=" + reffNumber;
             // var htmlToPdf = new NReco.PdfGenerator.HtmlToPdfConverter();
             //htmlToPdf.GeneratePdfFromFile(urlPdf, null, "export.pdf");
 
             System.IO.StringWriter htmlStringWriter = new System.IO.StringWriter();
-            Server.Execute("SLIKReport_SKBF_PDF.aspx?reffnumber="+reffNumber, htmlStringWriter);
+            Server.Execute("SLIKReport_SKBF_PDF.aspx?reffnumber=" + reffNumber, htmlStringWriter);
             string htmlContent = htmlStringWriter.GetStringBuilder().ToString();
 
             //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlPdf);
@@ -457,7 +458,7 @@ namespace DebtChecking.SLIK
             string dataExport = GenExportToTextFile(dtHead, dtPosition, dtDetail).ToString();
             Response.Clear();
             Response.ContentType = "application/text";
-            Response.AddHeader("content-disposition", "attachment;filename=report_"+reffNumber+".txt");
+            Response.AddHeader("content-disposition", "attachment;filename=report_" + reffNumber + ".txt");
             Response.Output.Write(dataExport);
             Response.Flush();
             Response.End();
@@ -466,7 +467,7 @@ namespace DebtChecking.SLIK
         private StringBuilder GenExportToTextFile(DataTable dtHead, DataTable dtPosition, DataTable dtDetail)
         {
             StringBuilder sb = new StringBuilder();
-            
+
             if (dtHead.AsEnumerable()
                .Where(x => x.Field<string>("status_app") == "A").Count() > 0)
             {
@@ -481,7 +482,7 @@ namespace DebtChecking.SLIK
                 string bakiDebet = GetFieldValueDatatable(dtCust, "BakiDebet", 0);
                 string policyResult = GetFieldValueDatatable(dtCust, "final_policy_desc", 0);
 
-                sb.Append("Summary SLIK "+processDate+" \r\n");
+                sb.Append("Summary SLIK " + processDate + " \r\n");
                 sb.Append("Report SLIK Result - Customer \r\n");
                 sb.Append("Customer Name : " + custName + " \r\n");
                 sb.Append("Total Fasilitas / Aktif : " + totalFasilitas + " / " + totalAktif + " \r\n");
@@ -499,7 +500,7 @@ namespace DebtChecking.SLIK
                 {
                     string statusApp = GetFieldValueDatatable(dtPosition, "status_app", i);
                     string statusDesc = GetFieldValueDatatable(dtPosition, "status_desc", i);
-                    sbReport.Append(GenerateReportTambahanTxt(statusApp, statusDesc, dtHead, dtDetail));
+                    sb.Append(GenerateReportTambahanTxt(statusApp, statusDesc, dtHead, dtDetail));
                 }
                 sb.Append("\r\r");
 

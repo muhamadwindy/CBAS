@@ -10,11 +10,16 @@
 
     <Template:Admin runat="server" ID="Template" />
     <script>
+        function Search() {
 
-        function bindDataTableRequestLog(s, e) {
-            debugger
-            prtable = $('#<%=GridReport.ClientID%>').DataTable({
+            let param = $('#txtIDRequest').val() + '|';
+            param += $('#txtPeriode').val() == "" ? ' - ' : $('#txtPeriode').val();
+            PanelPengajuanRequest.PerformCallback('s:' + param);
+        }
+        function bindDataTableRequestLog() {
+            let prtable = $('#<%=GridReport.ClientID%>').DataTable({
                 responsive: true,
+                destroy: true,
                 dom: 'Bfrtip',
                 "lengthChange": false,
                 searching: false,
@@ -33,6 +38,10 @@
 
             });
         }
+
+        $(document).ready(function () {
+            bindDataTableRequestLog();
+        });
     </script>
 </head>
 <body>
@@ -56,14 +65,14 @@
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">ID Request CBAS</label>
                                                 <div class="col-sm-5">
-                                                    <input id="PR_txtIDRequest" type="text" maxlength="200"
+                                                    <input id="txtIDRequest" type="text" maxlength="200"
                                                         class="form-control form-control-sm" />
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Periode</label>
                                                 <div class="col-sm-5">
-                                                    <input id="PR_txtPeriode" type="text" maxlength="100"
+                                                    <input id="txtPeriode" type="text" maxlength="100"
                                                         class="form-control form-control-sm daterange" />
                                                 </div>
                                             </div>
@@ -87,8 +96,12 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <dx:ASPxCallbackPanel ID="PanelPengajuanRequest" ClientInstanceName="PanelPengajuanRequest"
-                                        ClientSideEvents-EndCallback="bindDataTableRequestLog()"
+                                        OnCallback="PanelPengajuanRequest_Callback"
                                         runat="server" Width="100%">
+                                        <ClientSideEvents EndCallback="function(s,e) { 
+                                            debugger;
+                                              bindDataTableRequestLog();                                              
+                                              }" />
                                         <PanelCollection>
                                             <dx:PanelContent runat="server">
                                                 <div class="row">

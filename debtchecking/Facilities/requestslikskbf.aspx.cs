@@ -1,4 +1,5 @@
-﻿using DevExpress.Web;
+﻿using DebtChecking.CommonForm;
+using DevExpress.Web;
 using MWSFramework;
 using System;
 using System.Collections.Specialized;
@@ -40,6 +41,9 @@ namespace DebtChecking.Facilities
                         labelTempatLahir.Text = "Tempat Lahir";
                         labelTanggalLahir.Text = "Tanggal Lahir";
                         tr_PICName.Visible = false;
+                        tr_AktaPendirian.Visible = false;
+                        tr_ktp.Visible = true;
+                        tr_JenisBadanUsaha.Visible = false;
                     }
                     else
                     {
@@ -51,6 +55,9 @@ namespace DebtChecking.Facilities
                         labelTempatLahir.Text = "Tempat Pendirian";
                         labelTanggalLahir.Text = "Tanggal Pendirian";
                         tr_PICName.Visible = true;
+                        tr_AktaPendirian.Visible = true;
+                        tr_ktp.Visible = false;
+                        tr_JenisBadanUsaha.Visible = true;
 
                     }
                     BindGridUploadFoto();
@@ -378,6 +385,7 @@ namespace DebtChecking.Facilities
             staticFramework.reff(Brand, "select BrandId, BrandName from dbo.rfbrandmanufacturer where Active = 1", null, conn);
             staticFramework.reff(VehicleYear, "select VehicleYearCode, VehicleYear from dbo.RfVehicleYear where Active = 1", null, conn);
             staticFramework.reff(LoanTerm, "select Tenor, Tenor from dbo.RfTenor", null, conn);
+            staticFramework.reff(JenisBadanUsaha, "select Code, Deskripsi from RFJenisBadanUsaha order by position", null, conn);
             staticFramework.reff(Classification, "select ClassificationId, ClassificationName from RFCLASSIFICATION", null, conn);
 
             string productId = productid.SelectedValue;
@@ -434,6 +442,8 @@ namespace DebtChecking.Facilities
             staticFramework.retrieve(dt, mother_name);
             staticFramework.retrieve(dt, PICName);
             staticFramework.retrieve(dt, JenisIdentitas);
+            staticFramework.retrieve(dt, JenisBadanUsaha);
+            staticFramework.retrieve(dt, "ktp", AktaPendirian);
             //staticFramework.retrieve(dt, status_bpkb);
             //staticFramework.retrieve(dt, nama_bpkb);
             //string linkPhoto = Server.MapPath(dt.Rows[0]["photo"].ToString());
@@ -502,6 +512,7 @@ namespace DebtChecking.Facilities
                 tr_supp_mother_name.Style["display"] = "none";
                 supp_npwp.CssClass = "form-control mandatory";
                 supp_gender.CssClass = "form-control border-0 text-sm";
+                tr_supp_ktp.Style["display"] = "none";
             }
             else
             {
@@ -536,7 +547,7 @@ namespace DebtChecking.Facilities
             {
                 Fields["inputdate"] = "getdate()";
                 staticFramework.saveNVC(Fields, "inputby", USERID);
-                staticFramework.saveNVC(Fields, "reqstatus", "ADM");
+                staticFramework.saveNVC(Fields, "reqstatus", "DRF");
             }
             staticFramework.saveNVC(Keys, requestid);
             staticFramework.saveNVC(Fields, productid);
@@ -546,7 +557,7 @@ namespace DebtChecking.Facilities
             staticFramework.saveNVC(Fields, NoAplikasi);
             staticFramework.saveNVC(Fields, cust_name);
             staticFramework.saveNVC(Fields, dob);
-            staticFramework.saveNVC(Fields, ktp);
+            staticFramework.saveNVC(Fields, "ktp", (cust_type.SelectedValue == "PSH" ? AktaPendirian.Text : ktp.Text));
             staticFramework.saveNVC(Fields, pob);
             staticFramework.saveNVC(Fields, npwp);
             staticFramework.saveNVC(Fields, homeaddress);
@@ -555,6 +566,7 @@ namespace DebtChecking.Facilities
             staticFramework.saveNVC(Fields, mother_name);
             staticFramework.saveNVC(Fields, PICName);
             staticFramework.saveNVC(Fields, JenisIdentitas);
+            staticFramework.saveNVC(Fields, JenisBadanUsaha);
             //staticFramework.saveNVC(Fields, status_bpkb);
             //staticFramework.saveNVC(Fields, nama_bpkb);
 
@@ -609,6 +621,7 @@ namespace DebtChecking.Facilities
             staticFramework.saveNVC(Fields, supp_cust_name, "supp_");
             staticFramework.saveNVC(Fields, status_app);
             staticFramework.saveNVC(Fields, supp_dob, "supp_");
+            staticFramework.saveNVC(Fields, supp_JenisIdentitas, "supp_");
             staticFramework.saveNVC(Fields, supp_ktp, "supp_");
             staticFramework.saveNVC(Fields, supp_pob, "supp_");
             staticFramework.saveNVC(Fields, supp_npwp, "supp_");
@@ -1054,16 +1067,31 @@ namespace DebtChecking.Facilities
                     {
                         if (dataValidasi.Rows[0]["valid"].ToString() == "1")
                         {
-                            string sql = "exec sp_update_request @1,@2,@3,@4";
-                            string xxx = Session["UserID"].ToString();
-                            object[] par = new object[] { requestid.Text, "SBT", USERID, null };
-                            conn.ExecNonQuery(sql, par, dbtimeout);
+                            string sql = "exec sp_update_request @1,@2,@3,@4,@5,@6";  
+
+                            object[] param = new object[] { requestid.Text, "DRF", "APV", "SBT", USERID, null };
+                            conn.ExecNonQuery(sql, param, dbtimeout);
 
                             NameValueCollection Keys = new NameValueCollection();
                             NameValueCollection Fields = new NameValueCollection();
                             Fields["reqdate"] = "getdate()";
                             staticFramework.saveNVC(Keys, requestid);
                             staticFramework.save(Fields, Keys, "apprequest", conn);
+
+
+                            string sqlAudit = "select * from dbo.apprequest where requestid = @1";
+                            object[] parAudit = new object[] { requestid.Text };
+                            DataTable dtAppRequestBefore = conn.GetDataTable(sqlAudit, parAudit, dbtimeout);
+                             
+
+                            DataTable dtAppRequestAfter = conn.GetDataTable(sqlAudit, parAudit, dbtimeout);
+                            CommonClass cm = new CommonClass();
+
+                            cm.InsertAuditTrail("apprequest", null, USERID, dtAppRequestBefore, dtAppRequestAfter);
+
+
+
+
 
                             mainPanel.JSProperties["cp_alert"] = "Data permintaan SLIK checking berhasil disubmit.";
                             mainPanel.JSProperties["cp_target"] = "mainFramex";
@@ -1112,6 +1140,14 @@ namespace DebtChecking.Facilities
                     {
                         seq.Value = dt.Rows[0]["seq"].ToString();
                         supp_cust_name.Text = dt.Rows[0]["cust_name"].ToString();
+                        try
+                        {
+                            supp_JenisIdentitas.SelectedValue = dt.Rows[0]["JenisIdentitas"].ToString();
+                            supp_JenisIdentitas.DataBind();
+                        }
+                        catch (Exception)
+                        {
+                        }
                         supp_ktp.Text = dt.Rows[0]["ktp"].ToString();
                         supp_npwp.Text = dt.Rows[0]["npwp"].ToString();
                         supp_cust_type.SelectedValue = dt.Rows[0]["cust_type"].ToString();
@@ -1177,7 +1213,7 @@ namespace DebtChecking.Facilities
                 message += labelCustomerName.Text + " Harus Diisi" + Environment.NewLine;
             }
 
-            if (ktp.Text == "")
+            if (cust_type.SelectedValue == "IND" && ktp.Text == "")
             {
                 message += "KTP No. Harus Diisi" + Environment.NewLine;
             }
@@ -1205,51 +1241,63 @@ namespace DebtChecking.Facilities
             {
                 message += "Nama PIC Harus Diisi" + Environment.NewLine;
             }
+            if (cust_type.SelectedValue == "PSH" && AktaPendirian.Text == "")
+            {
+                message += "Akta Pendirian Harus Diisi" + Environment.NewLine;
+            }
+
+            if (cust_type.SelectedValue == "PSH" && JenisBadanUsaha.SelectedIndex == 0)
+            {
+                message += "Jenis Badan Usaha Harus Diisi" + Environment.NewLine;
+            }
 
 
 
 
             #region Loan Info
 
-            if (DealerCode.Text == "")
+            if (purpose.SelectedValue == "1")
             {
-                message += "Dealer Harus Diisi" + Environment.NewLine;
-            }
-            if (SalesPerson.SelectedIndex == 0)
-            {
-                message += "Sales Harus Diisi" + Environment.NewLine;
-            }
-            if (Model.SelectedIndex == 0)
-            {
-                message += "Model Harus Diisi" + Environment.NewLine;
-            }
-            if (Varian.SelectedIndex == 0)
-            {
-                message += "Varian Harus Diisi" + Environment.NewLine;
-            }
-            if (VehicleYear.SelectedIndex == 0)
-            {
-                message += "vehicle Year Harus Diisi" + Environment.NewLine;
-            }
-            if (NoOfUnit.SelectedIndex == 0)
-            {
-                message += "No of Unit Harus Diisi" + Environment.NewLine;
-            }
-            if (OTR.Text == "")
-            {
-                message += "OTR Harus Diisi" + Environment.NewLine;
-            }
-            if (DP.Text == "")
-            {
-                message += "DP Harus Diisi" + Environment.NewLine;
-            }
-            if (LoanTerm.SelectedIndex == 0)
-            {
-                message += "Loan Term Harus Diisi" + Environment.NewLine;
-            }
-            if (InterestRate.Text == "")
-            {
-                message += "Interest Rate Harus Diisi" + Environment.NewLine;
+                if (DealerCode.Text == "")
+                {
+                    message += "Dealer Harus Diisi" + Environment.NewLine;
+                }
+                if (SalesPerson.SelectedIndex == 0)
+                {
+                    message += "Sales Harus Diisi" + Environment.NewLine;
+                }
+                if (h_Model.Value == "")
+                {
+                    message += "Model Harus Diisi" + Environment.NewLine;
+                }
+                if (h_Varian.Value == "")
+                {
+                    message += "Varian Harus Diisi" + Environment.NewLine;
+                }
+                if (VehicleYear.SelectedIndex == 0)
+                {
+                    message += "vehicle Year Harus Diisi" + Environment.NewLine;
+                }
+                if (NoOfUnit.SelectedIndex == 0)
+                {
+                    message += "No of Unit Harus Diisi" + Environment.NewLine;
+                }
+                if (OTR.Text == "")
+                {
+                    message += "OTR Harus Diisi" + Environment.NewLine;
+                }
+                if (DP.Text == "")
+                {
+                    message += "DP Harus Diisi" + Environment.NewLine;
+                }
+                if (LoanTerm.SelectedIndex == 0)
+                {
+                    message += "Loan Term Harus Diisi" + Environment.NewLine;
+                }
+                if (InterestRate.Text == "")
+                {
+                    message += "Interest Rate Harus Diisi" + Environment.NewLine;
+                }
             }
             #endregion
             return message;
@@ -1460,7 +1508,6 @@ namespace DebtChecking.Facilities
             catch (Exception)
             {
 
-                throw;
             }
         }
     }

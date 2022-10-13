@@ -158,6 +158,7 @@
     <Compile Include="CommonForm\clsMasterPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="CommonForm\CommonClass.cs" />
     <Compile Include="CommonForm\CustomFunction.cs" />
     <Compile Include="CommonForm\ListSend.aspx.cs">
       <DependentUpon>ListSend.aspx</DependentUpon>

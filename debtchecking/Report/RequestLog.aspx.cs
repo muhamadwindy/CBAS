@@ -15,7 +15,7 @@ namespace DebtChecking.Report
 
             if (!IsPostBack)
             {
-                bindGridRequestLog("");
+                bindGridRequestLog("NULL|NULL|NULL");
             }
         }
 
@@ -37,6 +37,16 @@ namespace DebtChecking.Report
             GridReport.DataSource = dt;
             GridReport.DataBind();
             GridReport.HeaderRow.TableSection = TableRowSection.TableHeader;
+        }
+
+        protected void PanelPengajuanRequest_Callback(object sender, DevExpress.Web.CallbackEventArgsBase e)
+        {
+
+            var param = e.Parameter.Substring(2);
+            if (e.Parameter.ToString().StartsWith("s:"))
+            {
+                bindGridRequestLog(param);
+            }
         }
     }
 }

@@ -123,17 +123,44 @@
                 document.getElementById("mainPanel_supp_gender").setAttribute("class", "form-control form-control-sm border-0 text-sm mandatory");
                 document.getElementById("mainPanel_tr_supp_gender").style.display = "";
                 document.getElementById("mainPanel_tr_supp_mother_name").style.display = "";
+                document.getElementById("mainPanel_tr_supp_ktp").style.display = "";
+                document.getElementById("mainPanel_tr_supp_AktaPendirian").style.display = "none";
 
             } else if (val == "PSH") {
                 document.getElementById("mainPanel_supp_npwp").setAttribute("class", "form-control form-control-sm mandatory");
                 document.getElementById("mainPanel_supp_gender").setAttribute("class", "form-control form-control-sm border-0 text-sm");
                 document.getElementById("mainPanel_tr_supp_gender").style.display = "none";
                 document.getElementById("mainPanel_tr_supp_mother_name").style.display = "none";
+                document.getElementById("mainPanel_tr_supp_ktp").style.display = "none";
+                document.getElementById("mainPanel_tr_supp_AktaPendirian").style.display = "";
             }
         }
 
         function validasiktp() {
-            var ret = true
+            var ret = true;
+            var noktp = document.getElementById("mainPanel_ktp").value;
+            var nonpwp = document.getElementById("mainPanel_npwp").value;
+
+            if (
+                document.getElementById("mainPanel_cust_type_0").checked ||
+                document.getElementById("mainPanel_cust_type_1").checked
+            ) {
+                if (document.getElementById("mainPanel_cust_type_0").checked) {
+                    if (noktp.length != 16) {
+                        alert("No KTP tidak valid!");
+                        ret = false;
+                    }
+                }
+                if (document.getElementById("mainPanel_cust_type_1").checked) {
+                    if (nonpwp.length != 15) {
+                        alert("No NPWP tidak valid!");
+                        ret = false;
+                    }
+                }
+            } else {
+                alert("Pilih Jenis Nasabah!");
+                ret = false;
+            }
             return ret
         }
 
@@ -147,16 +174,16 @@
                 document.getElementById("mainPanel_supp_cust_type_1").checked
             ) {
                 if (document.getElementById("mainPanel_supp_cust_type_0").checked) {
-                    if (noktp.length < 10) {
+                    if (noktp.length != 16) {
                         alert("No KTP tidak valid!");
                         ret = false;
                     }
                 }
                 if (document.getElementById("mainPanel_supp_cust_type_1").checked) {
-                    if (nonpwp.length < 15) {
-                        alert("No NPWP tidak valid!");
-                        ret = false;
-                    }
+                    //if (nonpwp.length != 15) {
+                    //    alert("No NPWP tidak valid!");
+                    //    ret = false;
+                    //}
                 }
             } else {
                 alert("Pilih Jenis Nasabah!");
@@ -381,7 +408,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row">
+                                            <div class="form-group row" id="tr_ktp" runat="server">
                                                 <label class="col-sm-4 col-form-label">
                                                     KTP No.
                                                     <span class="text-danger">*</span>
@@ -412,6 +439,16 @@
                                                 </div>
                                             </div>
 
+                                            <div class="form-group row" id="tr_AktaPendirian" runat="server">
+                                                <label class="col-sm-4 col-form-label">
+                                                    Akta Pendirian
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-sm-8">
+                                                    <asp:TextBox ID="AktaPendirian" CssClass="form-control form-control-sm" runat="server" MaxLength="50"></asp:TextBox>
+                                                </div>
+                                            </div>
+
                                             <div class="form-group row">
                                                 <label class="col-sm-4 col-form-label">
                                                     <asp:Label ID="labelTempatLahir" runat="server"></asp:Label>
@@ -438,6 +475,16 @@
                                                 </div>
                                             </div>
 
+                                            <div class="form-group row" id="tr_JenisBadanUsaha" runat="server">
+                                                <label class="col-sm-4 col-form-label">
+                                                    Jenis Badan Usaha
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <div class="col-sm-8">
+                                                    <asp:DropDownList ID="JenisBadanUsaha" runat="server" CssClass="form-control form-control-sm select2">
+                                                    </asp:DropDownList>
+                                                </div>
+                                            </div>
 
                                             <div class="form-group row" runat="server" id="tr_gender">
                                                 <label class="col-sm-4 col-form-label">
@@ -583,12 +630,44 @@
                                                                                                         <asp:TextBox ID="supp_cust_name" runat="server" CssClass="form-control form-control-sm alphaonly" MaxLength="100"></asp:TextBox>
                                                                                                     </div>
                                                                                                 </div>
-                                                                                                <div class="form-group row">
-                                                                                                    <label class="col-sm-4 col-form-label">Nomor KTP</label>
-                                                                                                    <div class="col-sm-8">
+                                                                                                <div class="form-group row" id="tr_supp_ktp" runat="server">
+                                                                                                    <label class="col-sm-4 col-form-label">
+                                                                                                        KTP No.
+                                                                                                    </label>
+                                                                                                    <div class="col-sm-3">
+                                                                                                        <script type="text/javascript">
+                                                                                                            const setSuppIdentitas = (param) => {
+                                                                                                                const identitas = $('#mainPanel_supp_ktp');
+                                                                                                                identitas.val('');
+                                                                                                                if (param.value === "KITAS") {
+                                                                                                                    identitas.removeClass('numeric');
+                                                                                                                    identitas.addClass('alphanumeric');
+                                                                                                                } else {
+                                                                                                                    identitas.removeClass('alphanumeric');
+                                                                                                                    identitas.addClass('numeric');
+                                                                                                                }
+                                                                                                            }
+                                                                                                        </script>
+                                                                                                        <asp:DropDownList ID="supp_JenisIdentitas" RepeatLayout="UnorderedList"
+                                                                                                            CssClass="form-control form-control-sm" runat="server" RepeatDirection="Vertical"
+                                                                                                            onchange="setSuppIdentitas(this)">
+                                                                                                            <asp:ListItem Text="KTP" Value="KTP"></asp:ListItem>
+                                                                                                            <asp:ListItem Text="KITAS" Value="KITAS"></asp:ListItem>
+                                                                                                        </asp:DropDownList>
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-5">
                                                                                                         <asp:TextBox ID="supp_ktp" runat="server" CssClass="form-control form-control-sm numeric" MaxLength="16"></asp:TextBox>
                                                                                                     </div>
                                                                                                 </div>
+                                                                                                <div class="form-group row" id="tr_supp_AktaPendirian" runat="server">
+                                                                                                    <label class="col-sm-4 col-form-label">
+                                                                                                        Akta Pendirian
+                                                                                                    </label>
+                                                                                                    <div class="col-sm-8">
+                                                                                                        <asp:TextBox ID="supp_akta_pendirian" CssClass="form-control form-control-sm" runat="server" MaxLength="50"></asp:TextBox>
+                                                                                                    </div>
+                                                                                                </div>
+
                                                                                                 <div class="form-group row">
                                                                                                     <label class="col-sm-4 col-form-label">Nomor NPWP</label>
                                                                                                     <div class="col-sm-8">
@@ -956,8 +1035,19 @@
                                                                 <label class="col-sm-3 col-form-label">Brand</label>
                                                                 <div class="col-sm-9">
                                                                     <input type="hidden" runat="server" id="h_Brand" />
-                                                                    <asp:DropDownList ID="Brand" runat="server" onchange="mainPanel_h_Brand.value=this.value;panelModel.PerformCallback();panelLoanTerm.PerformCallback();;panelVarian.PerformCallback()" data-info="Brand" CssClass="form-control form-control-sm input-sm select2" Style="width: 100%"></asp:DropDownList>
+                                                                    <asp:DropDownList ID="Brand" runat="server" onchange="handleBrand(this)" data-info="Brand" CssClass="form-control form-control-sm input-sm select2" Style="width: 100%"></asp:DropDownList>
                                                                 </div>
+                                                                <script>
+                                                                    const handleBrand = (param) => {
+                                                                        mainPanel_h_Brand.value = param.value;
+                                                                        mainPanel_h_Model.value = '';
+                                                                        mainPanel_h_Varian.value = ''; 
+                                                                        panelModel.PerformCallback();
+                                                                        panelLoanTerm.PerformCallback();;
+                                                                        panelVarian.PerformCallback();
+                                                                        //panelClassification.PerformCallback();
+                                                                    }
+                                                                </script>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label class="col-sm-3 col-form-label">
@@ -986,8 +1076,7 @@
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label class="col-sm-3 col-form-label">
-                                                                    Varian
-                                                    <span class="text-danger">*</span>
+                                                                    Varian<span class="text-danger">*</span>
                                                                 </label>
                                                                 <div class="col-sm-9">
                                                                     <input type="hidden" id="h_Varian" runat="server" />
@@ -1014,8 +1103,8 @@
                                                                 <label class="col-sm-3 col-form-label">
                                                                     Classification 
                                                                 </label>
-                                                                <div class="col-sm-9"> 
-                                                                    <dx:ASPxCallbackPanel runat="server" ID="panelClassification" 
+                                                                <div class="col-sm-9">
+                                                                    <dx:ASPxCallbackPanel runat="server" ID="panelClassification"
                                                                         ClientInstanceName="panelClassification" OnCallback="panelClassification_Callback">
                                                                         <ClientSideEvents EndCallback="function(s, e) {
                                                                             $('#mainPanel_panelClassification_Classification').select2({
@@ -1025,7 +1114,7 @@
                                                                             }" />
                                                                         <PanelCollection>
                                                                             <dx:PanelContent ID="PanelContent7" runat="server">
-                                                                                <asp:DropDownList ID="Classification" Enabled="false" runat="server" CssClass="form-control" Style="width: 100%" >
+                                                                                <asp:DropDownList ID="Classification" Enabled="false" runat="server" CssClass="form-control" Style="width: 100%">
                                                                                 </asp:DropDownList>
 
                                                                             </dx:PanelContent>
@@ -1293,6 +1382,11 @@
         <script>
 
             function CheckTujuan(val = "") {
+                $('.select2').select2({
+                    theme: 'bootstrap4'
+                })
+
+
                 if (val == "") {
                     val = $('#mainPanel_purpose').val();
                 }

@@ -123,6 +123,15 @@ namespace DebtChecking.Facilities
         protected global::System.Web.UI.WebControls.TextBox cust_name;
 
         /// <summary>
+        /// tr_ktp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tr_ktp;
+
+        /// <summary>
         /// JenisIdentitas control.
         /// </summary>
         /// <remarks>
@@ -139,6 +148,24 @@ namespace DebtChecking.Facilities
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ktp;
+
+        /// <summary>
+        /// tr_AktaPendirian control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tr_AktaPendirian;
+
+        /// <summary>
+        /// AktaPendirian control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AktaPendirian;
 
         /// <summary>
         /// labelTempatLahir control.
@@ -175,6 +202,24 @@ namespace DebtChecking.Facilities
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox dob;
+
+        /// <summary>
+        /// tr_JenisBadanUsaha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tr_JenisBadanUsaha;
+
+        /// <summary>
+        /// JenisBadanUsaha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList JenisBadanUsaha;
 
         /// <summary>
         /// tr_gender control.
@@ -303,6 +348,24 @@ namespace DebtChecking.Facilities
         protected global::System.Web.UI.WebControls.TextBox supp_cust_name;
 
         /// <summary>
+        /// tr_supp_ktp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tr_supp_ktp;
+
+        /// <summary>
+        /// supp_JenisIdentitas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList supp_JenisIdentitas;
+
+        /// <summary>
         /// supp_ktp control.
         /// </summary>
         /// <remarks>
@@ -310,6 +373,24 @@ namespace DebtChecking.Facilities
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox supp_ktp;
+
+        /// <summary>
+        /// tr_supp_AktaPendirian control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tr_supp_AktaPendirian;
+
+        /// <summary>
+        /// supp_akta_pendirian control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox supp_akta_pendirian;
 
         /// <summary>
         /// supp_npwp control.
