@@ -113,15 +113,12 @@ namespace MikroMnt.user.ModuleUser
             object[] par = new object[2] { groupid, moduleid };
             grdview.DataSource = modconn.GetDataTable(Q_DATAPRODPRICE, par, dbtimeout);
             grdview.DataBind();
-
             clearvalues();
         }
-
         protected void grdview_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             grdview.PageIndex = e.NewPageIndex;
         }
-
         protected void grdview_PageIndexChanged(object sender, EventArgs e)
         {
             BindData();
@@ -151,15 +148,12 @@ namespace MikroMnt.user.ModuleUser
             object[] par = new object[2] { groupid, moduleid };
             grdview3.DataSource = modconn.GetDataTable(Q_DATATRESHAUTH, par, dbtimeout);
             grdview3.DataBind();
-
             clearvalues();
         }
-
         protected void grdview3_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             grdview3.PageIndex = e.NewPageIndex;
         }
-
         protected void grdview3_PageIndexChanged(object sender, EventArgs e)
         {
             BindData3();
@@ -201,7 +195,6 @@ namespace MikroMnt.user.ModuleUser
             modconn.ExecNonQuery(SP_ADDTRESHAUTH, par, dbtimeout);
             BindData3();
         }
-
         protected void grdview_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             string prodid;
@@ -228,7 +221,6 @@ namespace MikroMnt.user.ModuleUser
                     break;
             }
         }
-
         protected void grdview_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             switch (e.RowIndex)
@@ -237,10 +229,8 @@ namespace MikroMnt.user.ModuleUser
                     break;
             }
         }
-
         protected void grdview_RowEditing(object sender, GridViewEditEventArgs e)
         {
-
         }*/
 
         protected void grdview2_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -290,7 +280,6 @@ namespace MikroMnt.user.ModuleUser
                     break;
             }
         }
-
         protected void grdview3_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             switch (e.RowIndex)
@@ -299,10 +288,8 @@ namespace MikroMnt.user.ModuleUser
                     break;
             }
         }
-
         protected void grdview3_RowEditing(object sender, GridViewEditEventArgs e)
         {
-
         }*/
         #endregion
         #endregion

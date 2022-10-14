@@ -266,8 +266,8 @@ namespace MikroMnt.user
                 if (CHK_SG_APPRSTA.Checked) tmpApprovalGroup = "1";
                 if (CHK_SG_CALCULATOR.Checked) saveCalculator = "1";
                 if (FLAG_SUPERVISOR.Checked) flagSupervisor = "1";
-                object[] pardata = new object[12] {TXT_GROUPID.Text, TXT_SG_GRPNAME.Text, DDL_SG_GRPUPLINER.SelectedValue, 
-													 moduleID, LBL_SAVEMODE.Text, Session["UserID"],null,tmpApprovalGroup, MEMBEROF_AD.Text,
+                object[] pardata = new object[12] {TXT_GROUPID.Text, TXT_SG_GRPNAME.Text, DDL_SG_GRPUPLINER.SelectedValue,
+                                                     moduleID, LBL_SAVEMODE.Text, Session["UserID"],null,tmpApprovalGroup, MEMBEROF_AD.Text,
                                                      saveCalculator, flagSupervisor, SG_ROLEDESC.Text };
                 conn.ExecuteNonQuery(SP_SAVE, pardata, dbtimeout);
 
@@ -314,7 +314,7 @@ namespace MikroMnt.user
                     TXT_GROUPID.ReadOnly = true;
                     TXT_GROUPID.Text = e.Item.Cells[2].Text;
                     TXT_SG_GRPNAME.Text = e.Item.Cells[3].Text;
-                    
+
                     conn.ExecReader(Q_MODULEGROUP + "where groupid = '" + TXT_GROUPID.Text + "'", null, dbtimeout);
                     CHK_SG_APPRSTA.Checked = false;
                     CHK_SG_CALCULATOR.Checked = false;

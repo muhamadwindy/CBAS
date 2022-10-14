@@ -38,12 +38,112 @@
             $('#overlaypage').attr("class", "hidden");
         }
 
+        const validateForm = () => {
+
+            let message = "";
+            let custtype = $('input[name="mainPanel$cust_type"]:checked').val();
+
+            if ($('#mainPanel_branchid').val() == "") {
+                message += "Cabang Harus Diisi\r\n";
+            }
+
+            if ($('#mainPanel_purpose').val() == "") {
+                message += "Tujuan SLIK Harus Diisi\r\n";
+            }
+
+            if ($('#mainPanel_productid').val() == "") {
+                message += "Product Harus Diisi\r\n";
+            }
+
+            if ($('#mainPanel_cust_name').val() == "") {
+                message += $('#mainPanel_labelCustomerName').text() + " Harus Diisi\r\n";
+            }
+
+            if (custtype == "IND" && $('#mainPanel_ktp').val() == "") {
+                message += "KTP No. Harus Diisi\r\n";
+            }
+            if ($('#mainPanel_pob').val() == "") {
+                message += $('#mainPanel_labelTempatLahir').text() + " Harus Diisi\r\n";
+            }
+            if ($('#dob').val() == "") {
+                message += $('#mainPanel_labelTanggalLahir').text() + " Harus Diisi\r\n";
+            }
+            if (custtype == "IND" && $('input[name="mainPanel$gender"]:checked').val() == "") {
+                message += "Gender Harus Diisi\r\n";
+            }
+            if (custtype == "PSH" && $('#mainPanel_npwp').val() == "") {
+                message += "NPWP Harus Diisi\r\n";
+            }
+            if ($('#mainPanel_phonenumber').val() == "") {
+                message += "Nomor Telepon Harus Diisi\r\n";
+            }
+            if (custtype == "PSH" && $('#mainPanel_PICName').val() == "") {
+                message += "Nama PIC Harus Diisi\r\n";
+            }
+            if (custtype == "PSH" && $('#mainPanel_AktaPendirian').val() == "") {
+                message += "Akta Pendirian Harus Diisi\r\n";
+            }
+
+            if (custtype == "PSH" && $('#mainPanel_JenisBadanUsaha').val() == 0) {
+                message += "Jenis Badan Usaha Harus Diisi\r\n";
+            }
+            if ($('#mainPanel_purpose').val() == "1") {
+
+                if ($('#mainPanel_panelDealer_DealerCode').val() == "") {
+                    message += "Dealer Harus Diisi\r\n";
+                }
+                if ($('#mainPanel_SalesPerson').val() == "") {
+                    message += "Sales Harus Diisi\r\n";
+                }
+                if ($('#mainPanel_h_Brand').val() == "") {
+                    message += "Brand Harus Diisi\r\n";
+                }
+                if ($('#mainPanel_h_Model').val() == "") {
+                    message += "Model Harus Diisi\r\n";
+                }
+                if ($('#mainPanel_h_Varian').val() == "") {
+                    message += "Varian Harus Diisi\r\n";
+                }
+                if ($('#mainPanel_VehicleYear').val() == "") {
+                    message += "vehicle Year Harus Diisi\r\n";
+                }
+
+                if ($('#mainPanel_NoOfUnit').val() == "") {
+                    message += "No of Unit Harus Diisi\r\n";
+                }
+
+                if ($('#mainPanel_OTR').val() == "") {
+                    message += "OTR Harus Diisi\r\n";
+                }
+
+                if ($('#DP').val() == "") {
+                    message += "DP Harus Diisi\r\n";
+                }
+
+                if ($('#mainPanel_panelLoanTerm_LoanTerm').val() == "") {
+                    message += "Loan Term Harus Diisi\r\n";
+                }
+
+                if ($('#InterestRate').val() == "") {
+                    message += "Interest Rate Harus Diisi\r\n";
+                }
+            }
+
+            return message;
+        }
+
         function saveData() {
-            if (validasiktp() && $('#form1').valid()) {
-                $('#flagShowMyModalFoto').val('true');
-                $('#flagShowMyModalSLIKLainnya').val('true');
-                setoverlaypage();
-                callback(mainPanel, 's');
+            let msgValidate = validateForm();
+            if (msgValidate != '') {
+                alert(msgValidate);
+                return false;
+            } else {
+                if (validasiktp() && $('#form1').valid()) {
+                    $('#flagShowMyModalFoto').val('true');
+                    $('#flagShowMyModalSLIKLainnya').val('true');
+                    setoverlaypage();
+                    callback(mainPanel, 's');
+                }
             }
         }
         function submitData() {
@@ -93,7 +193,7 @@
         //$("#mainPanel_gridPanel_GridFileUpload").DataTable();
 
         function uploadDokumen() {
-            if ("<%=Request.QueryString["requestid"] %>" == "") {
+            if ("<%=Request.QueryString["mode"] %>" == "new") {
                 alert('Tekan Save Untuk Menambahkan Dokumen');
                 $('#flagShowMyModalFoto').val('true');
                 $('#myModal').modal('hide');
@@ -256,8 +356,8 @@
             });
 
             $(document).on("click", ".open-myModalSLIKLainnya", function () {
-                if ("<%=Request.QueryString["requestid"] %>" == "") {
-                    alert('Tekan Save Untuk Menambahkan Dokumen');
+                if ("<%=Request.QueryString["mode"] %>" == "new") {
+                    alert('Tekan Save Untuk Menambahkan Permintaan SLIK Checking Lainnya!');
                 } else {
 
                     $('#myModalSLIKLainnya').modal('show');
@@ -404,7 +504,7 @@
                                                     <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-sm-8">
-                                                    <asp:TextBox ID="cust_name" runat="server" CssClass="form-control form-control-sm" MaxLength="100"></asp:TextBox>
+                                                    <asp:TextBox ID="cust_name" runat="server" CssClass="form-control form-control-sm alphaonly" MaxLength="100"></asp:TextBox>
                                                 </div>
                                             </div>
 
@@ -1041,7 +1141,7 @@
                                                                     const handleBrand = (param) => {
                                                                         mainPanel_h_Brand.value = param.value;
                                                                         mainPanel_h_Model.value = '';
-                                                                        mainPanel_h_Varian.value = ''; 
+                                                                        mainPanel_h_Varian.value = '';
                                                                         panelModel.PerformCallback();
                                                                         panelLoanTerm.PerformCallback();;
                                                                         panelVarian.PerformCallback();
@@ -1065,8 +1165,8 @@
                                                                             }" />
                                                                         <PanelCollection>
                                                                             <dx:PanelContent ID="PanelContent5" runat="server">
-                                                                                <asp:DropDownList ID="Model" runat="server" CssClass="form-control"
-                                                                                    onchange="mainPanel_h_Model.value=this.value;panelVarian.PerformCallback()" data-info="Model" Style="width: 100%">
+                                                                                <asp:DropDownList ID="Model" runat="server" CssClass="form-control select2"
+                                                                                    onchange="mainPanel_h_Model.value=this.value;panelVarian.PerformCallback();" data-info="Model" Style="width: 100%">
                                                                                 </asp:DropDownList>
                                                                             </dx:PanelContent>
                                                                         </PanelCollection>
@@ -1090,7 +1190,7 @@
                                                                             }" />
                                                                         <PanelCollection>
                                                                             <dx:PanelContent ID="PanelContent6" runat="server">
-                                                                                <asp:DropDownList ID="Varian" runat="server" CssClass="form-control" Style="width: 100%" onchange="mainPanel_h_Varian.value=this.value;panelClassification.PerformCallback();">
+                                                                                <asp:DropDownList ID="Varian" runat="server" CssClass="form-control select2" onchange="mainPanel_h_Varian.value=this.value;panelClassification.PerformCallback();">
                                                                                 </asp:DropDownList>
 
                                                                             </dx:PanelContent>
@@ -1114,7 +1214,7 @@
                                                                             }" />
                                                                         <PanelCollection>
                                                                             <dx:PanelContent ID="PanelContent7" runat="server">
-                                                                                <asp:DropDownList ID="Classification" Enabled="false" runat="server" CssClass="form-control" Style="width: 100%">
+                                                                                <asp:DropDownList ID="Classification" Enabled="false" runat="server" CssClass="form-control select2">
                                                                                 </asp:DropDownList>
 
                                                                             </dx:PanelContent>

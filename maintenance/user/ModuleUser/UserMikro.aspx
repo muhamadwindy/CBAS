@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserMikro.aspx.cs" Inherits="MikroMnt.user.ModuleUser.UserMikro" %>
 
-<%@ Register TagPrefix="cc1" Namespace="DMSControls" Assembly="DMSControls" %>
+<%@ Register TagPrefix="cc1" Namespace="MWSControls" Assembly="MWSControls" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 

@@ -15,15 +15,6 @@ namespace MikroMnt.user
     {
 
         /// <summary>
-        /// Template control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::MikroMnt.include.Template Template;
-
-        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>

@@ -472,9 +472,7 @@ namespace DebtChecking.Facilities
 
             staticFramework.retrieve(dtLoan, "VarianId", Varian);
             staticFramework.retrieve(dtLoan, "VarianId", h_Varian);
-            setClassification();
-            staticFramework.retrieve(Classification, "VarianId", h_Varian);
-
+            setClassification(); 
 
             staticFramework.retrieve(dtLoan, "VehicleYearCode", VehicleYear);
             staticFramework.retrieve(dtLoan, "VehicleYearCode", h_VehicleYear);
@@ -483,7 +481,8 @@ namespace DebtChecking.Facilities
             staticFramework.retrieve(dtLoan, "Otr", OTR);
             staticFramework.retrieve(dtLoan, "DP", DP);
             loadTenor();
-            staticFramework.retrieve(dtLoan, "LoanTerm", LoanTerm);
+            staticFramework.retrieve(dtLoan, LoanTerm);
+            staticFramework.retrieve(dtLoan, "LoanTerm", h_LoanTerm);
             staticFramework.retrieve(dtLoan, "InterestRate", InterestRate);
             #endregion
 
@@ -587,8 +586,8 @@ namespace DebtChecking.Facilities
             staticFramework.saveNVC(Fields, "DealerCode", h_DealerCode.Value);
             staticFramework.saveNVC(Fields, "SalesId", h_SalesPerson.Value);
             staticFramework.saveNVC(Fields, "BrandId", h_Brand.Value);
-            staticFramework.saveNVC(Fields, "ModelId", Model.SelectedValue);
-            staticFramework.saveNVC(Fields, "VarianId", Varian);
+            staticFramework.saveNVC(Fields, "ModelId", h_Model.Value);
+            staticFramework.saveNVC(Fields, "VarianId", h_Varian.Value);
             staticFramework.saveNVC(Fields, "VehicleYearCode", h_VehicleYear.Value);
             staticFramework.saveNVC(Fields, "NoOfUnitId", h_NoOfUnit.Value);
             staticFramework.saveNVC(Fields, "Otr", OTR);
@@ -1094,8 +1093,8 @@ namespace DebtChecking.Facilities
 
 
                             mainPanel.JSProperties["cp_alert"] = "Data permintaan SLIK checking berhasil disubmit.";
-                            mainPanel.JSProperties["cp_target"] = "mainFramex";
-                            mainPanel.JSProperties["cp_redirect"] = "../ScreenMenu.aspx?sm=REQ&passurl&mntitle=Request SLIK Checking&li=L|REQ";
+                            mainPanel.JSProperties["cp_target"] = "mainFramex";                            
+                            mainPanel.JSProperties["cp_redirect"] = "../ScreenMenu.aspx?sm=BIC|REQ&passurl&mntitle=Request SLIK Checking&li=L|BIC|REQ";
                         }
                         else
                         {
@@ -1219,11 +1218,11 @@ namespace DebtChecking.Facilities
             }
             if (pob.Text == "")
             {
-                message += labelTempatLahir + " Harus Diisi" + Environment.NewLine;
+                message += labelTempatLahir.Text + " Harus Diisi" + Environment.NewLine;
             }
             if (dob.Text == "")
             {
-                message += labelTanggalLahir + " Harus Diisi" + Environment.NewLine;
+                message += labelTanggalLahir.Text + " Harus Diisi" + Environment.NewLine;
             }
             if (cust_type.SelectedValue == "IND" && gender.SelectedIndex == -1)
             {
@@ -1290,7 +1289,7 @@ namespace DebtChecking.Facilities
                 {
                     message += "DP Harus Diisi" + Environment.NewLine;
                 }
-                if (LoanTerm.SelectedIndex == 0)
+                if (h_LoanTerm.Value == "")
                 {
                     message += "Loan Term Harus Diisi" + Environment.NewLine;
                 }
