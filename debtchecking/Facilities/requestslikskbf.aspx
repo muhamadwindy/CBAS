@@ -236,22 +236,22 @@
             }
         }
 
-        function validasiktp() {
+        function validasiktp() { 
             var ret = true;
-            var noktp = document.getElementById("mainPanel_ktp").value;
-            var nonpwp = document.getElementById("mainPanel_npwp").value;
 
             if (
                 document.getElementById("mainPanel_cust_type_0").checked ||
                 document.getElementById("mainPanel_cust_type_1").checked
             ) {
                 if (document.getElementById("mainPanel_cust_type_0").checked) {
+                    let noktp = document.getElementById("mainPanel_ktp").value;
                     if (noktp.length != 16) {
                         alert("No KTP tidak valid!");
                         ret = false;
                     }
                 }
                 if (document.getElementById("mainPanel_cust_type_1").checked) {
+                    let nonpwp = document.getElementById("mainPanel_npwp").value;
                     if (nonpwp.length != 15) {
                         alert("No NPWP tidak valid!");
                         ret = false;
@@ -865,8 +865,7 @@
                                                             if (s.cp_alert != '' && s.cp_alert != undefined) {
                                                                 alert(s.cp_alert);
                                                                 s.cp_alert = '';
-                                                            }
-                                                            debugger
+                                                            } 
                                                         }" />
 
                                                     <PanelCollection>

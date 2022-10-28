@@ -1,172 +1,214 @@
-﻿using DevExpress.Web;
-using MWSFramework;
-using System;
-using System.Collections.Specialized;
+﻿using System;
+using System.Collections;
 using System.Configuration;
 using System.Data;
-using System.Security.Cryptography;
-using System.Text;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.IO;
+using DMS.Tools;
+using MWSFramework;
+using EvoPdf.HtmlToPdf;
+using DevExpress.Web;
 
 namespace DebtChecking.SLIK
 {
     public partial class Update_Password : DataPage
     {
+
+        #region retrieve
+        private void retrieve_Slik_Login(string key)
+        {
+
+        }
+        #endregion
+
+        #region databinding
+
+        private void gridbind_agunan(string key)
+        {
+
+        }
+
+        #endregion
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            bindSLIKViewer();
-            bindSLIKLogin();
-        }
-
-        private void bindSLIKViewer()
-        {
-            DataTable data = conn.GetDataTable("select * from slikloginviewer", null, dbtimeout);
-
-            for (int i = 0; i < data.Rows.Count; i++)
+            if (!IsPostBack)
             {
-                data.Rows[i]["pwd_viewer"] = (data.Rows[i]["pwd_viewer"].ToString());
+                retrieve_Slik_Login_viewer();
+                retrieve_Slik_Login();
+                retrieve_sliktasklistextract();
             }
-            GridSLIKViewer.DataSource = data;
-            GridSLIKViewer.DataBind();
-
-
-        }
-
-        private void bindSLIKLogin()
-        {
-            DataTable data = conn.GetDataTable("select * from sliklogin", null, dbtimeout);
-
-            for (int i = 0; i < data.Rows.Count; i++)
+            else
             {
-                data.Rows[i]["pwd_slik"] = Decrypt(data.Rows[i]["pwd_slik"].ToString(), true);
+
             }
-            GridSLIKLogin.DataSource = data;
-            GridSLIKLogin.DataBind();
         }
 
-        protected void deleteSLIKViewer(string id)
+        private void retrieve_Slik_Login_viewer()
+        {
+            //object[] par = new object[] { null };
+            GridUpdate_Password_slikloginviewer.DataSource = conn.GetDataTable("select * from slikloginviewer", null, dbtimeout);
+            GridUpdate_Password_slikloginviewer.DataBind();
+        }
+
+        private void retrieve_Slik_Login()
+        {
+            //object[] par = new object[] { null };
+            //GridUpdate_Password_sliklogin.DataSource = conn.GetDataTable("select * from sliklogin", null, dbtimeout);
+            GridUpdate_Password_sliklogin.DataSource = conn.GetDataTable("exec sp_vw_sliklogin", null, dbtimeout);
+            GridUpdate_Password_sliklogin.DataBind();
+        }
+
+        private void retrieve_sliktasklistextract()
+        {
+            gvsliktasklistextract.DataSource = conn.GetDataTable("select * from slik_tasklist_extract order by userid,serviceid", null, dbtimeout);
+            gvsliktasklistextract.DataBind();
+        }
+
+        protected void GridUpdate_Password_slikloginviewer_PageIndexChanged(object sender, EventArgs e)
+        {
+            retrieve_Slik_Login_viewer();
+        }
+
+        protected void GridUpdate_Password_slikloginviewer_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridUpdate_Password_slikloginviewer.PageIndex = e.NewPageIndex;
+        }
+
+        protected void GridUpdate_Password_slikloginviewer_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+        }
+
+
+        protected void gvsliktasklistextract_PageIndexChanged(object sender, EventArgs e)
+        {
+            retrieve_sliktasklistextract();
+        }
+
+
+
+        protected void gvsliktasklistextract_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvsliktasklistextract.PageIndex = e.NewPageIndex;
+        }
+
+        protected void gvsliktasklistextract_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+        }
+
+
+
+        protected void GridUpdate_Password_sliklogin_PageIndexChanged(object sender, EventArgs e)
+        {
+            retrieve_Slik_Login();
+        }
+
+        protected void GridUpdate_Password_sliklogin_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridUpdate_Password_sliklogin.PageIndex = e.NewPageIndex;
+        }
+
+        protected void GridUpdate_Password_sliklogin_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+        }
+
+        protected void gridPanel_Callback_slikloginviewer(object source, CallbackEventArgsBase e)
+        {
+            if (e.Parameter.ToString().StartsWith("d:"))
+            {
+                deleteSlikLoginViewer(e.Parameter.Substring(2));
+            }
+
+            retrieve_Slik_Login_viewer();
+        }
+
+        protected void gridPanel_Callback_sliklogin(object source, CallbackEventArgsBase e)
+        {
+            if (e.Parameter.ToString().StartsWith("d:"))
+            {
+                deleteSlikLogin(e.Parameter.Substring(2));
+            }
+
+            retrieve_Slik_Login();
+        }
+
+
+
+        protected void gridPanel_Callback_sliktasklistextract(object source, CallbackEventArgsBase e)
+        {
+            if (e.Parameter.ToString().StartsWith("d:"))
+            {
+                deleteSliktasklist_extract(e.Parameter.Substring(2));
+            }
+
+            retrieve_sliktasklistextract();
+        }
+
+
+
+        protected void deleteSlikLoginViewer(string id)
         {
             try
             {
-                string[] s = id.Split('|');
+                string[] s = id.Split(':');
                 object[] par = new object[] { s[0], s[1] };
                 conn.ExecNonQuery("DELETE FROM slikloginviewer WHERE userid = @1 AND uid_slik = @2 ", par, dbtimeout);
+
             }
             catch (Exception ex)
             {
-                mainPanel.JSProperties["cp_alert"] = ex.Message.IndexOf("Last Query:") <= 0 ? ex.Message : ex.Message.Substring(0, ex.Message.IndexOf("Last Query:"));
+                gridPanel.JSProperties["cp_alert"] = ex.Message.IndexOf("Last Query:") <= 0 ? ex.Message : ex.Message.Substring(0, ex.Message.IndexOf("Last Query:"));
             }
         }
 
-        protected void deleteSLIKLogin(string id)
+        protected void deleteSlikLogin(string id)
         {
             try
             {
-                string[] s = id.Split('|');
+                string[] s = id.Split(':');
                 object[] par = new object[] { s[0], s[1] };
                 conn.ExecNonQuery("DELETE FROM sliklogin WHERE userid = @1 AND uid_slik = @2 ", par, dbtimeout);
+                conn.ExecNonQuery("DELETE FROM sliklogindetail WHERE userid = @1 AND uid_slik = @2 ", par, dbtimeout);
+
+                string a = s[2].ToString();
+                if (s[2].ToString() == "OPR")
+                {
+                    conn.ExecNonQuery("DELETE FROM slik_tasklist WHERE userid = @1", par, dbtimeout);
+                }
+
+
             }
             catch (Exception ex)
             {
-                mainPanel.JSProperties["cp_alert"] = ex.Message.IndexOf("Last Query:") <= 0 ? ex.Message : ex.Message.Substring(0, ex.Message.IndexOf("Last Query:"));
+                gridPanel.JSProperties["cp_alert"] = ex.Message.IndexOf("Last Query:") <= 0 ? ex.Message : ex.Message.Substring(0, ex.Message.IndexOf("Last Query:"));
             }
         }
 
-        protected void mainPanel_Callback(object sender, CallbackEventArgsBase e)
+
+        protected void deleteSliktasklist_extract(string id)
         {
-            if (e.Parameter.ToString().StartsWith("sliklogin_delete:"))
+            try
             {
-                deleteSLIKLogin(e.Parameter.Substring(e.Parameter.IndexOf(':') + 1));
-                bindSLIKLogin();
-                mainPanel.JSProperties["cp_close_modal"] = "modalSLIKLogin";
-                mainPanel.JSProperties["cp_tab"] = "link-tab-sliklogin";
-            }
-            else if (e.Parameter.ToString().StartsWith("sliklogin_save"))
-            {
-                NameValueCollection Keys = new NameValueCollection();
-                NameValueCollection Fields = new NameValueCollection();
+                string[] s = id.Split(':');
+                object[] par = new object[] { s[0], s[1], s[2] };
+                conn.ExecNonQuery("DELETE FROM slik_tasklist_extract WHERE extractid= @1 AND  serviceid = @2 and userid= @3  ", par, dbtimeout);
 
-                staticFramework.saveNVC(Keys, "userid", sliklogin_userid);
-                staticFramework.saveNVC(Keys, "uid_slik", sliklogin_uid_slik);
-                staticFramework.saveNVC(Fields, "active", sliklogin_active);
-                staticFramework.saveNVC(Fields, "flag_spv", sliklogin_flag_spv);
-                staticFramework.saveNVC(Fields, "pwd_slik", Crypt(sliklogin_pwd_slik.Text, true));
-                staticFramework.save(Fields, Keys, "cbasslik.dbo.sliklogin", conn);
-                bindSLIKLogin();
-                mainPanel.JSProperties["cp_close_modal"] = "modalSLIKLogin";
-                mainPanel.JSProperties["cp_tab"] = "link-tab-sliklogin";
-            }
-            else if (e.Parameter.ToString().StartsWith("slikviewer_delete:"))
-            {
-                deleteSLIKViewer(e.Parameter.Substring(e.Parameter.IndexOf(':') + 1));
-                bindSLIKViewer();
-                mainPanel.JSProperties["cp_close_modal"] = "modalSLIKViewer";
-                mainPanel.JSProperties["cp_tab"] = "link-tab-slikviewer";
-            }
-            else if (e.Parameter.ToString().StartsWith("slikviewer_save"))
-            {
-                NameValueCollection Keys = new NameValueCollection();
-                NameValueCollection Fields = new NameValueCollection();
 
-                staticFramework.saveNVC(Keys, "userid", slikviewer_userid);
-                staticFramework.saveNVC(Fields, "uid_slik", slikviewer_uid_slik);
-                string pwd = (slikviewer_pwd_viewer.Text);
-                staticFramework.saveNVC(Fields, "pwd_viewer", pwd);
-                staticFramework.saveNVC(Fields, "active", slikviewer_active);
-                staticFramework.save(Fields, Keys, "cbasslik.dbo.slikloginviewer", conn);
-                bindSLIKViewer();
-                mainPanel.JSProperties["cp_close_modal"] = "modalSLIKViewer";
-                mainPanel.JSProperties["cp_tab"] = "link-tab-slikviewer";
             }
-
-            mainPanel.JSProperties["cp_alert"] = "Berhasil!";
+            catch (Exception ex)
+            {
+                gridPanel.JSProperties["cp_alert"] = ex.Message.IndexOf("Last Query:") <= 0 ? ex.Message : ex.Message.Substring(0, ex.Message.IndexOf("Last Query:"));
+            }
         }
 
-        private string Crypt(string text, bool useHashing = true)
-        {
-            byte[] bytes = Encoding.UTF8.GetBytes(text);
-            AppSettingsReader appSettingsReader = new AppSettingsReader();
-            string setting = ConfigurationManager.AppSettings["EncryptionKey"];
-            byte[] numArray;
-            if (useHashing)
-            {
-                MD5CryptoServiceProvider cryptoServiceProvider = new MD5CryptoServiceProvider();
-                numArray = cryptoServiceProvider.ComputeHash(Encoding.UTF8.GetBytes(setting));
-                cryptoServiceProvider.Clear();
-            }
-            else
-                numArray = Encoding.UTF8.GetBytes(setting);
-            TripleDESCryptoServiceProvider cryptoServiceProvider1 = new TripleDESCryptoServiceProvider();
-            cryptoServiceProvider1.Key = numArray;
-            cryptoServiceProvider1.Mode = CipherMode.ECB;
-            cryptoServiceProvider1.Padding = PaddingMode.PKCS7;
-            byte[] inArray = cryptoServiceProvider1.CreateEncryptor().TransformFinalBlock(bytes, 0, bytes.Length);
-            cryptoServiceProvider1.Clear();
-            return Convert.ToBase64String(inArray, 0, inArray.Length);
-        }
-
-
-        public string Decrypt(string text, bool useHashing = true)
-        {
-            byte[] inputBuffer = Convert.FromBase64String(text);
-            AppSettingsReader appSettingsReader = new AppSettingsReader();
-            string setting = ConfigurationManager.AppSettings["EncryptionKey"];
-            byte[] numArray;
-            if (useHashing)
-            {
-                MD5CryptoServiceProvider cryptoServiceProvider = new MD5CryptoServiceProvider();
-                numArray = cryptoServiceProvider.ComputeHash(Encoding.UTF8.GetBytes(setting));
-                cryptoServiceProvider.Clear();
-            }
-            else
-                numArray = Encoding.UTF8.GetBytes(setting);
-            TripleDESCryptoServiceProvider cryptoServiceProvider1 = new TripleDESCryptoServiceProvider();
-            cryptoServiceProvider1.Key = numArray;
-            cryptoServiceProvider1.Mode = CipherMode.ECB;
-            cryptoServiceProvider1.Padding = PaddingMode.PKCS7;
-            byte[] bytes = cryptoServiceProvider1.CreateDecryptor().TransformFinalBlock(inputBuffer, 0, inputBuffer.Length);
-            cryptoServiceProvider1.Clear();
-            return Encoding.UTF8.GetString(bytes);
-        }
 
     }
 }

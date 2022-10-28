@@ -443,7 +443,8 @@ namespace DebtChecking.Facilities
             staticFramework.retrieve(dt, PICName);
             staticFramework.retrieve(dt, JenisIdentitas);
             staticFramework.retrieve(dt, JenisBadanUsaha);
-            staticFramework.retrieve(dt, "ktp", AktaPendirian);
+            staticFramework.retrieve(dt, ktp);
+            staticFramework.retrieve(dt, AktaPendirian);
             //staticFramework.retrieve(dt, status_bpkb);
             //staticFramework.retrieve(dt, nama_bpkb);
             //string linkPhoto = Server.MapPath(dt.Rows[0]["photo"].ToString());
@@ -556,7 +557,8 @@ namespace DebtChecking.Facilities
             staticFramework.saveNVC(Fields, NoAplikasi);
             staticFramework.saveNVC(Fields, cust_name);
             staticFramework.saveNVC(Fields, dob);
-            staticFramework.saveNVC(Fields, "ktp", (cust_type.SelectedValue == "PSH" ? AktaPendirian.Text : ktp.Text));
+            staticFramework.saveNVC(Fields, "ktp", (cust_type.SelectedValue == "PSH" ? npwp.Text : ktp.Text));
+            staticFramework.saveNVC(Fields, AktaPendirian);
             staticFramework.saveNVC(Fields, pob);
             staticFramework.saveNVC(Fields, npwp);
             staticFramework.saveNVC(Fields, homeaddress);
@@ -1044,8 +1046,8 @@ namespace DebtChecking.Facilities
                     conn.ExecNonQuery("DELETE FROM APP_UPLOAD_DOC WHERE REQUESTID = @1 ", param, dbtimeout);
 
                     mainPanel.JSProperties["cp_alert"] = "Data permintaan SLIK checking berhasil dihapus.";
-                    mainPanel.JSProperties["cp_target"] = "mainframex";
-                    mainPanel.JSProperties["cp_redirect"] = "../ScreenMenu.aspx?sm=REQ&passurl&mntitle=Request SLIK Checking&li=L|REQ";
+                    mainPanel.JSProperties["cp_target"] = "mainframex"; 
+                    mainPanel.JSProperties["cp_redirect"] = "../ScreenMenu.aspx?sm=BIC|REQ&passurl&mntitle=Request SLIK Checking&li=L|BIC|REQ";
 
                     return;
                 }
@@ -1066,23 +1068,20 @@ namespace DebtChecking.Facilities
                     {
                         if (dataValidasi.Rows[0]["valid"].ToString() == "1")
                         {
-                            string sql = "exec sp_update_request @1,@2,@3,@4,@5,@6";  
+                            string sqlAudit = "select * from dbo.apprequest where requestid = @1";
+                            object[] parAudit = new object[] { requestid.Text };
+                            DataTable dtAppRequestBefore = conn.GetDataTable(sqlAudit, parAudit, dbtimeout);
+
+                            string sql = "exec sp_update_request @1,@2,@3,@4,@5,@6";
 
                             object[] param = new object[] { requestid.Text, "DRF", "APV", "SBT", USERID, null };
                             conn.ExecNonQuery(sql, param, dbtimeout);
-
                             NameValueCollection Keys = new NameValueCollection();
                             NameValueCollection Fields = new NameValueCollection();
                             Fields["reqdate"] = "getdate()";
                             staticFramework.saveNVC(Keys, requestid);
                             staticFramework.save(Fields, Keys, "apprequest", conn);
-
-
-                            string sqlAudit = "select * from dbo.apprequest where requestid = @1";
-                            object[] parAudit = new object[] { requestid.Text };
-                            DataTable dtAppRequestBefore = conn.GetDataTable(sqlAudit, parAudit, dbtimeout);
                              
-
                             DataTable dtAppRequestAfter = conn.GetDataTable(sqlAudit, parAudit, dbtimeout);
                             CommonClass cm = new CommonClass();
 

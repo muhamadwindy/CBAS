@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DebtChecking.SLIK {
-    
-    
-    public partial class Update_Password {
-        
+namespace DebtChecking.SLIK
+{
+
+
+    public partial class Update_Password
+    {
+
         /// <summary>
         /// Template control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace DebtChecking.SLIK {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DebtChecking.CommonForm.Template Template;
-        
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -29,16 +31,16 @@ namespace DebtChecking.SLIK {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
-        /// mainPanel control.
+        /// gridPanel2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxCallbackPanel mainPanel;
-        
+        protected global::DevExpress.Web.ASPxCallbackPanel gridPanel2;
+
         /// <summary>
         /// PanelContent1 control.
         /// </summary>
@@ -47,104 +49,122 @@ namespace DebtChecking.SLIK {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.PanelContent PanelContent1;
-        
+
         /// <summary>
-        /// GridSLIKLogin control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView GridSLIKLogin;
-        
+        protected global::System.Web.UI.HtmlControls.HtmlButton Button1;
+
         /// <summary>
-        /// GridSLIKViewer control.
+        /// GridUpdate_Password_sliklogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView GridSLIKViewer;
-        
+        protected global::System.Web.UI.WebControls.GridView GridUpdate_Password_sliklogin;
+
         /// <summary>
-        /// sliklogin_userid control.
+        /// gridPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox sliklogin_userid;
-        
+        protected global::DevExpress.Web.ASPxCallbackPanel gridPanel;
+
         /// <summary>
-        /// sliklogin_uid_slik control.
+        /// PanelContent13 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox sliklogin_uid_slik;
-        
+        protected global::DevExpress.Web.PanelContent PanelContent13;
+
         /// <summary>
-        /// sliklogin_pwd_slik control.
+        /// btn_upload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox sliklogin_pwd_slik;
-        
+        protected global::System.Web.UI.HtmlControls.HtmlButton btn_upload;
+
         /// <summary>
-        /// sliklogin_active control.
+        /// GridUpdate_Password_slikloginviewer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList sliklogin_active;
-        
+        protected global::System.Web.UI.WebControls.GridView GridUpdate_Password_slikloginviewer;
+
         /// <summary>
-        /// sliklogin_flag_spv control.
+        /// gridPanel3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList sliklogin_flag_spv;
-        
+        protected global::DevExpress.Web.ASPxCallbackPanel gridPanel3;
+
         /// <summary>
-        /// slikviewer_userid control.
+        /// PanelContent2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox slikviewer_userid;
-        
+        protected global::DevExpress.Web.PanelContent PanelContent2;
+
         /// <summary>
-        /// slikviewer_uid_slik control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox slikviewer_uid_slik;
-        
+        protected global::System.Web.UI.HtmlControls.HtmlButton Button2;
+
         /// <summary>
-        /// slikviewer_pwd_viewer control.
+        /// gvsliktasklistextract control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox slikviewer_pwd_viewer;
-        
+        protected global::System.Web.UI.WebControls.GridView gvsliktasklistextract;
+
         /// <summary>
-        /// slikviewer_active control.
+        /// ASPxButton2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList slikviewer_active;
+        protected global::DevExpress.Web.ASPxButton ASPxButton2;
+
+        /// <summary>
+        /// btnClose control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnClose;
+
+        /// <summary>
+        /// ASPxButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton ASPxButton1;
     }
 }

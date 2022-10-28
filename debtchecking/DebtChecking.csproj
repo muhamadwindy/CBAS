@@ -195,6 +195,13 @@
     <Compile Include="Facilities\UploadBulk.aspx.designer.cs">
       <DependentUpon>UploadBulk.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Facilities\UploadBulkSKBF.aspx.cs">
+      <DependentUpon>UploadBulkSKBF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Facilities\UploadBulkSKBF.aspx.designer.cs">
+      <DependentUpon>UploadBulkSKBF.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Facilities\uploadrequestslikskbf.aspx.cs">
       <DependentUpon>uploadrequestslikskbf.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -334,6 +341,27 @@
     </Compile>
     <Compile Include="SLIK\ManualReview.aspx.designer.cs">
       <DependentUpon>ManualReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SLIK\Modal_Content_SlikLogin.aspx.cs">
+      <DependentUpon>Modal_Content_SlikLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SLIK\Modal_Content_SlikLogin.aspx.designer.cs">
+      <DependentUpon>Modal_Content_SlikLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SLIK\Modal_Content_SlikLogin_Viewer.aspx.cs">
+      <DependentUpon>Modal_Content_SlikLogin_Viewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SLIK\Modal_Content_SlikLogin_Viewer.aspx.designer.cs">
+      <DependentUpon>Modal_Content_SlikLogin_Viewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SLIK\Modal_Content_SlikTasklist_Extract.aspx.cs">
+      <DependentUpon>Modal_Content_SlikTasklist_Extract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SLIK\Modal_Content_SlikTasklist_Extract.aspx.designer.cs">
+      <DependentUpon>Modal_Content_SlikTasklist_Extract.aspx</DependentUpon>
     </Compile>
     <Compile Include="SLIK\SLIKCreditSummary.aspx.cs">
       <DependentUpon>SLIKCreditSummary.aspx</DependentUpon>
@@ -2637,6 +2665,7 @@
     <Content Include="CommonForm\ReportSet.aspx" />
     <Content Include="Facilities\requestslikskbf.aspx" />
     <Content Include="Facilities\UploadBulk.aspx" />
+    <Content Include="Facilities\UploadBulkSKBF.aspx" />
     <Content Include="Facilities\uploadrequestslikskbf.aspx" />
     <Content Include="Facilities\UploadRestoreData.aspx" />
     <Content Include="Facilities\UploadTemplateMaster.aspx" />
@@ -2675,6 +2704,9 @@
     <Content Include="SLIK\Collateral.aspx" />
     <Content Include="SLIK\DetailValidation.aspx" />
     <Content Include="SLIK\ManualReview.aspx" />
+    <Content Include="SLIK\Modal_Content_SlikLogin.aspx" />
+    <Content Include="SLIK\Modal_Content_SlikLogin_Viewer.aspx" />
+    <Content Include="SLIK\Modal_Content_SlikTasklist_Extract.aspx" />
     <Content Include="SLIK\notyetuploaded.html" />
     <Content Include="SLIK\SLIKCreditSummary.aspx" />
     <Content Include="SLIK\SLIKNotFound.aspx" />

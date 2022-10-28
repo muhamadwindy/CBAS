@@ -10,6 +10,7 @@
     <title></title>
     <script>
         function onFileUploadComplete(s, e) {
+            debugger;
             callback(mainPanel, 'excproc:' + e.callbackData);
             $('#messages').text('Processing, Please Wait!');
         }
