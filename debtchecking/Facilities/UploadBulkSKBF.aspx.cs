@@ -150,20 +150,20 @@ namespace DebtChecking.Facilities
                         dr["purpose"] = getValWorkSheet(sheetUtamane, "E" + i);
                         dr["cust_name"] = getValWorkSheet(sheetUtamane, "F" + i);
                         string ktpMentah = getValWorkSheet(sheetUtamane, cust_type == "PSH" ? "O" + i.ToString() : "I" + i.ToString());
-                        decimal ktp = Decimal.Parse(ktpMentah == "" ? "0" : ktpMentah, System.Globalization.NumberStyles.Any);
+                        //decimal ktp = Decimal.Parse(ktpMentah == "" ? "0" : ktpMentah, System.Globalization.NumberStyles.Any);
 
-                        dr["ktp"] = ktp;
+                        dr["ktp"] = ktpMentah;
                         dr["AktaPendirian"] = getValWorkSheet(sheetUtamane, "G" + i);
                         dr["JenisIdentitas"] = getValWorkSheet(sheetUtamane, "H" + i);
                         dr["pob"] = getValWorkSheet(sheetUtamane, "J" + i);
-                        DateTime dob = DateTime.Parse(getValWorkSheet(sheetUtamane, "K" + i));
-                        dr["dob"] = dob;
+                        DateTime dob = Convert.ToDateTime(getValWorkSheet(sheetUtamane, "K" + i));
+                        dr["dob"] = dob.ToString("MM/dd/yyyy");
                         dr["JenisBadanUsaha"] = getValWorkSheet(sheetUtamane, "L" + i);
                         dr["gender"] = (getValWorkSheet(sheetUtamane, "M" + i)).ToString() == "Perempuan" ? "F" : "M";
                         dr["mother_name"] = getValWorkSheet(sheetUtamane, "N" + i);
                         string npwpMentah = getValWorkSheet(sheetUtamane, "O" + i) == "" ? "0" : getValWorkSheet(sheetUtamane, "O" + i);
-                        decimal npwp = Decimal.Parse(npwpMentah == "" ? "0" : npwpMentah, System.Globalization.NumberStyles.Any);
-                        dr["npwp"] = npwp;
+                        //decimal npwp = Decimal.Parse(npwpMentah == "" ? "0" : npwpMentah, System.Globalization.NumberStyles.Any);
+                        dr["npwp"] = npwpMentah;
 
                         dr["phonenumber"] = getValWorkSheet(sheetUtamane, "P" + i);
                         dr["NoAplikasi"] = getValWorkSheet(sheetUtamane, "Q" + i);
@@ -233,7 +233,7 @@ namespace DebtChecking.Facilities
                         drSLIKTambahan["npwp"] = getValWorkSheet(sheetLainnya, "H" + i);
                         drSLIKTambahan["pob"] = getValWorkSheet(sheetLainnya, "I" + i);
                         drSLIKTambahan["dob"] = getValWorkSheet(sheetLainnya, "J" + i);
-                        drSLIKTambahan["gender"] = getValWorkSheet(sheetLainnya, "K" + i);
+                        drSLIKTambahan["gender"] = getValWorkSheet(sheetLainnya, "K" + i) == "Perempuan" ? "F" : "M";
                         drSLIKTambahan["mother_name"] = getValWorkSheet(sheetLainnya, "L" + i);
 
                         tempAppTambahan.Rows.Add(drSLIKTambahan);
@@ -271,36 +271,6 @@ namespace DebtChecking.Facilities
                             Fields["inputdate"] = "getdate()";
                             staticFramework.save(Fields, Keys, "apprequest", conn);
 
-                            object[] parVal = new object[] { row["requestid"].ToString(), USERID };
-                            DataTable dataValidasi = conn.GetDataTable("exec sp_validasi_request @1, @2", parVal, dbtimeout);
-
-                            if (dataValidasi.Rows.Count > 0)
-                            {
-                                if (dataValidasi.Rows[0]["valid"].ToString() == "1")
-                                {
-
-                                    string sqlAudit = "select * from dbo.apprequest where requestid = @1";
-                                    object[] parAudit = new object[] { row["requestid"].ToString() };
-                                    DataTable dtAppRequestBefore = conn.GetDataTable(sqlAudit, parAudit, dbtimeout);
-
-                                    string sql = "exec sp_update_request @1,@2,@3,@4,@5,@6";
-
-                                    object[] param = new object[] { row["requestid"].ToString(), "DRF", "APV", "SBT", USERID, null };
-                                    conn.ExecNonQuery(sql, param, dbtimeout);
-                                    NameValueCollection KeysSumit = new NameValueCollection();
-                                    NameValueCollection FieldsSubmit = new NameValueCollection();
-                                    Fields["reqdate"] = "getdate()";
-                                    staticFramework.saveNVC(Keys, "requestid", row["requestid"].ToString());
-                                    staticFramework.save(Fields, Keys, "apprequest", conn);
-
-                                    DataTable dtAppRequestAfter = conn.GetDataTable(sqlAudit, parAudit, dbtimeout);
-                                    CommonClass cm = new CommonClass();
-
-                                    cm.InsertAuditTrail("apprequest", null, USERID, dtAppRequestBefore, dtAppRequestAfter);
-
-
-                                }
-                            }
                         }
 
                         foreach (DataRow row in tempAppLoanInfo.Rows)
@@ -343,14 +313,52 @@ namespace DebtChecking.Facilities
                             staticFramework.saveNVC(Fields, "dob", row["dob"]);
                             staticFramework.saveNVC(Fields, "gender", row["gender"]);
                             staticFramework.saveNVC(Fields, "mother_name", row["mother_name"]);
-
-                            Fields["inputdate"] = "getdate()";
+                            staticFramework.saveNVC(Fields, "inputby", USERID);
+                            Fields["inputdate"] = "getdate()"; 
                             staticFramework.save(Fields, Keys, "apprequestsupp",
                                 "DECLARE @seq INT \n" +
                                 "SELECT @seq=ISNULL(MAX(seq),0)+1 FROM apprequestsupp " +
                                 "WHERE requestid='" + row["requestid"] + "' \n", conn);
                         }
 
+
+                        foreach (DataRow row in tempAppRequest.Rows)
+                        {
+
+
+                            object[] parVal = new object[] { row["requestid"].ToString(), USERID };
+                            DataTable dataValidasi = conn.GetDataTable("exec sp_validasi_request @1, @2", parVal, dbtimeout);
+
+                            if (dataValidasi.Rows.Count > 0)
+                            {
+                                if (dataValidasi.Rows[0]["valid"].ToString() == "1")
+                                {
+
+                                    NameValueCollection Keys = new NameValueCollection();
+                                    NameValueCollection Fields = new NameValueCollection();
+                                    string sqlAudit = "select * from dbo.apprequest where requestid = @1";
+                                    object[] parAudit = new object[] { row["requestid"].ToString() };
+                                    DataTable dtAppRequestBefore = conn.GetDataTable(sqlAudit, parAudit, dbtimeout);
+
+                                    string sql = "exec sp_update_request @1,@2,@3,@4,@5,@6,@7";
+
+                                    object[] param = new object[] { row["requestid"].ToString(), "DRF", "APV", "SBT", USERID, null, "upload" };
+                                    conn.ExecNonQuery(sql, param, dbtimeout);
+                                    NameValueCollection KeysSumit = new NameValueCollection();
+                                    NameValueCollection FieldsSubmit = new NameValueCollection();
+                                    Fields["reqdate"] = "getdate()";
+                                    staticFramework.saveNVC(Keys, "requestid", row["requestid"].ToString());
+                                    staticFramework.save(Fields, Keys, "apprequest", conn);
+
+                                    DataTable dtAppRequestAfter = conn.GetDataTable(sqlAudit, parAudit, dbtimeout);
+                                    CommonClass cm = new CommonClass();
+
+                                    cm.InsertAuditTrail("apprequest", null, USERID, dtAppRequestBefore, dtAppRequestAfter);
+
+
+                                }
+                            }
+                        }
 
                         messages = "File " + fileName + " berhasil diproses!";
                     }
