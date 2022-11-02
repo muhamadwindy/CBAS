@@ -8,3 +8,14 @@ D:\SLIK OJK\Kredit Plus Portal  V 2\Login\bin\UOBISecurity.dll
 D:\SLIK OJK\Kredit Plus Portal  V 2\Login\obj\Release\MikroLogin.csproj.CopyComplete
 D:\SLIK OJK\Kredit Plus Portal  V 2\Login\obj\Release\MikroLogin.dll
 D:\SLIK OJK\Kredit Plus Portal  V 2\Login\obj\Release\MikroLogin.pdb
+D:\JOGJA\SKBF\Source Code\edisweb\Login\bin\MikroLogin.dll.config
+D:\JOGJA\SKBF\Source Code\edisweb\Login\bin\MikroLogin.dll
+D:\JOGJA\SKBF\Source Code\edisweb\Login\bin\MikroLogin.pdb
+D:\JOGJA\SKBF\Source Code\edisweb\Login\bin\DMS.Tools.dll
+D:\JOGJA\SKBF\Source Code\edisweb\Login\bin\Newtonsoft.Json.dll
+D:\JOGJA\SKBF\Source Code\edisweb\Login\bin\UOBISecurity.dll
+D:\JOGJA\SKBF\Source Code\edisweb\Login\obj\Release\MikroLogin.csproj.AssemblyReference.cache
+D:\JOGJA\SKBF\Source Code\edisweb\Login\obj\Release\MikroLogin.csproj.CoreCompileInputs.cache
+D:\JOGJA\SKBF\Source Code\edisweb\Login\obj\Release\MikroLogin.csproj.CopyComplete
+D:\JOGJA\SKBF\Source Code\edisweb\Login\obj\Release\MikroLogin.dll
+D:\JOGJA\SKBF\Source Code\edisweb\Login\obj\Release\MikroLogin.pdb

@@ -43,7 +43,7 @@ namespace DebtChecking.Report
                 {
                     DateTime param = (DateTime)UC_ReportFilter1.paramFilter[flg];
 
-                    UC_ReportFilter1.paramFilter[flg] = param.ToString("dd-MM-yyyy");
+                    UC_ReportFilter1.paramFilter[flg] = param.ToString("dd MMMM yyyy");
                 }
             }
 

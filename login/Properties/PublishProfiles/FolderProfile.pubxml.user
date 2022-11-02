@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
-This file is used by the publish/package process of your Web project. You can customize the behavior of this process
-by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project>
   <PropertyGroup>
-    <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\SLIK OJK\Kredit Plus Portal  V 2\Publish\edis</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\JOGJA\SKBF\Source Code\edisweb\Login\bin\app.publish\</_PublishTargetUrl>
+    <History>True|2022-11-02T09:43:46.0797104Z;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_Themes/customs/js/login.js">
@@ -5083,10 +5082,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/08/2021 21:18:04</publishTime>
     </File>
     <File Include="bin/MikroLogin.dll">
-      <publishTime>05/03/2021 21:38:44</publishTime>
+      <publishTime>11/02/2022 16:43:28</publishTime>
     </File>
     <File Include="bin/MikroLogin.pdb">
-      <publishTime>05/03/2021 21:38:44</publishTime>
+      <publishTime>11/02/2022 16:43:28</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>11/05/2017 00:41:00</publishTime>
@@ -5109,7 +5108,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="image/log03.JPG">
       <publishTime>04/08/2021 21:18:04</publishTime>
     </File>
-    <File Include="image/logo_btpns.png">
+    <File Include="image/logo_kreditplus.png">
       <publishTime>04/08/2021 21:18:04</publishTime>
     </File>
     <File Include="image/menarabtpn1.jpg">
@@ -5131,7 +5130,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/08/2021 21:18:04</publishTime>
     </File>
     <File Include="Login.aspx">
-      <publishTime>04/08/2021 21:18:04</publishTime>
+      <publishTime>09/15/2021 08:36:35</publishTime>
     </File>
     <File Include="login.css">
       <publishTime>04/08/2021 21:18:04</publishTime>
@@ -5140,7 +5139,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/08/2021 21:18:04</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/08/2021 21:18:04</publishTime>
+      <publishTime>05/04/2021 08:50:51</publishTime>
     </File>
   </ItemGroup>
 </Project>

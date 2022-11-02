@@ -350,3 +350,10 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 /debtchecking/bin/DebtChecking.dll
+/login/obj/*
+/debtchecking/bin/*
+/debtchecking/.vs/*
+/debtchecking/Upload/*
+/login/obj/*
+/maintenance/bin/*
+/maintenance/obj/*

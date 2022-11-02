@@ -30,3 +30,4 @@ D:\JOGJA\SKBF\Source Code\edisweb\Login\obj\Debug\MikroLogin.csproj.CoreCompileI
 D:\JOGJA\SKBF\Source Code\edisweb\Login\obj\Debug\MikroLogin.csproj.CopyComplete
 D:\JOGJA\SKBF\Source Code\edisweb\Login\obj\Debug\MikroLogin.dll
 D:\JOGJA\SKBF\Source Code\edisweb\Login\obj\Debug\MikroLogin.pdb
+D:\JOGJA\SKBF\Source Code\edisweb\Login\bin\DMS.Tools.dll

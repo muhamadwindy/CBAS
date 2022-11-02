@@ -155,9 +155,6 @@ D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\obj\Debug\DebtChecking.csproj.
 D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\EPPlus.dll
 D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\Newtonsoft.Json.dll
 D:\JOGJA\SKBF\Source Code\ediswebwnd\debtchecking\bin\DMS.Tools.dll
-D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.csproj.AssemblyReference.cache
-D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.csproj.ResolveComReference.cache
-D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.csproj.CoreCompileInputs.cache
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\classes\DMSControls.dll
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DebtChecking.dll.config
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DebtChecking.dll
@@ -178,6 +175,7 @@ D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\Ionic.Zip.dll
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\MWSControls.dll
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\MWSFramework.dll
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\Newtonsoft.Json.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\NReco.PdfGenerator.dll
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\UOBISecurity.dll
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.DataVisualization.v20.2.Core.dll
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.RichEdit.v20.2.Core.dll
@@ -192,6 +190,7 @@ D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Xpo.v20.2.dll
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.CodeParser.v20.2.dll
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.PivotGrid.v20.2.Core.xml
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\evohtmltopdf.xml
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\NReco.PdfGenerator.xml
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.RichEdit.v20.2.Core.xml
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.Snap.v20.2.Core.xml
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DevExpress.DataAccess.v20.2.xml
@@ -232,10 +231,11 @@ D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\de\DevExpress.Xpo.v20.2.resou
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\es\DevExpress.Xpo.v20.2.resources.dll
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ja\DevExpress.Xpo.v20.2.resources.dll
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\ru\DevExpress.Xpo.v20.2.resources.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.csproj.AssemblyReference.cache
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.csproj.ResolveComReference.cache
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.dll.licenses
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.csproj.CoreCompileInputs.cache
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.csproj.CopyComplete
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.dll
 D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.pdb
-D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\obj\Debug\DebtChecking.dll.licenses
-D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\NReco.PdfGenerator.dll
-D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\NReco.PdfGenerator.xml
-D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\DMS.Tools.dll
+D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\MWSFramework.pdb

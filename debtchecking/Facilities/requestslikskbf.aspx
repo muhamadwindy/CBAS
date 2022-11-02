@@ -518,7 +518,7 @@
                                                         const setIdentitas = (param) => {
                                                             const identitas = $('#mainPanel_ktp');
                                                             identitas.val('');
-                                                            if (param.value === "KITAS") {
+                                                            if (param.value === "PASPOR") {
                                                                 identitas.removeClass('numeric');
                                                                 identitas.addClass('alphanumeric');
                                                             } else {
@@ -531,7 +531,7 @@
                                                         CssClass="form-control form-control-sm" runat="server" RepeatDirection="Vertical"
                                                         onchange="setIdentitas(this)">
                                                         <asp:ListItem Text="KTP" Value="KTP"></asp:ListItem>
-                                                        <asp:ListItem Text="KITAS" Value="KITAS"></asp:ListItem>
+                                                        <asp:ListItem Text="PASPOR" Value="PASPOR"></asp:ListItem>
                                                     </asp:DropDownList>
                                                 </div>
                                                 <div class="col-sm-5">
@@ -739,7 +739,7 @@
                                                                                                             const setSuppIdentitas = (param) => {
                                                                                                                 const identitas = $('#mainPanel_supp_ktp');
                                                                                                                 identitas.val('');
-                                                                                                                if (param.value === "KITAS") {
+                                                                                                                if (param.value === "PASPOR") {
                                                                                                                     identitas.removeClass('numeric');
                                                                                                                     identitas.addClass('alphanumeric');
                                                                                                                 } else {
@@ -752,7 +752,7 @@
                                                                                                             CssClass="form-control form-control-sm" runat="server" RepeatDirection="Vertical"
                                                                                                             onchange="setSuppIdentitas(this)">
                                                                                                             <asp:ListItem Text="KTP" Value="KTP"></asp:ListItem>
-                                                                                                            <asp:ListItem Text="KITAS" Value="KITAS"></asp:ListItem>
+                                                                                                            <asp:ListItem Text="PASPOR" Value="PASPOR"></asp:ListItem>
                                                                                                         </asp:DropDownList>
                                                                                                     </div>
                                                                                                     <div class="col-sm-5">
