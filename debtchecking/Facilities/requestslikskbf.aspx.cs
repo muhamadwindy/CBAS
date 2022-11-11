@@ -375,7 +375,7 @@ namespace DebtChecking.Facilities
             staticFramework.reff(purpose, "exec sp_get_reff @1, @2", param, conn);
             staticFramework.reff(branchid, "select * FROM rfbranch", null, conn);
             staticFramework.reff(productid, "select * FROM rfproduct", null, conn);
-            staticFramework.reff(status_app, "select * FROM rfrelationbic", null, conn);
+            staticFramework.reff(status_app, "select * FROM rfrelationbic order by position", null, conn);
             staticFramework.reff(DOC_CODE, "select * from RFDOCUMENT where ACTIVE = 1  ", null, conn);
 
             DOC_CODE.Items.Remove("(none)");
@@ -473,7 +473,7 @@ namespace DebtChecking.Facilities
 
             staticFramework.retrieve(dtLoan, "VarianId", Varian);
             staticFramework.retrieve(dtLoan, "VarianId", h_Varian);
-            setClassification(); 
+            setClassification();
 
             staticFramework.retrieve(dtLoan, "VehicleYearCode", VehicleYear);
             staticFramework.retrieve(dtLoan, "VehicleYearCode", h_VehicleYear);
@@ -497,6 +497,7 @@ namespace DebtChecking.Facilities
             staticFramework.retrieve(dt, supp_cust_type, "supp_");
             staticFramework.retrieve(dt, supp_cust_name, "supp_");
             staticFramework.retrieve(dt, status_app);
+            staticFramework.retrieve(dt, "status_app", tempStatusApp);
             staticFramework.retrieve(dt, supp_dob, "supp_");
             staticFramework.retrieve(dt, supp_ktp, "supp_");
             staticFramework.retrieve(dt, supp_pob, "supp_");
@@ -620,7 +621,7 @@ namespace DebtChecking.Facilities
             staticFramework.saveNVC(Keys, seq);
             staticFramework.saveNVC(Fields, supp_cust_type, "supp_");
             staticFramework.saveNVC(Fields, supp_cust_name, "supp_");
-            staticFramework.saveNVC(Fields, status_app);
+            staticFramework.saveNVC(Fields, "status_app", tempStatusApp.Value);
             staticFramework.saveNVC(Fields, supp_dob, "supp_");
             staticFramework.saveNVC(Fields, supp_JenisIdentitas, "supp_");
             staticFramework.saveNVC(Fields, supp_ktp, "supp_");
@@ -631,6 +632,8 @@ namespace DebtChecking.Facilities
             staticFramework.saveNVC(Fields, supp_gender, "supp_");
             staticFramework.saveNVC(Fields, supp_mother_name, "supp_");
 
+            Fields["inputdate"] = "getdate()";
+            staticFramework.saveNVC(Fields, "inputby", USERID);
             if (seq.Value != "")
                 staticFramework.save(Fields, Keys, "apprequestsupp", conn);
             else
@@ -1046,7 +1049,7 @@ namespace DebtChecking.Facilities
                     conn.ExecNonQuery("DELETE FROM APP_UPLOAD_DOC WHERE REQUESTID = @1 ", param, dbtimeout);
 
                     mainPanel.JSProperties["cp_alert"] = "Data permintaan SLIK checking berhasil dihapus.";
-                    mainPanel.JSProperties["cp_target"] = "mainframex"; 
+                    mainPanel.JSProperties["cp_target"] = "mainframex";
                     mainPanel.JSProperties["cp_redirect"] = "../ScreenMenu.aspx?sm=BIC|REQ&passurl&mntitle=Request SLIK Checking&li=L|BIC|REQ";
 
                     return;
@@ -1081,7 +1084,7 @@ namespace DebtChecking.Facilities
                             Fields["reqdate"] = "getdate()";
                             staticFramework.saveNVC(Keys, requestid);
                             staticFramework.save(Fields, Keys, "apprequest", conn);
-                             
+
                             DataTable dtAppRequestAfter = conn.GetDataTable(sqlAudit, parAudit, dbtimeout);
                             CommonClass cm = new CommonClass();
 
@@ -1092,7 +1095,7 @@ namespace DebtChecking.Facilities
 
 
                             mainPanel.JSProperties["cp_alert"] = "Data permintaan SLIK checking berhasil disubmit.";
-                            mainPanel.JSProperties["cp_target"] = "mainFramex";                            
+                            mainPanel.JSProperties["cp_target"] = "mainFramex";
                             mainPanel.JSProperties["cp_redirect"] = "../ScreenMenu.aspx?sm=BIC|REQ&passurl&mntitle=Request SLIK Checking&li=L|BIC|REQ";
                         }
                         else
@@ -1149,7 +1152,16 @@ namespace DebtChecking.Facilities
                         supp_ktp.Text = dt.Rows[0]["ktp"].ToString();
                         supp_npwp.Text = dt.Rows[0]["npwp"].ToString();
                         supp_cust_type.SelectedValue = dt.Rows[0]["cust_type"].ToString();
-                        status_app.SelectedValue = dt.Rows[0]["status_app"].ToString();
+
+                        try
+                        {
+                            staticFramework.reff(status_app, "select * FROM rfrelationbic where cust_type = @1 order by position", new object[] { supp_cust_type.SelectedValue }, conn);
+                            mainPanel.JSProperties["cp_status_app"] = dt.Rows[0]["status_app"].ToString(); ;
+                        }
+                        catch (Exception)
+                        {
+                        }
+
                         supp_pob.Text = dt.Rows[0]["pob"].ToString();
                         supp_homeaddress.Text = dt.Rows[0]["homeaddress"].ToString();
                         supp_phonenumber.Text = dt.Rows[0]["phonenumber"].ToString();
@@ -1168,6 +1180,7 @@ namespace DebtChecking.Facilities
                         supp_phonenumber.Text = "";
                         supp_dob.Text = "";
                         supp_mother_name.Text = "";
+                        status_app.SelectedValue = null;
                     }
                 }
             }
@@ -1296,6 +1309,18 @@ namespace DebtChecking.Facilities
                 {
                     message += "Interest Rate Harus Diisi" + Environment.NewLine;
                 }
+            }
+            #endregion
+
+            #region Cek Dokumen
+
+            object[] par = new object[] { Request.QueryString["requestid"], USERID };
+
+            DataTable dt = conn.GetDataTable("EXEC SP_VW_APP_UPLOAD_DOC @1,@2 ", par, dbtimeout);
+
+            if (dt != null && dt.Rows.Count == 0)
+            {
+                message += "Silahkan upload dokumen" + Environment.NewLine;
             }
             #endregion
             return message;
@@ -1507,6 +1532,11 @@ namespace DebtChecking.Facilities
             {
 
             }
+        }
+
+        protected void panelStatusApp_Callback(object sender, CallbackEventArgsBase e)
+        {
+            staticFramework.reff(status_app, "select * FROM rfrelationbic where cust_type = @1 order by position", new object[] { e.Parameter.ToString() }, conn);
         }
     }
 }

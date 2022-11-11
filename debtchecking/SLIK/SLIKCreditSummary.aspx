@@ -1,4 +1,5 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SLIKCreditSummary.aspx.cs" Inherits="DebtChecking.Facilities.SLIKCreditSummary" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SLIKCreditSummary.aspx.cs"
+    Inherits="DebtChecking.Facilities.SLIKCreditSummary" %>
 
 <%@ Register TagPrefix="dx" Namespace="DevExpress.Web" Assembly="DevExpress.Web.v20.2, Version=20.2, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
 
@@ -7,14 +8,14 @@
 <html>
 <head>
     <title>SID Text Page</title>
-    <!-- #include file="~/include/onepost.html" -->
-    <Template:Admin runat="server" ID="Template" />
-    <script>
+    
+    <Template:Admin runat="server" ID="Template" /> 
+    <script type="text/javascript">
         function printPDF(param) {
             debugger;
             param.style.display = 'none';
-            document.getElementById('ctl00_ContentPlaceHolder1_mainPanel_btnpdf').style.display = 'none';
-            //window.print();
+            document.getElementById('ctl00_ContentPlaceHolder1_mainPanel_btnpdf').style.display = 'none'; 
+
 
             var printContent = document.getElementById("ctl00_ContentPlaceHolder1_mainPanel_GridViewKREDIT");
             var windowUrl = 'about:blank';
@@ -32,6 +33,7 @@
             document.getElementById('ctl00_ContentPlaceHolder1_mainPanel_btnpdf').style.display = '';
         }
 
+
         function call_kredit(param) {
             var fasilitasid = $(param).attr('commandargument')
             callbackpopup(PopupSID, PNL_KREDIT, "r:" + fasilitasid);
@@ -42,9 +44,11 @@
             var fasilitasid = $(param).attr('commandargument')
             callbackpopup(PopupHistory, PNL_HISTORY, "r:" + fasilitasid);
         }
-    </script>
+
+
+        </script>
 </head>
-<body class="text-sm">
+<body>
     <form id="form1" runat="server">
         <a id="idepfile" href='<%= ResolveUrl("~/SLIK/SLIKResult.aspx?passurl&mntitle=SLIK%20Checking%20Result&regno=") + Request.QueryString["regno"]%>'>IDeb File</a>
         |
@@ -118,9 +122,11 @@
                                                     <button type="button" id="btnprint" runat="server" class="btn btn-primary btn-sm"
                                                         onclick="callback(pdfPanel, 'p:')">
                                                         <span class="fa fa-print"></span>&nbsp;Print
+                                                       
                                                     </button>
                                                     <button type="button" id="btnpdf" class="btn btn-primary btn-sm" runat="server" onclick="callback(pdfPanel, 's:')">
                                                         <span class="fa fa-file-pdf"></span>&nbsp;Save As PDF
+                                                       
                                                     </button>
                                                     <dx:ASPxCallbackPanel ID="pdfPanel" runat="server" Width="100%"
                                                         OnCallback="pdfPanel_Callback" ClientInstanceName="pdfPanel">
@@ -144,7 +150,7 @@
                                                         GridViewID="GridViewKREDIT">
                                                     </dx:ASPxGridViewExporter>
                                                     <dx:ASPxGridView ID="GridViewKREDIT" runat="server" Width="100%" AutoGenerateColumns="False"
-                                                        Theme="MaterialCompact" ClientInstanceName="GridViewKREDIT" KeyFieldName="fasilitasid" Font-Size="X-Small"
+                                                        ClientInstanceName="GridViewKREDIT" KeyFieldName="fasilitasid" Font-Size="X-Small"
                                                         OnLoad="GridViewKREDIT_Load">
                                                         <Columns>
                                                             <dx:GridViewDataTextColumn Caption="ID Fasilitas" FieldName="fasilitasid"></dx:GridViewDataTextColumn>
@@ -178,7 +184,7 @@
                                                             </dx:GridViewDataTextColumn>
                                                         </Columns>
                                                         <SettingsPager PageSize="20" />
-                                                        <Settings ShowFilterRow="false" ShowGroupPanel="false" ShowGroupedColumns="true" ShowFooter="true" ShowPreview="true" />
+                                                        <Settings ShowFilterRow="true" ShowGroupPanel="true" ShowGroupedColumns="true" ShowFooter="true" ShowPreview="true" />
                                                         <SettingsBehavior AllowGroup="true" />
                                                         <TotalSummary>
                                                             <dx:ASPxSummaryItem FieldName="ljkName" SummaryType="Count" />
@@ -208,6 +214,7 @@
                             OnCallback="PNL_KREDIT_Callback">
                             <PanelCollection>
                                 <dx:PanelContent ID="PanelContent8" runat="server">
+
 
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -434,15 +441,19 @@
                                                             <td>:</td>
                                                             <td><%=DS(0, "jenisSukuBungaImbalanKet") %></td>
                                                         </tr>
+
                                                     </table>
                                                 </div>
                                             </div>
 
+
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <input id="Button2" runat="server" type="button" value="Close" class="btn btn-sm btn-primary" onclick="PopupSID.Hide();" />
+
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </dx:PanelContent>
@@ -451,6 +462,8 @@
                     </dx:PopupControlContentControl>
                 </ContentCollection>
             </dx:ASPxPopupControl>
+
+
 
             <dx:ASPxPopupControl ID="PopupHistory" ClientInstanceName="PopupHistory"
                 runat="server" HeaderText="History" Width="800px"
@@ -464,6 +477,61 @@
                             <PanelCollection>
                                 <dx:PanelContent ID="PanelContent3" runat="server">
                                     <table width="100%" class="table table-sm table-responsive">
+                                        <tr>
+                                            <td align="center" colspan="3" width="15%"><%=DS(0, "tahunBulan24Ket") %></td>
+                                            <td align="center" colspan="3" width="15%"><%=DS(0, "tahunBulan23Ket") %></td>
+                                            <td align="center" colspan="3" width="15%"><%=DS(0, "tahunBulan22Ket") %></td>
+                                            <td align="center" colspan="3" width="15%"><%=DS(0, "tahunBulan21Ket") %></td>
+                                            <td align="center" colspan="3" width="15%"><%=DS(0, "tahunBulan20Ket") %></td>
+                                            <td align="center" colspan="2" width="15%"><%=DS(0, "tahunBulan19Ket") %></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" width="6%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan24Color") %>"><%=DS(0, "tahunBulan24Kol") %>&nbsp;</td>
+                                            <td align="center" width="7%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan24Color") %>"><%=DS(0, "tahunBulan24Ht") %>&nbsp;</td>
+                                            <td align="center" width="1%">&nbsp;</td>
+                                            <td align="center" width="6%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan23Color") %>"><%=DS(0, "tahunBulan23Kol") %>&nbsp;</td>
+                                            <td align="center" width="7%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan23Color") %>"><%=DS(0, "tahunBulan23Ht") %>&nbsp;</td>
+                                            <td align="center" width="1%">&nbsp;</td>
+                                            <td align="center" width="6%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan22Color") %>"><%=DS(0, "tahunBulan22Kol") %>&nbsp;</td>
+                                            <td align="center" width="7%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan22Color") %>"><%=DS(0, "tahunBulan22Ht") %>&nbsp;</td>
+                                            <td align="center" width="1%">&nbsp;</td>
+                                            <td align="center" width="6%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan21Color") %>"><%=DS(0, "tahunBulan21Kol") %>&nbsp;</td>
+                                            <td align="center" width="7%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan21Color") %>"><%=DS(0, "tahunBulan21Ht") %>&nbsp;</td>
+                                            <td align="center" width="1%">&nbsp;</td>
+                                            <td align="center" width="6%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan20Color") %>"><%=DS(0, "tahunBulan20Kol") %>&nbsp;</td>
+                                            <td align="center" width="7%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan20Color") %>"><%=DS(0, "tahunBulan20Ht") %>&nbsp;</td>
+                                            <td align="center" width="1%">&nbsp;</td>
+                                            <td align="center" width="6%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan19Color") %>"><%=DS(0, "tahunBulan19Kol") %>&nbsp;</td>
+                                            <td align="center" width="7%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan19Color") %>"><%=DS(0, "tahunBulan19Ht") %>&nbsp;</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td align="center" colspan="3" width="15%"><%=DS(0, "tahunBulan18Ket") %></td>
+                                            <td align="center" colspan="3" width="15%"><%=DS(0, "tahunBulan17Ket") %></td>
+                                            <td align="center" colspan="3" width="15%"><%=DS(0, "tahunBulan16Ket") %></td>
+                                            <td align="center" colspan="3" width="15%"><%=DS(0, "tahunBulan15Ket") %></td>
+                                            <td align="center" colspan="3" width="15%"><%=DS(0, "tahunBulan14Ket") %></td>
+                                            <td align="center" colspan="2" width="15%"><%=DS(0, "tahunBulan13Ket") %></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" width="6%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan18Color") %>"><%=DS(0, "tahunBulan18Kol") %>&nbsp;</td>
+                                            <td align="center" width="7%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan18Color") %>"><%=DS(0, "tahunBulan18Ht") %>&nbsp;</td>
+                                            <td align="center" width="1%">&nbsp;</td>
+                                            <td align="center" width="6%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan17Color") %>"><%=DS(0, "tahunBulan17Kol") %>&nbsp;</td>
+                                            <td align="center" width="7%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan17Color") %>"><%=DS(0, "tahunBulan17Ht") %>&nbsp;</td>
+                                            <td align="center" width="1%">&nbsp;</td>
+                                            <td align="center" width="6%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan16Color") %>"><%=DS(0, "tahunBulan16Kol") %>&nbsp;</td>
+                                            <td align="center" width="7%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan16Color") %>"><%=DS(0, "tahunBulan16Ht") %>&nbsp;</td>
+                                            <td align="center" width="1%">&nbsp;</td>
+                                            <td align="center" width="6%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan15Color") %>"><%=DS(0, "tahunBulan15Kol") %>&nbsp;</td>
+                                            <td align="center" width="7%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan15Color") %>"><%=DS(0, "tahunBulan15Ht") %>&nbsp;</td>
+                                            <td align="center" width="1%">&nbsp;</td>
+                                            <td align="center" width="6%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan14Color") %>"><%=DS(0, "tahunBulan14Kol") %>&nbsp;</td>
+                                            <td align="center" width="7%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan14Color") %>"><%=DS(0, "tahunBulan14Ht") %>&nbsp;</td>
+                                            <td align="center" width="1%">&nbsp;</td>
+                                            <td align="center" width="6%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan13Color") %>"><%=DS(0, "tahunBulan13Kol") %>&nbsp;</td>
+                                            <td align="center" width="7%" style="border: solid 1px black;" bgcolor="<%=DS(0, "tahunBulan13Color") %>"><%=DS(0, "tahunBulan13Ht") %>&nbsp;</td>
+                                        </tr>
                                         <tr>
                                             <td align="center" colspan="3" width="15%"><%=DS(0, "tahunBulan12Ket") %></td>
                                             <td align="center" colspan="3" width="15%"><%=DS(0, "tahunBulan11Ket") %></td>
@@ -533,7 +601,9 @@
                     </dx:PopupControlContentControl>
                 </ContentCollection>
             </dx:ASPxPopupControl>
+
         </div>
+
     </form>
 </body>
 </html>

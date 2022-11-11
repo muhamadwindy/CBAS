@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DebtChecking.Facilities {
-    
-    
-    public partial class SLIKCreditSummary {
-        
+namespace DebtChecking.Facilities
+{
+
+
+    public partial class SLIKCreditSummary
+    {
+
         /// <summary>
         /// Template control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DebtChecking.CommonForm.Template Template;
-        
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// mainPanel control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxCallbackPanel mainPanel;
-        
+
         /// <summary>
         /// PanelContent1 control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.PanelContent PanelContent1;
-        
+
         /// <summary>
         /// cust_name control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label cust_name;
-        
+
         /// <summary>
         /// status_app control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden status_app;
-        
+
         /// <summary>
         /// reffnumber control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden reffnumber;
-        
+
         /// <summary>
         /// appid control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden appid;
-        
+
         /// <summary>
         /// pob_dob control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label pob_dob;
-        
+
         /// <summary>
         /// genderdesc control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label genderdesc;
-        
+
         /// <summary>
         /// Tr1 control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTableRow Tr1;
-        
+
         /// <summary>
         /// ktp control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label ktp;
-        
+
         /// <summary>
         /// final_policy control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label final_policy;
-        
+
         /// <summary>
         /// Button1 control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputButton Button1;
-        
+
         /// <summary>
         /// productid control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden productid;
-        
+
         /// <summary>
         /// btnprint control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlButton btnprint;
-        
+
         /// <summary>
         /// btnpdf control.
         /// </summary>
@@ -164,7 +166,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlButton btnpdf;
-        
+
         /// <summary>
         /// pdfPanel control.
         /// </summary>
@@ -173,7 +175,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxCallbackPanel pdfPanel;
-        
+
         /// <summary>
         /// PanelContent2 control.
         /// </summary>
@@ -182,7 +184,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.PanelContent PanelContent2;
-        
+
         /// <summary>
         /// urlframe control.
         /// </summary>
@@ -191,7 +193,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden urlframe;
-        
+
         /// <summary>
         /// ASPxGridViewExporter1 control.
         /// </summary>
@@ -200,7 +202,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGridViewExporter ASPxGridViewExporter1;
-        
+
         /// <summary>
         /// GridViewKREDIT control.
         /// </summary>
@@ -209,7 +211,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGridView GridViewKREDIT;
-        
+
         /// <summary>
         /// PopupSID control.
         /// </summary>
@@ -218,7 +220,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxPopupControl PopupSID;
-        
+
         /// <summary>
         /// PopupControlContentControl3 control.
         /// </summary>
@@ -227,7 +229,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.PopupControlContentControl PopupControlContentControl3;
-        
+
         /// <summary>
         /// PNL_KREDIT control.
         /// </summary>
@@ -236,7 +238,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxCallbackPanel PNL_KREDIT;
-        
+
         /// <summary>
         /// PanelContent8 control.
         /// </summary>
@@ -245,7 +247,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.PanelContent PanelContent8;
-        
+
         /// <summary>
         /// Button2 control.
         /// </summary>
@@ -254,7 +256,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputButton Button2;
-        
+
         /// <summary>
         /// PopupHistory control.
         /// </summary>
@@ -263,7 +265,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxPopupControl PopupHistory;
-        
+
         /// <summary>
         /// PopupControlContentControl1 control.
         /// </summary>
@@ -272,7 +274,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.PopupControlContentControl PopupControlContentControl1;
-        
+
         /// <summary>
         /// PNL_HISTORY control.
         /// </summary>
@@ -281,7 +283,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxCallbackPanel PNL_HISTORY;
-        
+
         /// <summary>
         /// PanelContent3 control.
         /// </summary>
@@ -290,7 +292,7 @@ namespace DebtChecking.Facilities {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.PanelContent PanelContent3;
-        
+
         /// <summary>
         /// Button3 control.
         /// </summary>

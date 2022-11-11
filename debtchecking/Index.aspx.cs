@@ -165,7 +165,7 @@ data-widget=""treeview"" role=""menu"" data-accordion=""false"">");
                     firstLink.Value = firstLink.Value == "" ? menuurl : firstLink.Value;
                 }
                 else
-                    htmlbuilder.Append("<li class=\"nav-item has-treeview\"><a href=\"#\" class=\"nav-link\"><i class=\"" + (menustyle == "" ? "fas fa-minus nav-icon" : menustyle) + "\"></i><p>" + menudesc + "<i class=\"right fas fa-angle-left\"></i></p></a> \n");
+                    htmlbuilder.Append("<li class=\"nav-item has-treeview" + (i == 0 ? " menu-open" : "") + "\"><a href=\"#\" class=\"nav-link\"><i class=\"" + (menustyle == "" ? "fas fa-minus nav-icon" : menustyle) + "\"></i><p>" + menudesc + "<i class=\"right fas fa-angle-left\"></i></p></a> \n");
 
                 DataView dv2 = new DataView(dtmenu, "MENUPARENT = '" + menuid + "'", "", DataViewRowState.OriginalRows);
                 if (dv2.Count > 0)

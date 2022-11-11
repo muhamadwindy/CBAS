@@ -33,6 +33,15 @@ namespace DebtChecking.Facilities
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// tempStatusApp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden tempStatusApp;
+
+        /// <summary>
         /// mainPanel control.
         /// </summary>
         /// <remarks>
@@ -328,6 +337,24 @@ namespace DebtChecking.Facilities
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList supp_cust_type;
+
+        /// <summary>
+        /// panelStatusApp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel panelStatusApp;
+
+        /// <summary>
+        /// PanelContent10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.PanelContent PanelContent10;
 
         /// <summary>
         /// status_app control.

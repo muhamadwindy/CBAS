@@ -133,10 +133,14 @@
         }
 
         function saveData() {
+            let docval = $('#mainPanel_gridPanel_GridFileUpload').find('td:eq(0)').html();
+            if (docval === 'No records Found!') {
+                alert('Silahkan upload dokumen');
+                return false;
+            }
             let msgValidate = validateForm();
             if (msgValidate != '') {
                 alert(msgValidate);
-                return false;
             } else {
                 if (validasiktp() && $('#form1').valid()) {
                     $('#flagShowMyModalFoto').val('true');
@@ -145,8 +149,15 @@
                     callback(mainPanel, 's');
                 }
             }
+            return false;
         }
         function submitData() {
+
+            let docval = $('#mainPanel_gridPanel_GridFileUpload').find('td:eq(0)').html();
+            if (docval === 'No records Found!') {
+                alert('Silahkan upload dokumen');
+                return false;
+            }
             if (validasiktp() && $('#form1').valid()) {
                 $('#flagShowMyModalFoto').val('true');
                 $('#flagShowMyModalSLIKLainnya').val('true');
@@ -155,10 +166,8 @@
                     setoverlaypage();
                     callback(mainPanel, 'submit')
                 }
-                else {
-                    return false;
-                }
             }
+            return false;
         }
         function deleteData() {
             if (confirm('Hapus data permintaan SLIK checking?')) {
@@ -225,7 +234,6 @@
                 document.getElementById("mainPanel_tr_supp_mother_name").style.display = "";
                 document.getElementById("mainPanel_tr_supp_ktp").style.display = "";
                 document.getElementById("mainPanel_tr_supp_AktaPendirian").style.display = "none";
-
             } else if (val == "PSH") {
                 document.getElementById("mainPanel_supp_npwp").setAttribute("class", "form-control form-control-sm mandatory");
                 document.getElementById("mainPanel_supp_gender").setAttribute("class", "form-control form-control-sm border-0 text-sm");
@@ -234,16 +242,18 @@
                 document.getElementById("mainPanel_tr_supp_ktp").style.display = "none";
                 document.getElementById("mainPanel_tr_supp_AktaPendirian").style.display = "";
             }
+            panelStatusApp.PerformCallback(val);
         }
 
-        function validasiktp() { 
+        function validasiktp() {
             var ret = true;
 
             if (
                 document.getElementById("mainPanel_cust_type_0").checked ||
                 document.getElementById("mainPanel_cust_type_1").checked
             ) {
-                if (document.getElementById("mainPanel_cust_type_0").checked) {
+                if (document.getElementById("mainPanel_cust_type_0").checked &&
+                    document.getElementById("mainPanel_supp_JenisIdentitas").value == "KTP") {
                     let noktp = document.getElementById("mainPanel_ktp").value;
                     if (noktp.length != 16) {
                         alert("No KTP tidak valid!");
@@ -273,7 +283,10 @@
                 document.getElementById("mainPanel_supp_cust_type_0").checked ||
                 document.getElementById("mainPanel_supp_cust_type_1").checked
             ) {
-                if (document.getElementById("mainPanel_supp_cust_type_0").checked) {
+                if (
+                    document.getElementById("mainPanel_supp_cust_type_0").checked &&
+                    document.getElementById("mainPanel_supp_JenisIdentitas").value == "KTP"
+                ) {
                     if (noktp.length != 16) {
                         alert("No KTP tidak valid!");
                         ret = false;
@@ -300,7 +313,7 @@
         }
 
         function showModal() {
-
+            debugger
             if ($('#flagShowMyModalFoto').val() != 'true') {
                 $('#myModal').modal('show');
             } else {
@@ -370,11 +383,14 @@
                     document.getElementById("mainPanel_supp_homeaddress").value = "";
                     document.getElementById("mainPanel_supp_mother_name").value = "";
                     document.getElementById("mainPanel_supp_pob").value = "";
-                    $('#mainPanel_status_app').val([])
+                    $('#mainPanel_panelStatusApp_status_app').val([])
+                    $('#mainPanel_supp_JenisIdentitas').val('KTP')
                     $('#mainPanel_supp_cust_type_0').val([])
                     $('#mainPanel_supp_cust_type_1').val([])
                     $('#mainPanel_supp_gender_0').val([])
                     $('#mainPanel_supp_gender_1').val([])
+
+
                 }
             });
 
@@ -413,11 +429,20 @@
     <form id="form1" runat="server" autocomplete="off">
         <input type="hidden" name="name" id="flagShowMyModalFoto" />
         <input type="hidden" name="name" id="flagShowMyModalSLIKLainnya" />
+        <input type="hidden" name="name" id="tempStatusApp" runat="server" />
         <div class="container-fluid">
             <dx:ASPxCallbackPanel ID="mainPanel" runat="server" Width="100%" BackColor="Transparent"
                 ClientInstanceName="mainPanel" OnCallback="mainPanel_Callback">
                 <ClientSideEvents EndCallback="function(s,e) {
+                    let identitas ={ value : ''};
                     
+                    identitas.value = $('#mainPanel_supp_JenisIdentitas').val();
+                    setSuppIdentitas(identitas);
+                    if (s.cp_status_app != '' && s.cp_status_app != undefined) {  
+                        $('#tempStatusApp').val(s.cp_status_app);
+                        $('#mainPanel_panelStatusApp_status_app').val($('#tempStatusApp').val());
+                    }
+
                     CheckTujuan('');
                     removerlaypage();
                     //Date picker
@@ -721,7 +746,33 @@
                                                                                                 <div class="form-group row">
                                                                                                     <label class="col-sm-4 col-form-label">Hubungan</label>
                                                                                                     <div class="col-sm-8">
-                                                                                                        <asp:DropDownList ID="status_app" runat="server" CssClass="form-control form-control-sm"></asp:DropDownList>
+                                                                                                        <dx:ASPxCallbackPanel runat="server" ID="panelStatusApp" ClientInstanceName="panelStatusApp" OnCallback="panelStatusApp_Callback">
+                                                                                                            <ClientSideEvents EndCallback="function(s, e) {
+                                                                                                                $('#mainPanel_panelStatusApp_status_app').val($('#tempStatusApp').val());
+                                                                                                                        if (s.cp_new != '' && s.cp_new != undefined) {
+                                                                                                                            window.open(s.cp_new,'_parent');
+                                                                                                                            s.cp_new = '';
+                                                                                                                        }
+
+                                                                                                                        if (s.cp_url != '' && s.cp_url != undefined) {
+                                                                                                                            window.open(s.cp_url,'_blank,toolbar=no, location=yes,status=no,menubar=no,scrollbars=yes,resizable=no');
+                                                                                                                            s.cp_url = '';
+                                                                                                                        }
+
+                                                                                                                        if (s.cp_alert != '' && s.cp_alert != undefined) {
+                                                                                                                            alert(s.cp_alert);
+                                                                                                                            s.cp_alert = '';
+                                                                                                                } 
+                                                                                                            }" />
+
+                                                                                                            <PanelCollection>
+
+                                                                                                                <dx:PanelContent ID="PanelContent10" runat="server">
+                                                                                                                    <asp:DropDownList ID="status_app" runat="server" onchange="tempStatusApp.value=this.value" CssClass="form-control form-control-sm"></asp:DropDownList>
+                                                                                                                </dx:PanelContent>
+                                                                                                            </PanelCollection>
+                                                                                                        </dx:ASPxCallbackPanel>
+
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="form-group row">
@@ -738,7 +789,6 @@
                                                                                                         <script type="text/javascript">
                                                                                                             const setSuppIdentitas = (param) => {
                                                                                                                 const identitas = $('#mainPanel_supp_ktp');
-                                                                                                                identitas.val('');
                                                                                                                 if (param.value === "PASPOR") {
                                                                                                                     identitas.removeClass('numeric');
                                                                                                                     identitas.addClass('alphanumeric');
@@ -750,13 +800,13 @@
                                                                                                         </script>
                                                                                                         <asp:DropDownList ID="supp_JenisIdentitas" RepeatLayout="UnorderedList"
                                                                                                             CssClass="form-control form-control-sm" runat="server" RepeatDirection="Vertical"
-                                                                                                            onchange="setSuppIdentitas(this)">
+                                                                                                            onchange="setSuppIdentitas(this);$('#mainPanel_supp_ktp').val('');">
                                                                                                             <asp:ListItem Text="KTP" Value="KTP"></asp:ListItem>
                                                                                                             <asp:ListItem Text="PASPOR" Value="PASPOR"></asp:ListItem>
                                                                                                         </asp:DropDownList>
                                                                                                     </div>
                                                                                                     <div class="col-sm-5">
-                                                                                                        <asp:TextBox ID="supp_ktp" runat="server" CssClass="form-control form-control-sm numeric" MaxLength="16"></asp:TextBox>
+                                                                                                        <asp:TextBox ID="supp_ktp" runat="server" CssClass="form-control form-control-sm" MaxLength="16"></asp:TextBox>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="form-group row" id="tr_supp_AktaPendirian" runat="server">
@@ -957,7 +1007,7 @@
 
                                                                                 <div class="col-sm-8">
                                                                                     <dx:ASPxUploadControl ID="ASPxUploadControl1" runat="server" ClientInstanceName="upload" ShowProgressPanel="true" ShowUploadButton="false" FileUploadMode="OnPageLoad"
-                                                                                        Width="300" OnFileUploadComplete="ASPxUploadControl1_FileUploadComplete">
+                                                                                        Theme="MaterialCompact" Width="300" OnFileUploadComplete="ASPxUploadControl1_FileUploadComplete">
                                                                                         <AdvancedModeSettings EnableFileList="False" EnableDragAndDrop="True" />
                                                                                         <ValidationSettings MaxFileSize="3145728" />
                                                                                         <ClientSideEvents FileUploadComplete="function(s, e) {
@@ -1333,9 +1383,9 @@
                                 <div class="card-footer">
                                     <div>
                                         <div align="center">
-                                            <input type="button" id="btn_save" runat="server" value="Save" class="m-1 btn btn-primary" onclick="saveData();" />
+                                            <input type="button" id="btn_save" runat="server" value="Save" class="m-1 btn btn-primary" onclick="return saveData();" />
                                             <input type="button" id="btn_del" runat="server" value="Delete" class="m-1 btn btn-danger" onclick="deleteData();" />
-                                            <button type="submit" id="btn_submit" class="m-1 btn btn-success" onclick="submitData();">
+                                            <button type="submit" id="btn_submit" class="m-1 btn btn-success" onclick="return submitData();">
                                                 Submit</button>
                                         </div>
                                     </div>
