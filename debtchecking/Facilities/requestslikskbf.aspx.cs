@@ -1318,9 +1318,14 @@ namespace DebtChecking.Facilities
 
             DataTable dt = conn.GetDataTable("EXEC SP_VW_APP_UPLOAD_DOC @1,@2 ", par, dbtimeout);
 
-            if (dt != null && dt.Rows.Count == 0)
+            if (message != "")
             {
-                message += "Silahkan upload dokumen" + Environment.NewLine;
+                if (dt != null && dt.Rows.Count == 0)
+                {
+                    //message += "Silahkan upload dokumen" + Environment.NewLine;
+
+                    savedata();
+                }
             }
             #endregion
             return message;

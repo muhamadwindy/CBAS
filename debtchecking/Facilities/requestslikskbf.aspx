@@ -147,6 +147,7 @@
                     $('#flagShowMyModalSLIKLainnya').val('true');
                     setoverlaypage();
                     callback(mainPanel, 's');
+                    return false;
                 }
             }
             return false;
@@ -202,14 +203,14 @@
         //$("#mainPanel_gridPanel_GridFileUpload").DataTable();
 
         function uploadDokumen() {
-            if ("<%=Request.QueryString["mode"] %>" == "new") {
+<%--            if ("<%=Request.QueryString["mode"] %>" == "new") {
                 alert('Tekan Save Untuk Menambahkan Dokumen');
                 $('#flagShowMyModalFoto').val('true');
                 $('#myModal').modal('hide');
                 return false;
-            } else {
-                $('#flagShowMyModalFoto').val('false');
-            }
+            } else {--%>
+            $('#flagShowMyModalFoto').val('false');
+            /*}*/
 
         }
         function ubahjenis(val) {
@@ -234,13 +235,15 @@
                 document.getElementById("mainPanel_tr_supp_mother_name").style.display = "";
                 document.getElementById("mainPanel_tr_supp_ktp").style.display = "";
                 document.getElementById("mainPanel_tr_supp_AktaPendirian").style.display = "none";
+                document.getElementById("tr_supp_npwp").style.display = "none";
             } else if (val == "PSH") {
                 document.getElementById("mainPanel_supp_npwp").setAttribute("class", "form-control form-control-sm mandatory");
                 document.getElementById("mainPanel_supp_gender").setAttribute("class", "form-control form-control-sm border-0 text-sm");
                 document.getElementById("mainPanel_tr_supp_gender").style.display = "none";
                 document.getElementById("mainPanel_tr_supp_mother_name").style.display = "none";
                 document.getElementById("mainPanel_tr_supp_ktp").style.display = "none";
-                document.getElementById("mainPanel_tr_supp_AktaPendirian").style.display = "";
+                document.getElementById("mainPanel_tr_supp_AktaPendirian").style.display = "none";
+                document.getElementById("tr_supp_npwp").style.display = "";
             }
             panelStatusApp.PerformCallback(val);
         }
@@ -275,45 +278,68 @@
         }
 
         function validasiktp_supl() {
-            var ret = true;
+
+            let message = "";
+
+            let custtype = document.getElementById('mainPanel_supp_cust_type_1').checked ? "PSH" : "IND";
             var noktp = document.getElementById("mainPanel_supp_ktp").value;
             var nonpwp = document.getElementById("mainPanel_supp_npwp").value;
 
-            if (
-                document.getElementById("mainPanel_supp_cust_type_0").checked ||
-                document.getElementById("mainPanel_supp_cust_type_1").checked
-            ) {
-                if (
-                    document.getElementById("mainPanel_supp_cust_type_0").checked &&
-                    document.getElementById("mainPanel_supp_JenisIdentitas").value == "KTP"
-                ) {
-                    if (noktp.length != 16) {
-                        alert("No KTP tidak valid!");
-                        ret = false;
+            if (custtype != "") {
+                let status_app = $('#mainPanel_panelStatusApp_status_app').val();
+                if (status_app == null || status_app === "") {
+                    message += "Silakan pilih hubungan\r\n";
+                }
+
+                if ($('#mainPanel_supp_cust_name').val() == "") {
+                    message += "Silakan isi Nama SLIK Tambahan\r\n";
+                }
+                if (custtype === "IND") {
+                    if (document.getElementById("mainPanel_supp_JenisIdentitas").value == "KTP") {
+                        if (noktp.length != 16 && $('#mainPanel_supp_ktp').val() != "") {
+                            message += "No KTP tidak valid!\r\n";
+                        }
+                    }
+                    if ($('#mainPanel_supp_ktp').val() == "") {
+                        message += "Silakan isi " + $('#mainPanel_supp_JenisIdentitas').val() + "\r\n";
+                    }
+
+                } else if (custtype === "PSH") {
+                    if ($('#mainPanel_supp_npwp').val() == "") {
+                        message += "Silakan isi NPWP\r\n";
                     }
                 }
-                if (document.getElementById("mainPanel_supp_cust_type_1").checked) {
-                    //if (nonpwp.length != 15) {
-                    //    alert("No NPWP tidak valid!");
-                    //    ret = false;
-                    //}
-                }
-            } else {
-                alert("Pilih Jenis Nasabah!");
-                ret = false;
-            }
-            return ret
-        }
 
+                if ($('#mainPanel_supp_pob').val() == "") {
+                    message += "Silakan isi Tempat Lahir/Pendirian\r\n";
+                }
+
+                if ($('#mainPanel_supp_dob').val() == "") {
+                    message += "Silakan isi Tanggal Lahir/Pendirian\r\n";
+                }
+                if (custtype === "IND") {
+                    if ($('input[name="mainPanel$supp_gender"]:checked').val() == undefined) {
+                        message += "Silakan isi gender\r\n";
+                    }
+                }
+
+            } else {
+                message += "Pilih Jenis Nasabah!\r\n";
+            }
+            return message;
+        }
         function saveSupl() {
-            if (validasiktp_supl()) {
+
+            let msgValidate = validasiktp_supl();
+            if (msgValidate != '') {
+                alert(msgValidate);
+            } else {
                 callback(gridSuppPanel, 's:');
                 $('#myModalSLIKLainnya').modal('hide');
             }
         }
 
         function showModal() {
-            debugger
             if ($('#flagShowMyModalFoto').val() != 'true') {
                 $('#myModal').modal('show');
             } else {
@@ -735,7 +761,10 @@
                                                                                         <div class="col-sm-6">
                                                                                             <div>
                                                                                                 <div class="form-group row">
-                                                                                                    <label class="col-sm-4 col-form-label">Jenis</label>
+                                                                                                    <label class="col-sm-4 col-form-label">
+                                                                                                        Jenis
+                                                                                                        <span class="text-danger">*</span>
+                                                                                                    </label>
                                                                                                     <div class="col-sm-8">
                                                                                                         <asp:RadioButtonList ID="supp_cust_type" runat="server" RepeatLayout="UnorderedList" RepeatDirection="Vertical" CssClass="form-control form-control-sm border-0 text-sm">
                                                                                                             <asp:ListItem Text="Individu" Value="IND" onclick="ubahjenis_supl(this.value)"></asp:ListItem>
@@ -744,7 +773,10 @@
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="form-group row">
-                                                                                                    <label class="col-sm-4 col-form-label">Hubungan</label>
+                                                                                                    <label class="col-sm-4 col-form-label">
+                                                                                                        Hubungan
+                                                                                                        <span class="text-danger">*</span>
+                                                                                                    </label>
                                                                                                     <div class="col-sm-8">
                                                                                                         <dx:ASPxCallbackPanel runat="server" ID="panelStatusApp" ClientInstanceName="panelStatusApp" OnCallback="panelStatusApp_Callback">
                                                                                                             <ClientSideEvents EndCallback="function(s, e) {
@@ -776,7 +808,10 @@
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="form-group row">
-                                                                                                    <label class="col-sm-4 col-form-label">Nama SLIK Tambahan</label>
+                                                                                                    <label class="col-sm-4 col-form-label">
+                                                                                                        Nama SLIK Tambahan
+                                                                                                        <span class="text-danger">*</span>
+                                                                                                    </label>
                                                                                                     <div class="col-sm-8">
                                                                                                         <asp:TextBox ID="supp_cust_name" runat="server" CssClass="form-control form-control-sm alphaonly" MaxLength="100"></asp:TextBox>
                                                                                                     </div>
@@ -784,6 +819,7 @@
                                                                                                 <div class="form-group row" id="tr_supp_ktp" runat="server">
                                                                                                     <label class="col-sm-4 col-form-label">
                                                                                                         KTP No.
+                                                                                                        <span class="text-danger">*</span>
                                                                                                     </label>
                                                                                                     <div class="col-sm-3">
                                                                                                         <script type="text/javascript">
@@ -818,7 +854,7 @@
                                                                                                     </div>
                                                                                                 </div>
 
-                                                                                                <div class="form-group row">
+                                                                                                <div class="form-group row" id="tr_supp_npwp">
                                                                                                     <label class="col-sm-4 col-form-label">Nomor NPWP</label>
                                                                                                     <div class="col-sm-8">
                                                                                                         <asp:TextBox ID="supp_npwp" CssClass="form-control form-control-sm numeric" runat="server" MaxLength="15">
@@ -830,14 +866,20 @@
                                                                                         <div class="col-sm-6">
                                                                                             <div>
                                                                                                 <div class="form-group row">
-                                                                                                    <label class="col-sm-5 col-form-label">Tempat Lahir/Pendirian</label>
+                                                                                                    <label class="col-sm-5 col-form-label">
+                                                                                                        Tempat Lahir/Pendirian
+                                                                                                        <span class="text-danger">*</span>
+                                                                                                    </label>
                                                                                                     <div class="col-sm-7">
                                                                                                         <asp:TextBox ID="supp_pob" CssClass="form-control form-control-sm" runat="server"></asp:TextBox>
                                                                                                     </div>
                                                                                                 </div>
 
                                                                                                 <div class="form-group row">
-                                                                                                    <label class="col-sm-5 col-form-label">Tanggal Lahir/Pendirian</label>
+                                                                                                    <label class="col-sm-5 col-form-label">
+                                                                                                        Tanggal Lahir/Pendirian
+                                                                                                        <span class="text-danger">*</span>
+                                                                                                    </label>
                                                                                                     <div class="col-sm-7">
                                                                                                         <div class="input-group">
                                                                                                             <div class="input-group-addon">
@@ -848,7 +890,10 @@
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div id="tr_supp_gender" class="form-group row" runat="server">
-                                                                                                    <label class="col-sm-5 col-form-label">Gender</label>
+                                                                                                    <label class="col-sm-5 col-form-label">
+                                                                                                        Gender
+                                                                                                        <span class="text-danger">*</span>
+                                                                                                    </label>
                                                                                                     <div class="col-sm-7">
                                                                                                         <asp:RadioButtonList ID="supp_gender" RepeatLayout="UnorderedList" CssClass="form-control form-control-sm border-0 text-sm" runat="server" RepeatDirection="Vertical">
                                                                                                             <asp:ListItem Text="Laki-laki" Value="M"></asp:ListItem>
@@ -881,13 +926,6 @@
                                                                                         <div align="center" colspan="2">
                                                                                             <input runat="server" id="BTN_SAVE1" type="button" class="m-1 btn btn-primary"
                                                                                                 onclick="saveSupl()" value=" Save" />
-                                                                                            <%--<input id="BTN_CANCEL1" runat="server" class="m-1 btn btn-default" type="button" value="Cancel" />--%>
-
-                                                                                            <%--     <input runat="server" id="BTN_SAVE1" type="button" class="m-1 btn btn-primary"
-                                                                                        onclick="if (validasiktp_supl()) callbackpopup(PopupSID, PanelSID, 's:', GridViewSuppl);" value=" Save " />
-                                                                                    <input id="BTN_CANCEL1" runat="server" class="m-1 btn btn-default"
-                                                                                        onclick="PopupSID.Hide();" type="button" value="Cancel" />
-                                                                                    <input type="hidden" id="seq" runat="server" />--%>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
