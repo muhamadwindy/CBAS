@@ -63,7 +63,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">ID Request CBAS</label>
+                                                <label class="col-sm-2 col-form-label">Request ID</label>
                                                 <div class="col-sm-5">
                                                     <input id="txtIDRequest" type="text" maxlength="200"
                                                         class="form-control form-control-sm" />
