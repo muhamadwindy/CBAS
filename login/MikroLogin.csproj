@@ -1632,6 +1632,7 @@
     <Content Include="image\menarabtpn1.jpg" />
     <Content Include="image\menarabtpn2.jpg" />
     <Content Include="image\menarabtpn3.jpg" />
+    <Content Include="image\skbf_login_logo.png" />
     <Content Include="image\spacer.gif" />
     <Content Include="include\onepost.html" />
     <Content Include="Login.aspx" />

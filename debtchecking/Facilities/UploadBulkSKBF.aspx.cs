@@ -227,7 +227,8 @@ namespace DebtChecking.Facilities
                         drSLIKTambahan["status_app"] = getValWorkSheet(sheetLainnya, "C" + i);
                         drSLIKTambahan["cust_name"] = getValWorkSheet(sheetLainnya, "D" + i);
                         drSLIKTambahan["jenisIdentitas"] = getValWorkSheet(sheetLainnya, "F" + i);
-                        decimal ktp = Decimal.Parse(getValWorkSheet(sheetLainnya, getValWorkSheet(sheetLainnya, "B" + i) == "PSH" ? "G" : "E" + i), System.Globalization.NumberStyles.Any);
+                        //decimal ktp = Decimal.Parse(getValWorkSheet(sheetLainnya, getValWorkSheet(sheetLainnya, "B" + i) == "PSH" ? "G" : "E" + i), System.Globalization.NumberStyles.Any);
+                        string ktp = getValWorkSheet(sheetLainnya, getValWorkSheet(sheetLainnya, "B" + i) == "PSH" ? "G" : "E" + i);
 
                         drSLIKTambahan["ktp"] = ktp;
                         drSLIKTambahan["npwp"] = getValWorkSheet(sheetLainnya, "H" + i);
@@ -314,7 +315,7 @@ namespace DebtChecking.Facilities
                             staticFramework.saveNVC(Fields, "gender", row["gender"]);
                             staticFramework.saveNVC(Fields, "mother_name", row["mother_name"]);
                             staticFramework.saveNVC(Fields, "inputby", USERID);
-                            Fields["inputdate"] = "getdate()"; 
+                            Fields["inputdate"] = "getdate()";
                             staticFramework.save(Fields, Keys, "apprequestsupp",
                                 "DECLARE @seq INT \n" +
                                 "SELECT @seq=ISNULL(MAX(seq),0)+1 FROM apprequestsupp " +

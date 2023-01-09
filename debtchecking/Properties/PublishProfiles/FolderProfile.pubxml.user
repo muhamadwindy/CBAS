@@ -5,6 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>D:\JOGJA\SKBF\Source Code\edisweb\debtchecking\bin\app.publish\</_PublishTargetUrl>
+    <History>True|2022-12-09T03:41:52.4575605Z;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_Themes/mwstyle/bower_components/bootstrap-datepicker/.bower.json">
@@ -7028,10 +7029,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/24/2021 13:31:11</publishTime>
     </File>
     <File Include="bin/DebtChecking.dll">
-      <publishTime>10/11/2022 11:56:27</publishTime>
+      <publishTime>12/09/2022 10:41:33</publishTime>
     </File>
     <File Include="bin/DebtChecking.pdb">
-      <publishTime>10/11/2022 11:56:27</publishTime>
+      <publishTime>12/09/2022 10:41:33</publishTime>
     </File>
     <File Include="bin/DevExpress.Charts.v20.2.Core.dll">
       <publishTime>04/24/2021 13:31:11</publishTime>
@@ -7157,10 +7158,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/24/2021 13:31:11</publishTime>
     </File>
     <File Include="bin/MWSControls.dll">
-      <publishTime>04/08/2021 21:18:04</publishTime>
+      <publishTime>10/12/2022 16:24:41</publishTime>
     </File>
     <File Include="bin/MWSFramework.dll">
-      <publishTime>10/10/2022 23:37:03</publishTime>
+      <publishTime>11/16/2022 14:36:00</publishTime>
+    </File>
+    <File Include="bin/MWSFramework.pdb">
+      <publishTime>11/16/2022 14:36:00</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>03/18/2021 03:03:36</publishTime>
@@ -7226,10 +7230,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/08/2021 21:18:04</publishTime>
     </File>
     <File Include="classes/MWSControls.dll">
-      <publishTime>04/08/2021 21:18:04</publishTime>
+      <publishTime>10/12/2022 16:24:41</publishTime>
     </File>
     <File Include="classes/MWSFramework.dll">
-      <publishTime>10/10/2022 23:37:03</publishTime>
+      <publishTime>11/02/2022 22:08:41</publishTime>
     </File>
     <File Include="classes/UOBISecurity.dll">
       <publishTime>11/16/2015 14:07:10</publishTime>
@@ -7259,7 +7263,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/28/2021 11:38:12</publishTime>
     </File>
     <File Include="CommonForm/UC_ListDetail.ascx">
-      <publishTime>06/28/2021 11:38:18</publishTime>
+      <publishTime>10/11/2022 15:06:45</publishTime>
     </File>
     <File Include="CommonForm/UC_ListFilter.ascx">
       <publishTime>06/28/2021 11:38:26</publishTime>
@@ -7286,16 +7290,22 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/11/2022 11:55:26</publishTime>
     </File>
     <File Include="Facilities/LandingPageRequestSLIK.aspx">
-      <publishTime>06/28/2021 11:39:46</publishTime>
+      <publishTime>11/16/2022 15:06:41</publishTime>
     </File>
     <File Include="Facilities/RequestSLIK.aspx">
       <publishTime>10/07/2021 10:28:16</publishTime>
     </File>
     <File Include="Facilities/requestslikskbf.aspx">
-      <publishTime>10/11/2022 10:05:42</publishTime>
+      <publishTime>11/16/2022 15:06:29</publishTime>
     </File>
     <File Include="Facilities/UploadBulk.aspx">
-      <publishTime>06/28/2021 11:40:08</publishTime>
+      <publishTime>10/26/2022 10:52:40</publishTime>
+    </File>
+    <File Include="Facilities/UploadBulkSKBF.aspx">
+      <publishTime>10/26/2022 10:59:12</publishTime>
+    </File>
+    <File Include="Facilities/uploadrequestslikskbf.aspx">
+      <publishTime>10/12/2022 18:49:20</publishTime>
     </File>
     <File Include="Facilities/UploadRestoreData.aspx">
       <publishTime>06/28/2021 11:40:17</publishTime>
@@ -7308,6 +7318,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="image/logo_btpns.png">
       <publishTime>04/08/2021 21:18:04</publishTime>
+    </File>
+    <File Include="image/skbf_login_logo.png">
+      <publishTime>10/09/2022 08:19:24</publishTime>
     </File>
     <File Include="image/windy_loading_blue_sky.gif">
       <publishTime>05/04/2021 05:04:50</publishTime>
@@ -7340,19 +7353,25 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/03/2021 16:19:08</publishTime>
     </File>
     <File Include="include/Template.ascx">
-      <publishTime>10/11/2022 00:00:05</publishTime>
+      <publishTime>10/12/2022 16:00:24</publishTime>
     </File>
     <File Include="Index.aspx">
-      <publishTime>05/03/2021 16:21:50</publishTime>
+      <publishTime>10/12/2022 22:48:05</publishTime>
+    </File>
+    <File Include="Library/MWSTools.js">
+      <publishTime>10/12/2022 18:03:54</publishTime>
     </File>
     <File Include="Logout.aspx">
       <publishTime>05/03/2021 16:21:59</publishTime>
     </File>
     <File Include="Main.aspx">
-      <publishTime>10/10/2022 23:27:17</publishTime>
+      <publishTime>10/12/2022 22:48:04</publishTime>
     </File>
     <File Include="Report/Report.aspx">
       <publishTime>07/17/2021 16:35:14</publishTime>
+    </File>
+    <File Include="Report/RequestLog.aspx">
+      <publishTime>11/16/2022 13:26:27</publishTime>
     </File>
     <File Include="ReportCompany.aspx">
       <publishTime>05/03/2021 16:22:24</publishTime>
@@ -7375,17 +7394,26 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="SLIK/ManualReview.aspx">
       <publishTime>06/28/2021 11:40:58</publishTime>
     </File>
+    <File Include="SLIK/Modal_Content_SlikLogin.aspx">
+      <publishTime>10/17/2022 10:36:44</publishTime>
+    </File>
+    <File Include="SLIK/Modal_Content_SlikLogin_Viewer.aspx">
+      <publishTime>10/17/2022 10:36:35</publishTime>
+    </File>
+    <File Include="SLIK/Modal_Content_SlikTasklist_Extract.aspx">
+      <publishTime>10/17/2022 10:46:27</publishTime>
+    </File>
     <File Include="SLIK/notyetuploaded.html">
       <publishTime>04/28/2021 14:56:13</publishTime>
     </File>
     <File Include="SLIK/SLIKCreditSummary.aspx">
-      <publishTime>06/28/2021 11:41:12</publishTime>
+      <publishTime>11/02/2022 23:54:42</publishTime>
     </File>
     <File Include="SLIK/SLIKNotFound.aspx">
       <publishTime>06/28/2021 11:41:22</publishTime>
     </File>
     <File Include="SLIK/SlikReport_SKBF.aspx">
-      <publishTime>10/11/2022 11:47:12</publishTime>
+      <publishTime>10/13/2022 23:41:38</publishTime>
     </File>
     <File Include="SLIK/SLIKReport_SKBF_PDF.aspx">
       <publishTime>10/11/2022 11:41:51</publishTime>
@@ -7394,13 +7422,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/28/2021 11:41:31</publishTime>
     </File>
     <File Include="SLIK/Update_Password.aspx">
-      <publishTime>06/29/2021 11:29:07</publishTime>
+      <publishTime>10/17/2022 10:57:04</publishTime>
     </File>
     <File Include="SLIK/ViewPDF.aspx">
       <publishTime>06/28/2021 11:41:48</publishTime>
     </File>
     <File Include="TemplateFile/Template_Request_SLIK.xlsx">
-      <publishTime>05/07/2021 21:38:54</publishTime>
+      <publishTime>10/24/2022 18:36:18</publishTime>
     </File>
     <File Include="unittest.aspx">
       <publishTime>10/10/2022 23:22:42</publishTime>
@@ -7409,7 +7437,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/08/2021 21:18:04</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/10/2022 23:21:00</publishTime>
+      <publishTime>10/11/2022 15:24:59</publishTime>
     </File>
   </ItemGroup>
 </Project>

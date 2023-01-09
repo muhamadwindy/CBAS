@@ -300,19 +300,19 @@
                                                                     <td>Logon status</td>
                                                                     <td>:</td>
                                                                     <td>
-                                                                        <asp:CheckBox ID="cb_logon" CssClass="form-control form-control-sm" runat="server" Text="(clear to reset)" AutoPostBack="True" OnCheckedChanged="cb_logon_CheckedChanged"></asp:CheckBox></td>
+                                                                        <asp:CheckBox ID="cb_logon" runat="server" Text="(clear to reset)" AutoPostBack="True" OnCheckedChanged="cb_logon_CheckedChanged"></asp:CheckBox></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Revoke</td>
                                                                     <td>:</td>
                                                                     <td>
-                                                                        <asp:CheckBox ID="cb_revoke" CssClass="form-control form-control-sm" runat="server" Text="(check for yes)"></asp:CheckBox></td>
+                                                                        <asp:CheckBox ID="cb_revoke" runat="server" Text="(check for yes)"></asp:CheckBox></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Active</td>
                                                                     <td>:</td>
                                                                     <td>
-                                                                        <asp:CheckBox ID="CHK_SU_ACTIVE" CssClass="form-control form-control-sm" runat="server" Text="(check for yes)"></asp:CheckBox></td>
+                                                                        <asp:CheckBox ID="CHK_SU_ACTIVE" runat="server" Text="(check for yes)"></asp:CheckBox></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td colspan="3"></td>

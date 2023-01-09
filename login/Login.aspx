@@ -4,31 +4,29 @@
 
 <html>
 <head runat="server">
-    <title>Kreditplus</title>
+    <title>Login Page CBAS</title>
     <link rel="shortcut icon" href="logo.ico" type="image/x-icon" />
     <script type="text/javascript" src="App_Themes/customs/js/login.js"></script>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"  content=""/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
  
-    <link href="App_Themes/mwstyle/plugins/fontawesome-free/css/all.min.css" rel="stylesheet" /> 
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" /> 
+    <link href="App_Themes/mwstyle/plugins/fontawesome-free/css/all.min.css" rel="stylesheet" />  
     <link href="App_Themes/mwstyle/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet" /> 
-    <link href="App_Themes/mwstyle/dist/css/adminlte.min.css" rel="stylesheet" /> 
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
+    <link href="App_Themes/mwstyle/dist/css/adminlte.min.css" rel="stylesheet" />  
 </head>
-<body class="hold-transition login-page" style="background-image: url('image/bg_kreditplus.jpg') !important; background-size: cover; /* <------ */
+<body class="hold-transition login-page" style="background-image: url('image/background_login.jpg') !important; background-size: cover; /* <------ */
     background-repeat: no-repeat; background-position: center center;">
     <form id="form1" runat="server">
         <div class="login-box"> 
             <div class="card">
                 <div class="card-header">
                     <div class="text-center">
-                        <img src="image/logo_kreditplus.png" />
+                        <img src="image/skbf_login_logo.png" alt="jemblek" width="200px"/>
                     </div>
                 </div>
                 <div class="card-body login-card-body">
-                    <p class="login-box-msg font-weight-bold">External Data Integration System</p>
+                    <p class="login-box-msg font-weight-bold">Credit Bureau Automation System</p>
                     <div class="input-group mb-3">
                         <asp:TextBox ID="TXT_USERNAME" CssClass="form-control" placeholder="Username" onkeypress="return kutip_satu()" runat="server"></asp:TextBox>
                         <div class="input-group-append">
@@ -61,7 +59,7 @@
 
                 <div class="card-footer"> 
                     <p class="text-center">
-                        Copyright © 2021 PT. Finansia Multi Finance<br />
+                        Copyright © 2022 PT. Sunindo KB Finance<br />
                         All Right Reserved
                     </p>
                 </div> 

@@ -38,6 +38,19 @@
             $('#overlaypage').attr("class", "hidden");
         }
 
+        const setIdentitas = (param, isClearValue) => {
+            const identitas = $('#mainPanel_ktp');
+            if (isClearValue) {
+                identitas.val('');
+            }
+            if (param.value === "PASPOR") {
+                identitas.removeClass('numeric');
+                identitas.addClass('alphanumeric');
+            } else {
+                identitas.removeClass('alphanumeric');
+                identitas.addClass('numeric');
+            }
+        }
         const validateForm = () => {
 
             let message = "";
@@ -60,7 +73,8 @@
             }
 
             if (custtype == "IND" && $('#mainPanel_ktp').val() == "") {
-                message += "KTP No. Harus Diisi\r\n";
+                let labelIDNPWP = $("#mainPanel_JenisIdentitas option:selected").html()
+                message += labelIDNPWP + " Harus Diisi\r\n";
             }
             if ($('#mainPanel_pob').val() == "") {
                 message += $('#mainPanel_labelTempatLahir').text() + " Harus Diisi\r\n";
@@ -255,12 +269,20 @@
                 document.getElementById("mainPanel_cust_type_0").checked ||
                 document.getElementById("mainPanel_cust_type_1").checked
             ) {
-                if (document.getElementById("mainPanel_cust_type_0").checked &&
-                    document.getElementById("mainPanel_supp_JenisIdentitas").value == "KTP") {
+                if (document.getElementById("mainPanel_cust_type_0").checked) {
                     let noktp = document.getElementById("mainPanel_ktp").value;
-                    if (noktp.length != 16) {
-                        alert("No KTP tidak valid!");
-                        ret = false;
+
+                    let labelJenisIdentitas = $("#mainPanel_JenisIdentitas option:selected").html()
+                    if (document.getElementById("mainPanel_JenisIdentitas").value == "KTP") {
+                        if (noktp.length != 16) {
+                            alert(labelJenisIdentitas + " Tidak Valid!");
+                            ret = false;
+                        }
+                    } else if (document.getElementById("mainPanel_JenisIdentitas").value == "KTP") {
+                        if (noktp.length === 0) {
+                            alert(labelJenisIdentitas + " Harus Diisi!");
+                            ret = false;
+                        }
                     }
                 }
                 if (document.getElementById("mainPanel_cust_type_1").checked) {
@@ -295,13 +317,15 @@
                     message += "Silakan isi Nama SLIK Tambahan\r\n";
                 }
                 if (custtype === "IND") {
+                    let labelJenisIdentitas = $("#mainPanel_supp_JenisIdentitas option:selected").html()
                     if (document.getElementById("mainPanel_supp_JenisIdentitas").value == "KTP") {
                         if (noktp.length != 16 && $('#mainPanel_supp_ktp').val() != "") {
-                            message += "No KTP tidak valid!\r\n";
+
+                            message += labelJenisIdentitas + " tidak valid!\r\n";
                         }
                     }
                     if ($('#mainPanel_supp_ktp').val() == "") {
-                        message += "Silakan isi " + $('#mainPanel_supp_JenisIdentitas').val() + "\r\n";
+                        message += "Silakan isi " + labelJenisIdentitas + "\r\n";
                     }
 
                 } else if (custtype === "PSH") {
@@ -372,6 +396,10 @@
 
 
         $(document).ready(function () {
+            let param = {
+                value: $('#mainPanel_JenisIdentitas').val()
+            }
+            setIdentitas(param, false);
             $('.select2').select2({
                 theme: 'bootstrap4'
             })
@@ -410,7 +438,10 @@
                     document.getElementById("mainPanel_supp_mother_name").value = "";
                     document.getElementById("mainPanel_supp_pob").value = "";
                     $('#mainPanel_panelStatusApp_status_app').val([])
-                    $('#mainPanel_supp_JenisIdentitas').val('KTP')
+                    let identitas=$('#mainPanel_supp_JenisIdentitas').val('KTP')
+                     
+                    setSuppIdentitas(identitas, true);
+
                     $('#mainPanel_supp_cust_type_0').val([])
                     $('#mainPanel_supp_cust_type_1').val([])
                     $('#mainPanel_supp_gender_0').val([])
@@ -463,7 +494,7 @@
                     let identitas ={ value : ''};
                     
                     identitas.value = $('#mainPanel_supp_JenisIdentitas').val();
-                    setSuppIdentitas(identitas);
+                    setSuppIdentitas(identitas, false);
                     if (s.cp_status_app != '' && s.cp_status_app != undefined) {  
                         $('#tempStatusApp').val(s.cp_status_app);
                         $('#mainPanel_panelStatusApp_status_app').val($('#tempStatusApp').val());
@@ -565,22 +596,10 @@
                                                     <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-sm-3">
-                                                    <script type="text/javascript">
-                                                        const setIdentitas = (param) => {
-                                                            const identitas = $('#mainPanel_ktp');
-                                                            identitas.val('');
-                                                            if (param.value === "PASPOR") {
-                                                                identitas.removeClass('numeric');
-                                                                identitas.addClass('alphanumeric');
-                                                            } else {
-                                                                identitas.removeClass('alphanumeric');
-                                                                identitas.addClass('numeric');
-                                                            }
-                                                        }
-                                                    </script>
+                                                 
                                                     <asp:DropDownList ID="JenisIdentitas" RepeatLayout="UnorderedList"
                                                         CssClass="form-control form-control-sm" runat="server" RepeatDirection="Vertical"
-                                                        onchange="setIdentitas(this)">
+                                                        onchange="setIdentitas(this, true)">
                                                         <asp:ListItem Text="KTP" Value="KTP"></asp:ListItem>
                                                         <asp:ListItem Text="PASPOR" Value="PASPOR"></asp:ListItem>
                                                     </asp:DropDownList>
@@ -823,8 +842,11 @@
                                                                                                     </label>
                                                                                                     <div class="col-sm-3">
                                                                                                         <script type="text/javascript">
-                                                                                                            const setSuppIdentitas = (param) => {
+                                                                                                            const setSuppIdentitas = (param,isClearValue) => {
                                                                                                                 const identitas = $('#mainPanel_supp_ktp');
+                                                                                                                if (isClearValue) {
+                                                                                                                    identitas.val('');
+                                                                                                                }
                                                                                                                 if (param.value === "PASPOR") {
                                                                                                                     identitas.removeClass('numeric');
                                                                                                                     identitas.addClass('alphanumeric');
@@ -836,7 +858,7 @@
                                                                                                         </script>
                                                                                                         <asp:DropDownList ID="supp_JenisIdentitas" RepeatLayout="UnorderedList"
                                                                                                             CssClass="form-control form-control-sm" runat="server" RepeatDirection="Vertical"
-                                                                                                            onchange="setSuppIdentitas(this);$('#mainPanel_supp_ktp').val('');">
+                                                                                                            onchange="setSuppIdentitas(this)">
                                                                                                             <asp:ListItem Text="KTP" Value="KTP"></asp:ListItem>
                                                                                                             <asp:ListItem Text="PASPOR" Value="PASPOR"></asp:ListItem>
                                                                                                         </asp:DropDownList>
@@ -1046,8 +1068,7 @@
                                                                                 <div class="col-sm-8">
                                                                                     <dx:ASPxUploadControl ID="ASPxUploadControl1" runat="server" ClientInstanceName="upload" ShowProgressPanel="true" ShowUploadButton="false" FileUploadMode="OnPageLoad"
                                                                                         Theme="MaterialCompact" Width="300" OnFileUploadComplete="ASPxUploadControl1_FileUploadComplete">
-                                                                                        <AdvancedModeSettings EnableFileList="False" EnableDragAndDrop="True" />
-                                                                                        <ValidationSettings MaxFileSize="3145728" />
+                                                                                        <AdvancedModeSettings EnableFileList="False" EnableDragAndDrop="True" /> 
                                                                                         <ClientSideEvents FileUploadComplete="function(s, e) {
 
                                                             $('#myModal').modal('hide');
@@ -1586,7 +1607,7 @@
             }
 
             CheckTujuan("");
-        </script>
+        </script> 
     </form>
 </body>
 </html>
